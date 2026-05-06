@@ -1,0 +1,8 @@
+Options -Indexes
+
+RewriteEngine On
+RewriteBase /
+
+# Offre active par défaut — changer /444 en /333 quand nouvelle offre
+RewriteRule ^$ /444/ [R=302,L]
+RewriteRule ^index\.html?$ /444/ [R=302,L]
