@@ -17,22 +17,22 @@
    ========================================================= */
 @font-face {
   font-family: 'Eliptik Harmony';
-  src: url('../fonts/Eliptik-Harmony-Thin.ttf') format('truetype');
+  src: url('fonts/Eliptik-Harmony-Thin.ttf') format('truetype');
   font-weight: 100; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: 'Eliptik Harmony';
-  src: url('../fonts/Eliptik-Harmony-Light.ttf') format('truetype');
+  src: url('fonts/Eliptik-Harmony-Light.ttf') format('truetype');
   font-weight: 300; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: 'Eliptik Harmony';
-  src: url('../fonts/Eliptik-Harmony-Regular.ttf') format('truetype');
+  src: url('fonts/Eliptik-Harmony-Regular.ttf') format('truetype');
   font-weight: 400; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: 'Eliptik Harmony';
-  src: url('../fonts/Eliptik-Harmony-Bold.ttf') format('truetype');
+  src: url('fonts/Eliptik-Harmony-Bold.ttf') format('truetype');
   font-weight: 700; font-style: normal; font-display: swap;
 }
 
@@ -183,13 +183,12 @@ h1, h2, h3, h4 {
 
 .hero-bg {
   position: absolute;
-  inset: -22% -10%;
+  inset: -22% 0;
   background-image: url('images/hero-cours-collectifs.jpg');
   background-size: cover;
-  background-position: 25% center;
+  background-position: 62% center;
   z-index: -2;
   will-change: transform;
-  transform: scale(0.88);
 }
 /* Dégradé gauche → droite : texte lisible à gauche, femme visible à droite */
 .hero::before {
@@ -1468,7 +1467,7 @@ h1, h2, h3, h4 {
       const scrollY = window.scrollY;
       // Stop dès que le hero est hors écran
       if (scrollY > hero.offsetHeight) { pending = false; return; }
-      bg.style.transform = 'translateY(' + (scrollY * 0.28) + 'px) scale(0.88)';
+      bg.style.transform = 'translateY(' + (scrollY * 0.28) + 'px)';
       pending = false;
     }
     window.addEventListener('scroll', function() {
