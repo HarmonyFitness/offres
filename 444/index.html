@@ -753,11 +753,19 @@ h1, h2, h3, h4 {
 .check-mark.off { background: var(--line-2); color: var(--ink-5); }
 
 @media (max-width: 700px) {
-  .compare-row, .compare-row.th { grid-template-columns: 1.3fr 1fr 1fr; }
-  .compare-row > div { padding: 10px 10px; font-size: 12px; }
+  .compare-row, .compare-row.th { grid-template-columns: 1fr 1fr 1fr; }
+  .compare-row > div { padding: 10px 8px; font-size: 12px; }
   .club-mini { font-size: 10px; padding: 1px 5px; }
   .clubs-num { font-size: 16px; }
   .comp-note { font-size: 10.5px; }
+  .compare-row.th .plan-title { font-size: 13px; }
+  /* CTA row : 2 colonnes, sans la colonne feature */
+  .compare-cta-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .compare-cta-row .col-feat { display: none; }
+  .compare-cta-row .col-plan { padding: 0 8px; }
+  .compare-cta-row .plan-cta { justify-content: center; }
 }
 
 /* =========================================================
@@ -820,6 +828,13 @@ h1, h2, h3, h4 {
     justify-content: space-between;
   }
   .compare-cta-row .plan-cta {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .closing-actions {
+    flex-direction: column;
+  }
+  .btn-white, .btn-outline {
     width: 100%;
     justify-content: space-between;
   }
@@ -1318,7 +1333,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- ============ GALLERY ============ -->
   <section class="gallery-section">
     <div class="section-head reveal">
-      <h2 class="section-title">Des clubs conçus pour<br/>le corps et l'esprit.</h2>
+      <h2 class="section-title">Des clubs conçus pour le corps et l'esprit.</h2>
     </div>
 
     <div class="gallery-grid reveal">
