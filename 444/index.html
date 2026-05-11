@@ -203,7 +203,7 @@ h1, h2, h3, h4 {
   inset: -22% 0;
   background-image: url('images/hero-cours-collectifs.jpg');
   background-size: cover;
-  background-position: 62% center;
+  background-position: center 30%;
   z-index: -2;
   will-change: transform;
 }
@@ -755,6 +755,8 @@ h1, h2, h3, h4 {
 @media (max-width: 700px) {
   .compare-row, .compare-row.th { grid-template-columns: 1fr 1fr 1fr; }
   .compare-row > div { padding: 10px 8px; font-size: 12px; }
+  .compare-row .col-feat { font-size: 13px; }
+  .compare-row.section-th > div:first-child { white-space: nowrap; font-size: 12px; }
   .club-mini { font-size: 10px; padding: 1px 5px; }
   .clubs-num { font-size: 16px; }
   .comp-note { font-size: 10.5px; }
