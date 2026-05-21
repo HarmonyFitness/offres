@@ -187,7 +187,7 @@ h1, h2, h3, h4 {
 }
 @media (max-width: 768px) {
   .hero-wrap { height: 700px; }
-  .hero-bg { background-position: center 10%; }
+  .hero-bg { background-position: center 10%; transform: scale(1.1); }
 }
 
 .hero {
@@ -771,8 +771,8 @@ h1, h2, h3, h4 {
   .compare-cta-row {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding: 16px;
+    gap: 4px;
+    padding: 12px 16px;
   }
   .compare-cta-row .col-feat { display: none; }
   .compare-cta-row .col-plan { padding: 0; width: 100%; }
@@ -1525,7 +1525,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const scrollY = window.scrollY;
       // Stop dès que le hero est hors écran
       if (scrollY > hero.offsetHeight) { pending = false; return; }
-      bg.style.transform = 'translateY(' + (scrollY * 0.28) + 'px)';
+      const scale = window.innerWidth <= 768 ? 1.1 : 0.88;
+      bg.style.transform = 'translateY(' + (scrollY * 0.28) + 'px) scale(' + scale + ')';
       pending = false;
     }
     window.addEventListener('scroll', function() {
