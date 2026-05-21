@@ -763,13 +763,17 @@ h1, h2, h3, h4 {
   .clubs-num { font-size: 16px; }
   .comp-note { font-size: 10.5px; }
   .compare-row.th .plan-title { font-size: 13px; }
-  /* CTA row : 2 colonnes, sans la colonne feature */
+  /* CTA row : colonne unique, Premium en premier */
   .compare-cta-row {
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
   }
   .compare-cta-row .col-feat { display: none; }
-  .compare-cta-row .col-plan { padding: 0 8px; }
-  .compare-cta-row .plan-cta { justify-content: center; }
+  .compare-cta-row .col-plan { padding: 0; width: 100%; }
+  .compare-cta-row .col-plan.featured-col { order: -1; }
+  .compare-cta-row .plan-cta { width: 100%; justify-content: space-between; }
 }
 
 /* =========================================================
