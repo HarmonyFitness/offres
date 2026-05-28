@@ -1525,8 +1525,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const scrollY = window.scrollY;
       // Stop dès que le hero est hors écran
       if (scrollY > hero.offsetHeight) { pending = false; return; }
-      const scale = window.innerWidth <= 768 ? 1.1 : 0.88;
-      bg.style.transform = 'translateY(' + (scrollY * 0.28) + 'px) scale(' + scale + ')';
+      const ty = scrollY * 0.28;
+      // Desktop : translateY seul (le scale(0.88) faisait "popper"/rétrécir l'image
+      // au démarrage du scroll). Mobile : on garde scale(1.1) (inset + scale).
+      bg.style.transform = window.innerWidth <= 768
+        ? 'translateY(' + ty + 'px) scale(1.1)'
+        : 'translateY(' + ty + 'px)';
       pending = false;
     }
     window.addEventListener('scroll', function() {
