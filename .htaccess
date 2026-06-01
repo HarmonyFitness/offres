@@ -6,15 +6,16 @@ RewriteEngine On
 RewriteBase /
 
 # ──────────────────────────────────────────────────────────────
-# État courant : aucune offre en ligne.
-#   /            → page d'attente (sert /index.html automatiquement)
-#   /444 et /333 → renvoient aussi vers la page d'attente
+# Offre 333 — en ligne.
+#   /            → /333/
+#   /index.html  → /333/
+#   /444 (ancienne offre) → /333/
 #
-# Pour réactiver une offre (ex. 333) :
-#   1) Retirer "333" de la règle ci-dessous
-#   2) Ajouter au-dessus :
-#        RewriteRule ^$ /333/ [R=302,L]
-#        RewriteRule ^index\.html?$ /333/ [R=302,L]
+# Quand 333 sera terminée et qu'aucune offre n'est en ligne :
+# remplacer les 3 RewriteRule par :
+#   RewriteRule ^(333|444)(/.*)?$ / [R=302,L]
 # ──────────────────────────────────────────────────────────────
 
-RewriteRule ^(333|444)(/.*)?$ / [R=302,L]
+RewriteRule ^$ /333/ [R=302,L]
+RewriteRule ^index\.html?$ /333/ [R=302,L]
+RewriteRule ^444(/.*)?$ /333/ [R=302,L]
