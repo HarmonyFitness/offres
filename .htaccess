@@ -5,33 +5,9 @@ ErrorDocument 404 /404.html
 RewriteEngine On
 RewriteBase /
 
-# ──────────────────────────────────────────────────────────────
-# Bascule des offres sur la page d'accueil (heure LOCALE du serveur,
-# format %{TIME} = YYYYMMDDHHMMSS, comparaisons lexicales).
-#   • Jusqu'au lundi 1 juin 2026 09:00:00  →  home = offre 444
-#   • Du 1 juin 2026 09:00:00 au 30 juin 2026 23:59:59  →  home = offre 333 ; /444 → /333
-#   • Après le 30 juin 2026 23:59:59  →  page d'attente (/index.html) ; /333 + /444 → /
-# ──────────────────────────────────────────────────────────────
+# Pas d'offre en cours — page d'attente sur / (sert /index.html automatiquement).
+# Quand offre 333 prête : ajouter ici "RewriteRule ^$ /333/ [R=302,L]"
+# et "RewriteRule ^index\.html?$ /333/ [R=302,L]", puis ajuster la règle ci-dessous.
 
-# 1) Avant le 1 juin 09:00 → home vers /444/
-RewriteCond %{TIME} <20260601090000
-RewriteRule ^$ /444/ [R=302,L]
-RewriteCond %{TIME} <20260601090000
-RewriteRule ^index\.html?$ /444/ [R=302,L]
-
-# 2) Du 1 juin 09:00 au 30 juin 23:59:59 → home vers /333/
-RewriteCond %{TIME} >20260601085959
-RewriteCond %{TIME} <20260701000000
-RewriteRule ^$ /333/ [R=302,L]
-RewriteCond %{TIME} >20260601085959
-RewriteCond %{TIME} <20260701000000
-RewriteRule ^index\.html?$ /333/ [R=302,L]
-
-# 3) Offre 444 périmée : du 1 juin 09:00 au 30 juin → /444 renvoie vers l'offre active /333
-RewriteCond %{TIME} >20260601085959
-RewriteCond %{TIME} <20260701000000
-RewriteRule ^444(/.*)?$ /333/ [R=302,L]
-
-# 4) Après le 30 juin 23:59:59 → /333 et /444 renvoient vers la page d'attente
-RewriteCond %{TIME} >20260630235959
-RewriteRule ^(333|444)(/.*)?$ / [R=302,L]
+# Ancien chemin /444 — renvoie vers la page d'attente
+RewriteRule ^444(/.*)?$ / [R=302,L]
