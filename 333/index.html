@@ -154,19 +154,25 @@ h1, h2, h3, h4 {
    l'apparence d'un CTA d'inscription (qui appartient aux cartes plan). */
 .btn-topbar {
   padding: 10px 16px; font-size: 13px; font-weight: 600;
-  background: var(--brand-100); color: var(--brand-ink);
+  background: linear-gradient(135deg, var(--brand-50) 0%, var(--brand-100) 100%);
+  color: var(--brand-ink);
   border-radius: 999px;
-  border: 1px solid var(--brand-200);
+  border: 1px solid var(--brand-100);
   transition: background .18s, border-color .18s, transform .15s;
   white-space: nowrap;
   flex-shrink: 0;
   display: inline-flex; align-items: center; gap: 8px;
 }
 .btn-topbar:hover {
-  background: var(--brand-200);
-  border-color: var(--brand-300);
+  background: linear-gradient(135deg, var(--brand-100) 0%, var(--brand-200) 100%);
+  border-color: var(--brand-200);
   transform: translateY(-1px);
 }
+
+/* Essential / Premium mis en gras dans les CTAs ("Choisir l'offre 333 X"). */
+.plan-cta strong,
+.btn-white strong,
+.btn-outline strong { font-weight: 700; }
 
 /* Texte en dégradé brand — utilisé pour mettre "333" en valeur dans le H2. */
 .num-grad {
@@ -534,7 +540,7 @@ h1, h2, h3, h4 {
   margin-top: 24px; width: 100%;
   padding: 16px 22px; border-radius: 999px;
   background: var(--grad-cta); color: #fff;
-  font-size: 14px; font-weight: 600;
+  font-size: 14px; font-weight: 500;
   display: inline-flex; align-items: center; justify-content: space-between;
   box-shadow: 0 2px 6px rgba(10,37,64,.12), 0 8px 20px rgba(58,143,194,.25);
   transition: transform .15s, box-shadow .18s, background .18s;
@@ -940,7 +946,7 @@ h1, h2, h3, h4 {
 }
 .btn-white {
   padding: 16px 28px; background: #fff; color: var(--brand-ink);
-  border-radius: 999px; font-size: 14px; font-weight: 700;
+  border-radius: 999px; font-size: 14px; font-weight: 500;
   display: inline-flex; align-items: center; gap: 10px;
   box-shadow: 0 8px 24px rgba(0,0,0,.18);
   transition: transform .18s, background .18s;
@@ -949,7 +955,7 @@ h1, h2, h3, h4 {
 .btn-outline {
   padding: 16px 28px; background: transparent; color: #fff;
   border: 1px solid rgba(255,255,255,.5); border-radius: 999px;
-  font-size: 14px; font-weight: 700;
+  font-size: 14px; font-weight: 500;
   display: inline-flex; align-items: center; gap: 10px;
   transition: border-color .18s, background .18s;
 }
@@ -1070,7 +1076,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <a class="hero-cta" href="#formules">
-      Choisir ma formule
+      <span>Choisir ma formule <span class="num-grad">333</span></span>
       <span class="arrow">
         <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </span>
@@ -1112,7 +1118,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a class="plan-cta"
            href="https://souscription.harmony.ch/?add-to-cart=52948"
            target="_blank" rel="noopener">
-          <span>Choisir Essential</span>
+          <span>S'abonner à l'offre <strong>Essential</strong></span>
           <span class="arrow"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
 
@@ -1186,7 +1192,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a class="plan-cta"
            href="https://souscription.harmony.ch/?add-to-cart=52947"
            target="_blank" rel="noopener">
-          <span>Choisir Premium</span>
+          <span>S'abonner à l'offre <strong>Premium</strong></span>
           <span class="arrow"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
 
@@ -1346,13 +1352,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="col-feat"></div>
         <div class="col-plan">
           <a class="plan-cta" href="https://souscription.harmony.ch/?add-to-cart=52948" target="_blank" rel="noopener">
-            <span>Choisir Essential</span>
+            <span>S'abonner à l'offre <strong>Essential</strong></span>
             <span class="arrow"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
         </div>
         <div class="col-plan featured-col">
           <a class="plan-cta" href="https://souscription.harmony.ch/?add-to-cart=52947" target="_blank" rel="noopener">
-            <span>Choisir Premium</span>
+            <span>S'abonner à l'offre <strong>Premium</strong></span>
             <span class="arrow"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
         </div>
@@ -1430,11 +1436,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="closing-lead">L'offre 333.- est valable du 1er au 30 juin 2026. Inscription en ligne en moins de cinq minutes. Premier passage en club dès que vous êtes prêt.</p>
       <div class="closing-actions">
         <a class="btn-white" href="https://souscription.harmony.ch/?add-to-cart=52947" target="_blank" rel="noopener">
-          Choisir Premium
+          <span>S'abonner à l'offre <strong>Premium</strong></span>
           <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a class="btn-outline" href="https://souscription.harmony.ch/?add-to-cart=52948" target="_blank" rel="noopener">
-          Choisir Essential
+          <span>S'abonner à l'offre <strong>Essential</strong></span>
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
       <p class="closing-deadline"><span class="dot"></span>Date limite : 30 juin 2026</p>
