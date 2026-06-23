@@ -213,7 +213,7 @@ h1, h2, h3, h4 {
   min-height: 760px;
 }
 @media (max-width: 768px) {
-  .hero-wrap { min-height: 860px; }
+  .hero-wrap { height: 700px; min-height: 700px; }
 }
 
 .hero {
@@ -241,9 +241,9 @@ h1, h2, h3, h4 {
 }
 @media (max-width: 768px) {
   .hero-bg {
-    /* Mobile : on zoome et on ancre en bas pour que le ballon soit visible
-       et que le visage du sportif sorte du cadre (hors zone texte). */
-    background-size: auto 145%;
+    /* Mobile : hauteur hero fixée à 700px. On zoome et on ancre en bas
+       pour cadrer sur le t-shirt/ballon ; le visage du sportif sort par le haut. */
+    background-size: auto 140%;
     background-position: 50% 100%;
   }
 }
@@ -314,28 +314,21 @@ h1, h2, h3, h4 {
 }
 .hero-sub strong { color: #fff; font-weight: 600; }
 
-/* Wrapper prix + compteur — gère le layout 2 colonnes mobile et l'absolute desktop */
+/* Wrapper prix + compteur — compteur in-flow à droite du gros 888.- */
 .hero-price-cd {
   margin-top: 26px;
   padding-top: 22px;
   border-top: 1px solid rgba(255,255,255,.14);
   width: 100%;
 }
-@media (max-width: 900px) {
-  .hero-price-cd {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 16px;
-  }
-}
-
-.hero-price {
+.hero-price-top {
   display: flex;
-  flex-direction: column;
-  gap: 9px;
-  flex: 1;
-  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+@media (max-width: 600px) {
+  .hero-price-top { gap: 16px; }
 }
 .hero-price-row {
   display: flex;
@@ -364,7 +357,7 @@ h1, h2, h3, h4 {
   font-weight: 500;
   color: rgba(255,255,255,.75);
   line-height: 1.45;
-  margin: 0;
+  margin: 14px 0 0;
 }
 .hero-price-note strong {
   color: rgba(255,255,255,.95);
@@ -433,18 +426,9 @@ h1, h2, h3, h4 {
   justify-content: flex-start;
   flex-shrink: 0;
 }
-/* Desktop : compteur en bas-droite du hero (absolute) */
-@media (min-width: 901px) {
-  .hero-cd-wrap {
-    position: absolute;
-    bottom: 60px;
-    right: 72px;
-    z-index: 5;
-  }
-}
 
 .hero-cta {
-  margin-top: 20px;
+  margin-top: 36px;
   display: inline-flex; align-items: center; gap: 10px;
   padding: 16px 30px;
   background: #fff; color: var(--brand-ink);
@@ -1126,19 +1110,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="hero-sub"><strong>La Suisse est qualifiée pour la Coupe du Monde 2026.</strong> Pour célébrer ce moment, nous débloquons 88 abonnements à 888.-</p>
 
     <div class="hero-price-cd">
-      <div class="hero-price">
+      <div class="hero-price-top">
         <div class="hero-price-row">
           <span class="hero-price-big num">888.-</span>
         </div>
-        <p class="hero-price-note">Payable en plusieurs fois sans frais <span class="heylight-tag">Heylight</span></p>
-      </div>
-      <div class="hero-cd-wrap">
-        <div class="cd-widget" id="cd-widget-1">
-          <span class="cd-blink"></span>
-          <span class="cd-label">Abonnements<br/>restants</span>
-          <span class="cd-num" data-cd-remaining>88</span>
+        <div class="hero-cd-wrap">
+          <div class="cd-widget" id="cd-widget-1">
+            <span class="cd-blink"></span>
+            <span class="cd-label">Abonnements<br/>restants</span>
+            <span class="cd-num" data-cd-remaining>88</span>
+          </div>
         </div>
       </div>
+      <p class="hero-price-note">Payable en plusieurs fois sans frais <span class="heylight-tag">Heylight</span></p>
     </div>
     <a class="hero-cta" href="#formules">
       <span>Réserver votre offre <span class="num-grad">888</span></span>
