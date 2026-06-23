@@ -295,9 +295,9 @@ h1, h2, h3, h4 {
 }
 
 .hero h1 {
-  font-size: clamp(36px, 4.2vw, 58px);
-  line-height: 0.93;
-  letter-spacing: -0.03em;
+  font-size: clamp(48px, 6.2vw, 92px);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
   color: #fff;
   text-transform: uppercase;
   margin-bottom: 0;
@@ -314,21 +314,15 @@ h1, h2, h3, h4 {
 }
 .hero-sub strong { color: #fff; font-weight: 600; }
 
-/* Wrapper prix + compteur — compteur in-flow à droite du gros 888.- */
+/* Bloc prix */
 .hero-price-cd {
-  margin-top: 26px;
-  padding-top: 22px;
-  border-top: 1px solid rgba(255,255,255,.14);
+  margin-top: 22px;
   width: 100%;
 }
 .hero-price-top {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-@media (max-width: 600px) {
-  .hero-price-top { gap: 16px; }
+  align-items: flex-end;
+  gap: 16px;
 }
 .hero-price-row {
   display: flex;
@@ -357,7 +351,7 @@ h1, h2, h3, h4 {
   font-weight: 500;
   color: rgba(255,255,255,.75);
   line-height: 1.45;
-  margin: 14px 0 0;
+  margin: 6px 0 0;
 }
 .hero-price-note strong {
   color: rgba(255,255,255,.95);
@@ -372,59 +366,60 @@ h1, h2, h3, h4 {
   vertical-align: baseline;
 }
 
-/* Counter widget — carré, label sur 2 lignes + gros chiffre */
+/* Counter widget — pill horizontale, sous les CTA */
 .cd-widget {
-  position: relative;
   display: inline-flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
   gap: 10px;
-  width: 132px;
-  height: 132px;
-  padding: 18px 14px;
+  padding: 10px 16px 10px 14px;
   background: rgba(255,255,255,.1);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255,255,255,.18);
-  border-radius: 18px;
+  border-radius: 999px;
   color: #fff;
+  white-space: nowrap;
 }
 .cd-widget .cd-label {
   font-family: var(--font-sans);
-  font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
-  color: rgba(255,255,255,.65);
-  line-height: 1.3;
-  display: block;
+  font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(255,255,255,.72);
+  font-weight: 600;
 }
 .cd-widget .cd-num {
   font-family: var(--font-display);
-  font-size: 44px; font-weight: 700;
+  font-size: 17px; font-weight: 700;
   color: #fff;
-  letter-spacing: -.025em;
+  letter-spacing: -.01em;
   line-height: 1;
-  display: block;
 }
 .cd-blink {
-  position: absolute;
-  top: 12px; right: 12px;
-  width: 8px; height: 8px; border-radius: 50%;
+  width: 9px; height: 9px; border-radius: 50%;
   background: var(--green-light);
   box-shadow: 0 0 10px var(--green-light);
   animation: pulseBlink 1.4s ease-in-out infinite;
   flex-shrink: 0;
+  transition: background .4s, box-shadow .4s;
 }
 @keyframes pulseBlink { 0%,100%{opacity:1} 50%{opacity:.3} }
-.cd-widget.depleted .cd-blink {
+.cd-widget.warn .cd-blink {
+  background: #f59e0b;
+  box-shadow: 0 0 10px #f59e0b;
+}
+.cd-widget.danger .cd-blink {
   background: var(--swiss-red);
-  box-shadow: 0 0 10px var(--swiss-red);
+  box-shadow: 0 0 12px var(--swiss-red);
+}
+@media (max-width: 600px) {
+  .cd-widget { padding: 9px 14px 9px 12px; gap: 8px; }
+  .cd-widget .cd-label { font-size: 10px; }
+  .cd-widget .cd-num { font-size: 15.5px; }
 }
 
 .hero-cd-wrap {
+  margin-top: 18px;
   display: flex;
   justify-content: flex-start;
-  flex-shrink: 0;
 }
 
 .hero-cta {
@@ -528,6 +523,20 @@ h1, h2, h3, h4 {
   line-height: 1;
   margin-bottom: 10px;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  white-space: nowrap;
+}
+.plan-emoji {
+  font-size: 0.78em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  display: inline-block;
+}
+@media (max-width: 600px) {
+  .plan-name { font-size: 36px; gap: 10px; }
 }
 .plan-tagline {
   font-size: 14px; line-height: 1.45;
@@ -982,7 +991,7 @@ h1, h2, h3, h4 {
   font-size: clamp(34px, 4.4vw, 56px);
   letter-spacing: -0.03em; color: #fff; margin-bottom: 28px;
 }
-.closing-cd { display: flex; justify-content: center; margin-bottom: 32px; }
+.closing-cd { display: flex; justify-content: center; margin-top: 22px; }
 .closing-lead {
   font-size: 16px; color: rgba(255,255,255,.85); line-height: 1.6;
   margin-bottom: 32px; max-width: 56ch;
@@ -1104,32 +1113,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-inner">
     <span class="eyebrow">
       <span class="ch-cross"><svg width="12" height="12"><use href="#ch-cross-symbol"/></svg></span>
-      Édition limitée · Offre 888
+      Offre Coupe du Monde · Limitée
     </span>
-    <h1>Coupe du Monde&nbsp;:<br/>L'offre des qualifiés</h1>
-    <p class="hero-sub"><strong>La Suisse est qualifiée pour la Coupe du Monde 2026.</strong> Pour célébrer ce moment, nous débloquons 88 abonnements à 888.-</p>
+    <h1>L'offre des<br/>qualifiés</h1>
+    <p class="hero-sub"><strong>La Suisse est qualifiée pour la Coupe du Monde 2026&nbsp;⚽</strong> Pour célébrer ce moment, nous débloquons 88 abonnements à 888.-. Ne ratez pas votre place — ils partent vite&nbsp;!</p>
 
     <div class="hero-price-cd">
-      <div class="hero-price-top">
-        <div class="hero-price-row">
-          <span class="hero-price-big num">888.-</span>
-        </div>
-        <div class="hero-cd-wrap">
-          <div class="cd-widget" id="cd-widget-1">
-            <span class="cd-blink"></span>
-            <span class="cd-label">Abonnements<br/>restants</span>
-            <span class="cd-num" data-cd-remaining>88</span>
-          </div>
-        </div>
+      <div class="hero-price-row">
+        <span class="hero-price-big num">888.-</span>
       </div>
       <p class="hero-price-note">Payable en plusieurs fois sans frais <span class="heylight-tag">Heylight</span></p>
     </div>
+
     <a class="hero-cta" href="#formules">
-      <span>Réserver votre offre <span class="num-grad">888</span></span>
+      <span>Choisir votre offre <span class="num-grad">888</span></span>
       <span class="arrow">
         <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </span>
     </a>
+
+    <div class="hero-cd-wrap">
+      <div class="cd-widget" id="cd-widget-1">
+        <span class="cd-blink"></span>
+        <span class="cd-label">Abonnements restants</span>
+        <span class="cd-num" data-cd-remaining>88</span>
+      </div>
+    </div>
   </div>
 </section>
 </div>
@@ -1150,7 +1159,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="plan-tier">
           <span class="plan-tier-num">Offre 888 · 6 clubs</span>
         </div>
-        <div class="plan-name">Essential</div>
+        <div class="plan-name"><span class="plan-emoji">⚽</span>Essential</div>
         <div class="plan-tagline">12 mois de fitness, wellness et cours collectifs dans nos 6 clubs Essential.</div>
 
         <div class="plan-price-block">
@@ -1161,16 +1170,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="price-meta">
             Payable jusqu'à 12 fois sans frais <span class="heylight-tag">Heylight</span> · soit <b>74.- / mois</b>
           </div>
-          <span class="duration-tag">
-            <span class="ch-cross"><svg width="12" height="12"><use href="#ch-cross-symbol"/></svg></span>
-            12 mois d'accès
-          </span>
+          <span class="duration-tag">12 mois d'accès</span>
         </div>
 
         <a class="plan-cta"
            href="https://souscription.harmony.ch/?add-to-cart=54132"
            target="_blank" rel="noopener">
-          <span>Réserver l'offre <strong>Essential</strong></span>
+          <span>S'abonner à l'offre <strong>Essential</strong></span>
           <span class="arrow"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
 
@@ -1226,7 +1232,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="plan-tier">
           <span class="plan-tier-num">Offre 888 · Tous clubs</span>
         </div>
-        <div class="plan-name">Premium</div>
+        <div class="plan-name"><span class="plan-emoji">🇨🇭</span>Premium</div>
         <div class="plan-tagline">8 mois d'accès illimité à l'ensemble du réseau Harmony, espaces aquatiques inclus.</div>
 
         <div class="plan-price-block">
@@ -1237,16 +1243,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="price-meta">
             Payable jusqu'à 10 fois sans frais <span class="heylight-tag">Heylight</span> · soit <b>88.80 / mois</b>
           </div>
-          <span class="duration-tag">
-            <span class="ch-cross"><svg width="12" height="12"><use href="#ch-cross-symbol"/></svg></span>
-            8 mois d'accès illimité
-          </span>
+          <span class="duration-tag">8 mois d'accès illimité</span>
         </div>
 
         <a class="plan-cta"
            href="https://souscription.harmony.ch/?add-to-cart=54135"
            target="_blank" rel="noopener">
-          <span>Réserver l'offre <strong>Premium</strong></span>
+          <span>S'abonner à l'offre <strong>Premium</strong></span>
           <span class="arrow"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
 
@@ -1406,13 +1409,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="col-feat"></div>
         <div class="col-plan">
           <a class="plan-cta" href="https://souscription.harmony.ch/?add-to-cart=54132" target="_blank" rel="noopener">
-            <span>Réserver l'offre <strong>Essential</strong></span>
+            <span>S'abonner à l'offre <strong>Essential</strong></span>
             <span class="arrow"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
         </div>
         <div class="col-plan featured-col">
           <a class="plan-cta" href="https://souscription.harmony.ch/?add-to-cart=54135" target="_blank" rel="noopener">
-            <span>Réserver l'offre <strong>Premium</strong></span>
+            <span>S'abonner à l'offre <strong>Premium</strong></span>
             <span class="arrow"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
         </div>
@@ -1468,28 +1471,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="closing-inner">
       <span class="eyebrow">
         <span class="ch-cross"><svg width="12" height="12"><use href="#ch-cross-symbol"/></svg></span>
-        Édition limitée · Offre 888
+        Offre Coupe du Monde · Limitée
       </span>
-      <h2>Préparez votre saison.<br/>Vivez la Coupe en forme.</h2>
-      <div class="closing-cd">
-        <div class="cd-widget" id="cd-widget-2">
-          <span class="cd-blink"></span>
-          <span class="cd-label">Abonnements<br/>restants</span>
-          <span class="cd-num" data-cd-remaining>88</span>
-        </div>
-      </div>
-      <p class="closing-lead">88 abonnements à 888.-, débloqués pour célébrer la qualification de la Suisse à la Coupe du Monde 2026. Inscription en ligne en moins de cinq minutes — paiement en plusieurs fois sans frais via Heylight.</p>
+      <h2>Ne restez pas<br/>sur le banc de touche.</h2>
+      <p class="closing-lead">88 abonnements à 888.- pour célébrer la qualification de la Suisse. Une fois épuisés, c'est terminé — inscription en moins de cinq minutes, paiement échelonné sans frais via Heylight.</p>
       <div class="closing-actions">
         <a class="btn-white" href="https://souscription.harmony.ch/?add-to-cart=54135" target="_blank" rel="noopener">
-          <span>Réserver l'offre <strong>Premium</strong></span>
+          <span>S'abonner à l'offre <strong>Premium</strong></span>
           <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a class="btn-outline" href="https://souscription.harmony.ch/?add-to-cart=54132" target="_blank" rel="noopener">
-          <span>Réserver l'offre <strong>Essential</strong></span>
+          <span>S'abonner à l'offre <strong>Essential</strong></span>
           <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
-      <p class="closing-deadline"><span class="dot"></span>Dans la limite des stocks · 88 abonnements au total</p>
+      <div class="closing-cd">
+        <div class="cd-widget" id="cd-widget-2">
+          <span class="cd-blink"></span>
+          <span class="cd-label">Abonnements restants</span>
+          <span class="cd-num" data-cd-remaining>88</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1611,10 +1613,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       document.querySelectorAll('[data-cd-remaining]').forEach(el => {
         el.textContent = n;
       });
-      // Quand quasi épuisé : passe le dot en rouge
-      if (n <= 10) {
-        document.querySelectorAll('.cd-widget').forEach(el => el.classList.add('depleted'));
-      }
+      // Couleur du dot : vert (par défaut) → orange (≤30) → rouge (≤10)
+      document.querySelectorAll('.cd-widget').forEach(el => {
+        el.classList.toggle('warn',   n <= 30 && n > 10);
+        el.classList.toggle('danger', n <= 10);
+      });
     }
     update();
     setInterval(update, 5000);
