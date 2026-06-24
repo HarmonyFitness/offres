@@ -241,10 +241,10 @@ h1, h2, h3, h4 {
 }
 @media (max-width: 768px) {
   .hero-bg {
-    /* Mobile : hero 700px fixé. On zoome et on ancre en bas pour cadrer sur
-       le t-shirt/ballon ; le visage du sportif sort par le haut. */
+    /* Mobile : hero 700px fixé. On zoome et on ancre en haut pour que la tête
+       du sportif soit visible entre la topbar et le H1. */
     background-size: auto 140%;
-    background-position: 50% 100%;
+    background-position: 50% 0%;
   }
 }
 .hero::before {
