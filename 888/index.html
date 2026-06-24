@@ -100,15 +100,43 @@ html {
   scroll-padding-top: 100px;
 }
 
-/* Curseur ballon de foot (Coupe du Monde) — desktop uniquement.
-   PNG 32x32, hotspot centré. Fallback auto/pointer pour Safari iOS. */
+/* Curseur ballon de foot interactif (suit la souris, grossit + tremble au survol).
+   Faux curseur en div fixé, JS s'occupe de la position. Desktop souris uniquement. */
 @media (hover: hover) and (pointer: fine) {
-  html, body {
-    cursor: url('images/ball-cursor.png') 16 16, auto;
-  }
-  a, button, .faq-q, [role="button"] {
-    cursor: url('images/ball-cursor.png') 16 16, pointer;
-  }
+  html, body { cursor: none; }
+  a, button, .faq-q, [role="button"], input, textarea, select { cursor: none; }
+}
+#ball-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate3d(-9999px, -9999px, 0);
+  will-change: transform;
+  display: none;
+  opacity: 0;
+  transition: opacity .15s;
+}
+@media (hover: hover) and (pointer: fine) {
+  #ball-cursor { display: block; }
+}
+#ball-cursor .ball-inner {
+  display: block;
+  width: 32px; height: 32px;
+  background: url('images/ball-cursor.png') center/contain no-repeat;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform .18s cubic-bezier(.16,1,.3,1);
+  will-change: transform;
+}
+#ball-cursor.is-hover .ball-inner {
+  animation: ballShake .42s ease-in-out infinite;
+}
+@keyframes ballShake {
+  0%   { transform: translate(-50%, -50%) rotate(0deg)   scale(1.3); }
+  25%  { transform: translate(-50%, -50%) rotate(-14deg) scale(1.3); }
+  50%  { transform: translate(-50%, -50%) rotate(0deg)   scale(1.3); }
+  75%  { transform: translate(-50%, -50%) rotate(14deg)  scale(1.3); }
+  100% { transform: translate(-50%, -50%) rotate(0deg)   scale(1.3); }
 }
 html, body { margin: 0; padding: 0; background: var(--canvas); }
 body {
@@ -1104,6 +1132,9 @@ h1, h2, h3, h4 {
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+<!-- Faux curseur ballon de foot (suit la souris, JS) -->
+<div id="ball-cursor" aria-hidden="true"><span class="ball-inner"></span></div>
+
 <!-- Croix suisse SVG réutilisable (référencée via <use>) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="ch-cross-symbol" viewBox="0 0 16 16">
@@ -1690,6 +1721,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     });
   });
+
+  // Curseur ballon de foot — suit la souris, scale 1.3 + shake au survol des liens
+  (function() {
+    if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    const cursor = document.getElementById('ball-cursor');
+    if (!cursor) return;
+    const HOVER_SELECTOR = 'a, button, .faq-q, [role="button"]';
+    let x = 0, y = 0, pending = false, shown = false;
+    function tick() {
+      cursor.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0)';
+      pending = false;
+    }
+    window.addEventListener('mousemove', function(e) {
+      x = e.clientX; y = e.clientY;
+      if (!shown) { cursor.style.opacity = '1'; shown = true; }
+      if (!pending) { pending = true; requestAnimationFrame(tick); }
+    }, { passive: true });
+    document.addEventListener('mouseover', function(e) {
+      if (e.target.closest && e.target.closest(HOVER_SELECTOR)) {
+        cursor.classList.add('is-hover');
+      }
+    });
+    document.addEventListener('mouseout', function(e) {
+      if (e.target.closest && e.target.closest(HOVER_SELECTOR)) {
+        cursor.classList.remove('is-hover');
+      }
+    });
+    document.addEventListener('mouseleave', function() {
+      cursor.style.opacity = '0';
+      shown = false;
+    });
+  })();
 
   // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
