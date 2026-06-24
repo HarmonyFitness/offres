@@ -232,17 +232,18 @@ h1, h2, h3, h4 {
   position: absolute;
   inset: 0;
   background-image: url('images/hero-cdm.jpg');
-  background-size: cover;
-  /* Image portrait · sportif central, drapeau suisse en haut-droite, ballon en bas.
-     En desktop : crop pour révéler le drapeau en haut et garder les sportifs visibles. */
-  background-position: 50% 8%;
+  /* Image portrait · sportif central avec ballon, drapeau suisse en haut-droite.
+     Desktop : on élargit l'image et on l'ancre à gauche pour pousser le sujet/visage
+     vers la droite (hors zone texte) tout en gardant le drapeau visible en haut-droite. */
+  background-size: 130% auto;
+  background-position: 0% 30%;
   z-index: -2;
   will-change: transform;
 }
 @media (max-width: 768px) {
   .hero-bg {
-    /* Mobile : hauteur hero fixée à 700px. On zoome et on ancre en bas
-       pour cadrer sur le t-shirt/ballon ; le visage du sportif sort par le haut. */
+    /* Mobile : hero 700px fixé. On zoome et on ancre en bas pour cadrer sur
+       le t-shirt/ballon ; le visage du sportif sort par le haut. */
     background-size: auto 140%;
     background-position: 50% 100%;
   }
