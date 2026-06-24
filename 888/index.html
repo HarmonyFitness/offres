@@ -101,13 +101,13 @@ html {
 }
 
 /* Curseur ballon de foot (Coupe du Monde) — desktop uniquement.
-   SVG data URL, hotspot centré. Fallback auto/pointer pour Safari iOS. */
+   PNG 32x32, hotspot centré. Fallback auto/pointer pour Safari iOS. */
 @media (hover: hover) and (pointer: fine) {
   html, body {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23fff' stroke='%23111' stroke-width='1.6'/%3E%3Cpolygon points='16,9 20.8,12.5 19,18 13,18 11.2,12.5' fill='%23111'/%3E%3Cline x1='16' y1='9' x2='16' y2='3.5' stroke='%23111' stroke-width='1.4'/%3E%3Cline x1='20.8' y1='12.5' x2='26.5' y2='9.5' stroke='%23111' stroke-width='1.4'/%3E%3Cline x1='11.2' y1='12.5' x2='5.5' y2='9.5' stroke='%23111' stroke-width='1.4'/%3E%3Cline x1='13' y1='18' x2='10' y2='25' stroke='%23111' stroke-width='1.4'/%3E%3Cline x1='19' y1='18' x2='22' y2='25' stroke='%23111' stroke-width='1.4'/%3E%3C/svg%3E") 16 16, auto;
+    cursor: url('images/ball-cursor.png') 16 16, auto;
   }
   a, button, .faq-q, [role="button"] {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23fff' stroke='%23111' stroke-width='1.6'/%3E%3Cpolygon points='16,9 20.8,12.5 19,18 13,18 11.2,12.5' fill='%23111'/%3E%3Cline x1='16' y1='9' x2='16' y2='3.5' stroke='%23111' stroke-width='1.4'/%3E%3Cline x1='20.8' y1='12.5' x2='26.5' y2='9.5' stroke='%23111' stroke-width='1.4'/%3E%3Cline x1='11.2' y1='12.5' x2='5.5' y2='9.5' stroke='%23111' stroke-width='1.4'/%3E%3Cline x1='13' y1='18' x2='10' y2='25' stroke='%23111' stroke-width='1.4'/%3E%3Cline x1='19' y1='18' x2='22' y2='25' stroke='%23111' stroke-width='1.4'/%3E%3C/svg%3E") 16 16, pointer;
+    cursor: url('images/ball-cursor.png') 16 16, pointer;
   }
 }
 html, body { margin: 0; padding: 0; background: var(--canvas); }
