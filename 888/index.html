@@ -366,32 +366,29 @@ h1, h2, h3, h4 {
   vertical-align: baseline;
 }
 
-/* Counter widget · pill horizontale, sous les CTA */
+/* Counter widget · inline texte (sans contour) sous les CTA */
 .cd-widget {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 16px 10px 14px;
-  background: rgba(255,255,255,.1);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,.18);
-  border-radius: 999px;
+  padding: 0;
+  background: transparent;
+  border: 0;
   color: #fff;
   white-space: nowrap;
 }
-.cd-widget .cd-label {
-  font-family: var(--font-sans);
-  font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
-  color: rgba(255,255,255,.72);
-  font-weight: 600;
-}
 .cd-widget .cd-num {
   font-family: var(--font-display);
-  font-size: 17px; font-weight: 700;
+  font-size: 19px; font-weight: 700;
   color: #fff;
   letter-spacing: -.01em;
   line-height: 1;
+}
+.cd-widget .cd-label {
+  font-family: var(--font-sans);
+  font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.78);
+  font-weight: 600;
 }
 .cd-blink {
   width: 9px; height: 9px; border-radius: 50%;
@@ -1116,7 +1113,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       Offre Coupe du Monde · Limitée
     </span>
     <h1>L'offre des<br/>qualifiés</h1>
-    <p class="hero-sub"><strong>La Suisse est qualifiée pour la Coupe du Monde 2026&nbsp;⚽</strong> Pour célébrer ce moment, nous débloquons 88 abonnements à 888.-. Ne ratez pas votre place, ils partent vite&nbsp;!</p>
+    <p class="hero-sub"><strong>La Suisse est qualifiée pour la Coupe du Monde 2026&nbsp;⚽</strong> Pour célébrer ce moment, nous débloquons 88 abonnements à 888.-</p>
 
     <div class="hero-price-cd">
       <div class="hero-price-row">
@@ -1135,8 +1132,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-cd-wrap">
       <div class="cd-widget" id="cd-widget-1">
         <span class="cd-blink"></span>
-        <span class="cd-label">Abonnements restants</span>
         <span class="cd-num" data-cd-remaining>88</span>
+        <span class="cd-label">Abonnements restants</span>
       </div>
     </div>
   </div>
@@ -1149,7 +1146,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="plans-wrap">
     <div class="section-head reveal">
       <h2 class="section-title">Choisissez<br/>votre offre <span class="num-grad">888</span></h2>
-      <p class="section-sub">Deux formules au même prix exceptionnel. Choisissez celle qui correspond à votre rythme et au réseau de clubs dont vous avez besoin.</p>
+      <p class="section-sub">Deux formules au même prix exceptionnel, dans la limite des 88 abonnements disponibles. Choisissez vite celle qui correspond à votre rythme et au réseau de clubs dont vous avez besoin.</p>
     </div>
 
     <div class="plans reveal" id="formules">
@@ -1176,7 +1173,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a class="plan-cta"
            href="https://souscription.harmony.ch/?add-to-cart=54132"
            target="_blank" rel="noopener">
-          <span>S'abonner à l'offre <strong>Essential</strong></span>
+          <span>S'abonner à l'offre <strong>Essential 888</strong></span>
           <span class="arrow"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
 
@@ -1249,7 +1246,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a class="plan-cta"
            href="https://souscription.harmony.ch/?add-to-cart=54135"
            target="_blank" rel="noopener">
-          <span>S'abonner à l'offre <strong>Premium</strong></span>
+          <span>S'abonner à l'offre <strong>Premium 888</strong></span>
           <span class="arrow"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
 
@@ -1409,13 +1406,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="col-feat"></div>
         <div class="col-plan">
           <a class="plan-cta" href="https://souscription.harmony.ch/?add-to-cart=54132" target="_blank" rel="noopener">
-            <span>S'abonner à l'offre <strong>Essential</strong></span>
+            <span>S'abonner à l'offre <strong>Essential 888</strong></span>
             <span class="arrow"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
         </div>
         <div class="col-plan featured-col">
           <a class="plan-cta" href="https://souscription.harmony.ch/?add-to-cart=54135" target="_blank" rel="noopener">
-            <span>S'abonner à l'offre <strong>Premium</strong></span>
+            <span>S'abonner à l'offre <strong>Premium 888</strong></span>
             <span class="arrow"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
         </div>
@@ -1477,19 +1474,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="closing-lead">88 abonnements à 888.- pour célébrer la qualification de la Suisse. Une fois épuisés, c'est terminé. Inscription en moins de cinq minutes, paiement échelonné sans frais via Heylight.</p>
       <div class="closing-actions">
         <a class="btn-white" href="https://souscription.harmony.ch/?add-to-cart=54135" target="_blank" rel="noopener">
-          <span>S'abonner à l'offre <strong>Premium</strong></span>
+          <span>S'abonner à l'offre <strong>Premium 888</strong></span>
           <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a class="btn-outline" href="https://souscription.harmony.ch/?add-to-cart=54132" target="_blank" rel="noopener">
-          <span>S'abonner à l'offre <strong>Essential</strong></span>
+          <span>S'abonner à l'offre <strong>Essential 888</strong></span>
           <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 8 H13 M9 4 L13 8 L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
       <div class="closing-cd">
         <div class="cd-widget" id="cd-widget-2">
           <span class="cd-blink"></span>
-          <span class="cd-label">Abonnements restants</span>
           <span class="cd-num" data-cd-remaining>88</span>
+          <span class="cd-label">Abonnements restants</span>
         </div>
       </div>
     </div>
