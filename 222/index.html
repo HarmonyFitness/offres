@@ -187,13 +187,12 @@ h1, h2, h3, h4 {
    EYEBROW
    ========================================================= */
 .eyebrow {
-  display: inline-flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: center;
   font-family: var(--font-sans);
   font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--brand); font-weight: 600;
   margin-bottom: 16px;
 }
-.eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; border-radius: 2px; }
 
 /* =========================================================
    HERO — largeur contrainte, coins arrondis, ancrage gauche
@@ -267,7 +266,6 @@ h1, h2, h3, h4 {
 .hero .eyebrow {
   color: rgba(255,255,255,.72);
 }
-.hero .eyebrow::before { background: rgba(255,255,255,.38); }
 
 .hero h1 {
   font-size: clamp(36px, 4.2vw, 58px);
@@ -914,7 +912,6 @@ h1, h2, h3, h4 {
 }
 .closing-inner { max-width: 760px; margin: 0 auto; text-align: center; }
 .closing .eyebrow { color: rgba(255,255,255,.8); justify-content: center; }
-.closing .eyebrow::before { background: rgba(255,255,255,.4); }
 .closing h2 {
   font-size: clamp(34px, 4.4vw, 56px);
   letter-spacing: -0.03em; color: #fff; margin-bottom: 28px;
@@ -1030,14 +1027,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
   <div class="hero-bg" role="img" aria-label="Membre Harmony Fitness en séance de course sur tapis dans un club en Suisse romande"></div>
   <div class="hero-inner">
-    <span class="eyebrow">Offre limitée</span>
+    <span class="eyebrow">Offre 222 · Limitée</span>
     <h1>Gardez<br/>le rythme<br/>cet été !</h1>
 
     <div class="hero-price">
       <div class="hero-price-row">
         <span class="hero-price-big num">222.-</span>
       </div>
-      <p class="hero-price-note">Paiement en 1 fois · <strong>sans engagement</strong> à l'issue de la période</p>
+      <p class="hero-price-note">Profitez de notre offre 222 disponible sur nos abonnements <strong>Essential</strong> ou <strong>Premium</strong>.</p>
     </div>
 
     <div class="hero-cd-wrap">
@@ -1075,6 +1072,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="plans-wrap">
     <div class="section-head reveal">
       <h2 class="section-title">Choisissez<br/>votre offre <span class="num-grad">222</span></h2>
+      <p class="section-sub">Deux formules au même prix exceptionnel mais avec des accès et des durées différentes. Offre à activer avant le 31 juillet 2026.</p>
     </div>
 
     <div class="plans reveal" id="formules">
@@ -1389,7 +1387,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <img class="closing__bg" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=2000&q=80" alt="Salle d'entraînement Harmony Fitness" loading="lazy">
   <div class="shell">
     <div class="closing-inner">
-      <span class="eyebrow">Offre limitée</span>
+      <span class="eyebrow">Offre 222 · Limitée</span>
       <h2>Le bon moment,<br/>c'est maintenant.</h2>
       <div class="closing-cd">
         <div class="cd-widget">
