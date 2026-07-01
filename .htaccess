@@ -6,16 +6,16 @@ RewriteEngine On
 RewriteBase /
 
 # ──────────────────────────────────────────────────────────────
-# Offre 333 — en ligne.
-#   /            → /333/
-#   /index.html  → /333/
-#   /444 (ancienne offre) → /333/
+# Offre 222 — en ligne.
+#   /            → /222/
+#   /index.html  → /222/
+#   /333, /444, /888 (autres offres) → /222/
 #
-# Quand 333 sera terminée et qu'aucune offre n'est en ligne :
+# Quand 222 sera terminée et qu'aucune offre n'est en ligne :
 # remplacer les 3 RewriteRule par :
-#   RewriteRule ^(333|444)(/.*)?$ / [R=302,L]
+#   RewriteRule ^(222|333|444|888)(/.*)?$ / [R=302,L]
 # ──────────────────────────────────────────────────────────────
 
-RewriteRule ^$ /333/ [R=302,L]
-RewriteRule ^index\.html?$ /333/ [R=302,L]
-RewriteRule ^444(/.*)?$ /333/ [R=302,L]
+RewriteRule ^$ /222/ [R=302,L]
+RewriteRule ^index\.html?$ /222/ [R=302,L]
+RewriteRule ^(333|444|888)(/.*)?$ /222/ [R=302,L]
