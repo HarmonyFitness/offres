@@ -1,2 +1,5 @@
 # macOS
 .DS_Store
+
+# Claude Code — config locale (permissions, launch configs, historique de session)
+.claude/
