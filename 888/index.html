@@ -222,17 +222,6 @@ h1, h2, h3, h4 {
 }
 
 /* =========================================================
-   CROIX SUISSE · touche Coupe du Monde
-   ========================================================= */
-.ch-cross {
-  display: inline-flex;
-  align-items: center;
-  vertical-align: -2px;
-  flex-shrink: 0;
-}
-.ch-cross svg { display: block; }
-
-/* =========================================================
    EYEBROW
    ========================================================= */
 .eyebrow {
@@ -1135,14 +1124,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Faux curseur ballon de foot (suit la souris, JS) -->
 <div id="ball-cursor" aria-hidden="true"><span class="ball-inner"></span></div>
 
-<!-- Croix suisse SVG réutilisable (référencée via <use>) -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="ch-cross-symbol" viewBox="0 0 16 16">
-    <rect width="16" height="16" rx="2" fill="#D52B1E"/>
-    <rect x="6.5" y="3" width="3" height="10" fill="#fff"/>
-    <rect x="3" y="6.5" width="10" height="3" fill="#fff"/>
-  </symbol>
-</svg>
 
 <!-- ============ TOPBAR ============ -->
 <header class="topbar">
@@ -1163,11 +1144,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-bg" role="img" aria-label="Membre Harmony Fitness en pleine session de renforcement musculaire, prêt pour la Coupe du Monde 2026"></div>
   <div class="hero-inner">
     <span class="eyebrow">
-      <span class="ch-cross"><svg width="12" height="12"><use href="#ch-cross-symbol"/></svg></span>
+      <span class="plan-emoji">⚽</span>
       Offre Coupe du Monde · Limitée
     </span>
     <h1>L'offre des<br/>qualifiés</h1>
-    <p class="hero-sub"><strong>La Suisse est qualifiée pour la Coupe du Monde 2026&nbsp;⚽</strong>&nbsp;Offre flash du 3 au 8 juillet : 88 abonnements à 888.- pour vivre l'été en forme.</p>
+    <p class="hero-sub"><strong>La Coupe du Monde 2026 approche&nbsp;⚽</strong>&nbsp;Offre flash du 3 au 8 juillet : 88 abonnements à 888.- pour vivre l'été en forme.</p>
 
     <div class="hero-price-cd">
       <div class="hero-price-row">
@@ -1208,10 +1189,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Essential -->
       <article class="plan" data-id="essential">
         <div class="plan-tier">
-          <span class="plan-tier-num">Offre 888 · 6 clubs 4★</span>
+          <span class="plan-tier-num">Offre 888 · 6 clubs</span>
         </div>
         <div class="plan-name"><span class="plan-emoji">⚽</span>Essential</div>
-        <div class="plan-tagline">12 mois de fitness, wellness et cours collectifs dans nos 6 clubs 4★.</div>
+        <div class="plan-tagline">12 mois de fitness, wellness et cours collectifs dans nos 6 clubs Essential.</div>
 
         <div class="plan-price-block">
           <div class="plan-price">
@@ -1281,10 +1262,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Premium -->
       <article class="plan featured" data-id="premium">
         <div class="plan-tier">
-          <span class="plan-tier-num">Offre 888 · Tous clubs 4★ &amp; 5★</span>
+          <span class="plan-tier-num">Offre 888 · Tous clubs</span>
         </div>
-        <div class="plan-name"><span class="plan-emoji">🇨🇭</span>Premium</div>
-        <div class="plan-tagline">8 mois d'accès illimité à tous nos clubs 4★ &amp; 5★, espaces aquatiques inclus.</div>
+        <div class="plan-name"><span class="plan-emoji">⚽</span>Premium</div>
+        <div class="plan-tagline">8 mois d'accès illimité à l'ensemble du réseau Harmony, espaces aquatiques inclus.</div>
 
         <div class="plan-price-block">
           <div class="plan-price">
@@ -1521,11 +1502,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="shell">
     <div class="closing-inner">
       <span class="eyebrow">
-        <span class="ch-cross"><svg width="12" height="12"><use href="#ch-cross-symbol"/></svg></span>
+        <span class="plan-emoji">⚽</span>
         Offre Coupe du Monde · Limitée
       </span>
       <h2>Ne restez pas<br/>sur le banc de touche.</h2>
-      <p class="closing-lead">88 abonnements à 888.- pour célébrer la qualification de la Suisse. Offre flash du 3 au 8 juillet, à saisir jusqu'à épuisement. Inscription en moins de cinq minutes, dès 74.-/mois sans frais via Heylight.</p>
+      <p class="closing-lead">88 abonnements à 888.- pour célébrer la Coupe du Monde 2026. Offre flash du 3 au 8 juillet, à saisir jusqu'à épuisement. Inscription en moins de cinq minutes, dès 74.-/mois sans frais via Heylight.</p>
       <div class="closing-actions">
         <a class="btn-white" href="https://souscription.harmony.ch/paiement/?add-to-cart=54135" target="_blank" rel="noopener">
           <span>S'abonner à l'offre <strong>Premium 888</strong></span>
@@ -1561,7 +1542,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Pourquoi cette offre à 888.- ?
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
         </button>
-        <div class="faq-a"><p>Pour célébrer la qualification de l'équipe de Suisse à la Coupe du Monde 2026, Harmony débloque 88 abonnements à 888.-. Une opération flash et exceptionnelle, du vendredi 3 juillet au mercredi 8 juillet 2026.</p></div>
+        <div class="faq-a"><p>Pour célébrer la Coupe du Monde 2026, Harmony débloque 88 abonnements à 888.-. Une opération flash et exceptionnelle, du vendredi 3 juillet au mercredi 8 juillet 2026.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
@@ -1582,7 +1563,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Qu'est-ce qui différencie Essential et Premium ?
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
         </button>
-        <div class="faq-a"><p>Les deux formules sont au même prix de 888.-. Essential vous donne 12 mois d'accès dans nos 6 clubs 4★ (fitness, wellness, cours collectifs). Premium vous offre 8 mois d'accès illimité à l'ensemble du réseau (9 clubs 4★ &amp; 5★), avec les espaces et cours aquatiques en plus.</p></div>
+        <div class="faq-a"><p>Les deux formules sont au même prix de 888.-. Essential vous donne 12 mois d'accès dans nos 6 clubs Essential (fitness, wellness, cours collectifs). Premium vous offre 8 mois d'accès illimité à l'ensemble du réseau (9 clubs), avec les espaces et cours aquatiques en plus.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
@@ -1598,13 +1579,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </button>
         <div class="faq-a"><p>L'offre est volontairement limitée à 88 bénéficiaires, un clin d'œil au prix 888.- et un cadre clair pour notre équipe. Une fois les 88 abonnements souscrits, l'offre s'arrête.</p></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          Y a-t-il une caution ?
-          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-a"><p>Oui, une caution de 10.- est demandée à l'inscription pour la remise du badge d'accès. Elle vous est restituée en fin de contrat.</p></div>
-      </div>
     </div>
   </div>
 </section>
@@ -1614,7 +1588,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="foot-inner">
     <div class="foot-brand foot-logo">
       <img class="foot-logo-img" src="https://souscription.harmony.ch/wp-content/uploads/logo-harmony.png" alt="Harmony Fitness" />
-      <p class="foot-tag">Neuf clubs en Suisse romande. Fitness, wellness et espaces aquatiques.</p>
+      <p class="foot-tag">Neuf clubs en Romandie. Fitness, wellness et espaces aquatiques.</p>
     </div>
     <div class="foot-col">
       <h5>Contact</h5>
@@ -1629,7 +1603,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="foot-bot">
     <p>© 2026 Harmony Fitness</p>
-    <p>Offre 888 · Édition flash Coupe du Monde 2026 · 88 abonnements disponibles du vendredi 3 au mercredi 8 juillet 2026, dans la limite des stocks. Paiement échelonné sans frais via Heylight. Sans engagement et sans renouvellement automatique à l'issue de la période souscrite. Caution de 10.- restituée en fin de contrat.</p>
+    <p>Offre 888 · Édition flash Coupe du Monde 2026 · 88 abonnements disponibles du vendredi 3 au mercredi 8 juillet 2026, dans la limite des stocks. Paiement échelonné sans frais via Heylight. Sans engagement et sans renouvellement automatique à l'issue de la période souscrite.</p>
   </div>
 </footer>
 
