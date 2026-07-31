@@ -1,0 +1,53 @@
+name: Bascule fin offre 222 → page « aucune offre en cours »
+
+# Fast-forward de la branche fin-offre-222 dans main puis déploiement FTP inline.
+# Le déploiement est fait dans ce workflow (pas via le trigger `push` de deploy.yml),
+# car un push effectué avec GITHUB_TOKEN ne déclenche pas d'autres workflows.
+#
+# Timing : cron à 22h00 UTC le 31 juillet 2026 = 00h00 CEST le 1er août.
+# Latence GitHub Actions (5–15 min) → push effectif attendu 00h05–00h15 CEST.
+# Le JS timer client-side dans /222/index.html couvre les visiteurs de /222/ dès 00h00.
+
+on:
+  schedule:
+    - cron: '0 22 31 7 *'
+  workflow_dispatch:
+
+jobs:
+  bascule:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Fast-forward main to fin-offre-222
+        run: |
+          git config user.name "harmony-scheduler[bot]"
+          git config user.email "harmony-scheduler@users.noreply.github.com"
+          git fetch origin fin-offre-222:fin-offre-222
+          echo "== HEAD before merge =="
+          git log --oneline -1
+          echo "== fin-offre-222 tip =="
+          git log --oneline -1 fin-offre-222
+          git merge --ff-only fin-offre-222
+          git push origin main
+          echo "== HEAD after push =="
+          git log --oneline -1
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: ${{ secrets.FTP_PATH }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
