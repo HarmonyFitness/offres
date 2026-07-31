@@ -6,17 +6,15 @@ RewriteEngine On
 RewriteBase /
 
 # ──────────────────────────────────────────────────────────────
-# Offre 222 — offre principale.
-#   /            → /222/
-#   /index.html  → /222/
-#   /333, /444 (anciennes offres) → /222/
-#   /888 reste accessible en direct (offre parallèle, non promue depuis la home)
+# Aucune offre spéciale en cours.
+#   /            → sert index.html (page « pas d'offre en cours »)
+#   /222, /333, /444, /888 (offres closes) → /
 #
-# Quand 222 sera terminée et qu'aucune offre n'est en ligne :
-# remplacer les 3 RewriteRule par :
-#   RewriteRule ^(222|333|444|888)(/.*)?$ / [R=302,L]
+# Quand la prochaine offre X ouvrira :
+# remplacer la RewriteRule par les 3 rules du pattern précédent :
+#   RewriteRule ^$ /X/ [R=302,L]
+#   RewriteRule ^index\.html?$ /X/ [R=302,L]
+#   RewriteRule ^(anciennes-offres)(/.*)?$ /X/ [R=302,L]
 # ──────────────────────────────────────────────────────────────
 
-RewriteRule ^$ /222/ [R=302,L]
-RewriteRule ^index\.html?$ /222/ [R=302,L]
-RewriteRule ^(333|444)(/.*)?$ /222/ [R=302,L]
+RewriteRule ^(222|333|444|888)(/.*)?$ / [R=302,L]

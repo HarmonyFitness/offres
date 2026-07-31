@@ -1497,6 +1497,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script>
+  // Safety net : à minuit, on remplace le contenu de la page par un message « aucune
+  // offre en cours ». On INJECTE (pas de redirect) pour éviter la boucle possible entre
+  // 00h00 et le déploiement du nouveau .htaccess : l'ancien .htaccess redirige encore
+  // / → /222/, donc window.location.replace('/') provoquerait ERR_TOO_MANY_REDIRECTS.
+  // Une fois .htaccess basculé, /222/ redirige serveur → / et ce script ne s'exécute plus.
+  (function() {
+    const deadline = new Date('2026-08-01T00:00:00').getTime();
+    function showEndScreen() {
+      document.title = 'Harmony Fitness · Aucune offre en cours';
+      document.body.innerHTML = '<div style="min-height:100vh;display:grid;place-items:center;background:#0a2540;color:#fff;font-family:system-ui,-apple-system,\'Segoe UI\',sans-serif;padding:24px;text-align:center;line-height:1.6"><div style="max-width:520px"><p style="opacity:.6;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 20px">Aucune offre en cours</p><h1 style="font-size:clamp(32px,5vw,52px);margin:0 0 24px;line-height:1.05;text-transform:uppercase;letter-spacing:-0.02em;font-weight:700">On prépare<br>la prochaine.</h1><p style="opacity:.78;margin:0 0 32px">L\'offre 222 est terminée. Retrouvez nos abonnements standards et l\'accès à nos 9 clubs.</p><a href="https://souscription.harmony.ch/" style="display:inline-block;padding:16px 28px;background:#fff;color:#0a3d5c;border-radius:999px;font-weight:700;text-decoration:none">Voir les abonnements →</a></div></div>';
+    }
+    const now = Date.now();
+    if (now >= deadline) showEndScreen();
+    else setTimeout(showEndScreen, deadline - now);
+  })();
+
   // Compteur jours / heures / minutes — hero + closing
   (function() {
     const end = new Date('2026-07-31T23:59:59');
