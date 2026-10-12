@@ -631,7 +631,9 @@ h1, h2, h3, h4 {
    COURS COLLECTIFS · par objectif + Small Group Training (Extra)
    ========================================================= */
 .cours-section { padding-top: 72px; padding-bottom: 24px; }
-.cours-legend { display: flex; align-items: center; gap: 10px; margin: -8px 0 24px; font-size: 15px; color: var(--ink-3); }
+.cours-legend { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px 24px; margin: -8px 0 16px; font-size: 15px; color: var(--ink-3); }
+.cours-kicker { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); }
+.cours-legend-p { display: inline-flex; align-items: center; gap: 10px; }
 .cours-groups { border-top: 2px solid var(--ink); }
 .cours-group {
   display: grid; grid-template-columns: minmax(220px, 1fr) 2.2fr; gap: 24px; align-items: baseline;
@@ -646,6 +648,7 @@ h1, h2, h3, h4 {
   font-size: 15.5px; font-weight: 600; color: var(--ink);
 }
 .cours-chip .club-tag { font-size: 10px; padding: 3px 7px; }
+.cours-chip.more { background: transparent; border-style: dashed; color: var(--ink-4); font-weight: 500; }
 .cours-note { margin: 18px 0 0; font-size: 15px; color: var(--ink-3); }
 @media (max-width: 760px) {
   .cours-group { grid-template-columns: 1fr; gap: 12px; padding: 18px 0; }
@@ -1186,11 +1189,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var K = C.coursSection;
     var tagP = '<span class="club-tag premium">Premium</span>';
     el('cours').innerHTML =
-      '<p class="cours-legend">' + tagP + txt(K.legendePremium) + '</p>' +
+      '<div class="cours-legend"><span class="cours-kicker">' + txt(K.kicker) + '</span>' +
+        '<span class="cours-legend-p">' + tagP + txt(K.legendePremium) + '</span></div>' +
       '<div class="cours-groups">' + K.groupes.map(function (g) {
         return '<div class="cours-group"><h3>' + txt(g.objectif) + '</h3><ul class="cours-list">' +
           g.cours.map(function (c) { return '<li class="cours-chip">' + txt(c.nom) + (c.premium ? tagP : '') + '</li>'; }).join('') +
-          '</ul></div>';
+          '<li class="cours-chip more">' + txt(K.plusLabel) + '…</li></ul></div>';
       }).join('') + '</div>' +
       '<p class="cours-note">' + txt(K.note) + '</p>' +
       '<div class="sgt-box"><div class="sgt-head"><h3>' + txt(K.sgt.titre) + '</h3><span class="sgt-badge">' + txt(K.sgt.badge) + '</span></div>' +

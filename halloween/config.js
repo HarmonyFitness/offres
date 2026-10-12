@@ -73,12 +73,12 @@ window.OFFRE = {
   /* Clubs · catégorie : 'gym' | 'essential' | 'premium'
      Essential couvre gym + essential · Premium couvre tout. */
   clubs: [
-    { nom: 'Genève · Pâquis',     categorie: 'gym',       canton: 'Genève', lat: 46.2148, lon: 6.1472 },
-    { nom: 'Genève · Eaux-Vives', categorie: 'essential', canton: 'Genève', lat: 46.2021, lon: 6.1606 },
+    { nom: 'Pâquis',              categorie: 'gym',       canton: 'Genève', lat: 46.2148, lon: 6.1472 },
+    { nom: 'Eaux-Vives',          categorie: 'essential', canton: 'Genève', lat: 46.2021, lon: 6.1606 },
     { nom: 'Blandonnet',          categorie: 'essential', canton: 'Genève', lat: 46.2213, lon: 6.0972 },
     { nom: 'Meyrin',              categorie: 'essential', canton: 'Genève', lat: 46.2219, lon: 6.0665 },
     { nom: 'Versoix',             categorie: 'essential', canton: 'Genève', lat: 46.2750, lon: 6.1673 },
-    { nom: 'Genève · La Praille', categorie: 'premium',   canton: 'Genève', lat: 46.1796, lon: 6.1272 },
+    { nom: 'La Praille',          categorie: 'premium',   canton: 'Genève', lat: 46.1796, lon: 6.1272 },
     { nom: 'Veyrier',             categorie: 'premium',   canton: 'Genève', lat: 46.1668, lon: 6.1808 },
     { nom: 'Signy',               categorie: 'essential', canton: 'Vaud',   lat: 46.3973, lon: 6.2060 },
     { nom: 'Gland',               categorie: 'essential', canton: 'Vaud',   lat: 46.4159, lon: 6.2792 },
@@ -165,10 +165,13 @@ window.OFFRE = {
 
   /* Cours collectifs · sélection tirée de cours-harmony.xlsx (onglet Cours), classée par objectif principal.
      premium: true = cours donné uniquement dans les clubs Premium (La Praille, Veyrier, Denges).
-     Les Small Group Training sont payants en plus (Extra) : jamais présentés comme inclus. */
+     Les Small Group Training sont payants en plus (Extra) : jamais présentés comme inclus.
+     Pas de cours Hyrox pour le moment (Les Mills Ceremony Hyrox, Ceremony Hyrox Max retirés). */
   coursSection: {
-    titre: 'Des cours pour chaque envie',
-    sousTitre: 'Une sélection de nos cours collectifs, inclus dans votre formule. Le programme varie d\'un club à l\'autre.',
+    titre: 'Un aperçu de nos cours collectifs',
+    sousTitre: 'Quelques-uns des cours inclus dans votre formule, parmi bien d\'autres. Le planning varie d\'un club à l\'autre.',
+    kicker: 'Extrait du programme',
+    plusLabel: 'et d\'autres',                  // dernière étiquette de chaque objectif
     legendePremium: 'Uniquement avec le 888 Premium',
     groupes: [
       { objectif: 'Se renforcer et sculpter', cours: [
@@ -176,7 +179,7 @@ window.OFFRE = {
       { objectif: 'Se dépenser', cours: [
         { nom: 'HIIT' }, { nom: 'Boxe' }, { nom: 'Indoor Cycling' }, { nom: 'Aqua Bike', premium: true }, { nom: 'Aqua Gym', premium: true } ] },
       { objectif: 'Se dépasser', cours: [
-        { nom: 'Hybrid Training by Harmony' }, { nom: 'Les Mills Ceremony Hyrox' }, { nom: 'Les Mills Grit', premium: true } ] },
+        { nom: 'Hybrid Training by Harmony' }, { nom: 'Les Mills Grit', premium: true } ] },
       { objectif: 'Danser', cours: [
         { nom: 'Zumba' }, { nom: 'All Styles Dance' }, { nom: 'Aqua Zumba', premium: true } ] },
       { objectif: 'Bouger mieux et soulager son dos', cours: [
@@ -184,12 +187,12 @@ window.OFFRE = {
       { objectif: 'Se détendre', cours: [
         { nom: 'Yoga' }, { nom: 'Cours Zen' }, { nom: 'Sophrologie Stretching' }, { nom: 'Air Yoga', premium: true } ] }
     ],
-    note: 'Et bien d\'autres cours : consultez le planning dans votre club.',
+    note: 'Ce n\'est qu\'un aperçu : tous les cours et leurs horaires sont dans le planning de votre club.',
     sgt: {
       titre: 'Small Group Training',
       badge: 'Extra · non inclus',
       texte: 'En petit groupe avec un coach, sur réservation. Ces séances se paient en plus de votre abonnement.',
-      cours: [ 'Cross Training', 'Ceremony Hyrox Max', 'HIIT Boxing', 'TRX Pilates' ]
+      cours: [ 'Cross Training', 'HIIT Boxing', 'TRX Pilates', 'Flow' ]
     }
   },
 
