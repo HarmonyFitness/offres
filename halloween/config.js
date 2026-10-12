@@ -116,7 +116,7 @@ window.OFFRE = {
       resume: '12 mois, 7 clubs',              // encart du hero
       prix: 'CHF 888.–',
       duree: '12 mois',
-      sousPrix: 'soit 12x CHF 74.– sans frais avec HeyLight',
+      sousPrix: 'ou en 12x CHF 74.– sans frais avec HeyLight',
       inclus: {
         fitness: true, wellness: true, cours: true, aqua: false, linge: false,
         coaching: '4 séances (valeur CHF 400.–)'
@@ -133,7 +133,7 @@ window.OFFRE = {
       resume: '8 mois, 10 clubs',
       prix: 'CHF 888.–',
       duree: '8 mois',
-      sousPrix: 'soit 6x CHF 148.– sans frais avec HeyLight',
+      sousPrix: 'ou en 6x CHF 148.– sans frais avec HeyLight',
       inclus: {
         fitness: true, wellness: true, cours: true, aqua: true, linge: true,
         coaching: '6 séances (valeur CHF 600.–)'
