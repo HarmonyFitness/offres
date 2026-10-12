@@ -744,6 +744,32 @@ h1, h2, h3, h4 {
 .closing .ended-box { margin-top: 0; text-align: center; }
 @media (max-width: 600px) { .closing { padding: 72px 0; } .btn-light { width: 100%; } }
 
+/* Bloc final avec photo : photo à droite (desktop), texte à gauche */
+.closing-photo { display: none; }
+.has-final-img .closing { padding: 120px 0; min-height: 560px; display: flex; align-items: center; }
+.has-final-img .closing > .shell { width: 100%; }
+.has-final-img .closing-photo {
+  display: block;
+  position: absolute; top: 0; bottom: 0; right: 0; width: 64%; z-index: -1;
+  background-size: cover; background-position: 50% 30%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, rgba(0,0,0,.6) 22%, #000 45%);
+          mask-image: linear-gradient(to right, transparent 0, rgba(0,0,0,.6) 22%, #000 45%);
+}
+.has-final-img .closing-inner { margin: 0; max-width: 520px; text-align: left; align-items: flex-start; }
+.has-final-img .closing .countdown { justify-content: flex-start; }
+.has-final-img .closing .ended-box { text-align: left; }
+@media (max-width: 760px) {
+  .has-final-img .closing { display: block; min-height: 0; padding: 300px 0 64px; }
+  .has-final-img .closing-photo {
+    top: 0; bottom: auto; left: 0; width: 100%; height: 340px;
+    background-position: 50% 20%;
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+  }
+  .has-final-img .closing-inner { margin: 0 auto; text-align: center; align-items: center; }
+  .has-final-img .closing .countdown { justify-content: center; }
+}
+
 /* =========================================================
    PIED DE PAGE · mentions légales + contact
    ========================================================= */
@@ -894,6 +920,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- ============ BLOC FINAL ============ -->
   <section class="closing">
+    <div class="closing-photo" id="closing-photo" role="img" aria-label=""></div>
     <div class="shell">
       <div class="closing-inner">
         <div class="hide-termine">
@@ -1044,6 +1071,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         root.classList.add('ghost-cursor');
       } catch (e) { /* canvas indisponible : curseur normal */ }
     })();
+  }
+
+  /* ---------- Bloc final : photo ---------- */
+  if (C.visuels.final) {
+    root.classList.add('has-final-img');
+    var fp = el('closing-photo');
+    fp.style.backgroundImage = 'url("' + C.visuels.final.replace(/"/g, '%22') + '")';
+    fp.setAttribute('aria-label', C.visuels.finalAlt || '');
   }
 
   /* ---------- Cartes formules ---------- */
@@ -1276,14 +1311,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   (function () {
     var bar = el('sticky-cta'), hero = el('hero'), plans = el('formules');
     if (!bar || !('IntersectionObserver' in window)) return;
-    var heroVisible = true, plansVisible = false;
+    var heroVisible = true, plansVisible = false, closingVisible = false;
     function update() {
-      var show = !heroVisible && !plansVisible;
+      var show = !heroVisible && !plansVisible && !closingVisible;   // pas de doublon avec les autres boutons
       bar.classList.toggle('is-visible', show);
       root.style.setProperty('--sticky-h', show && innerWidth <= 900 ? bar.offsetHeight + 'px' : '0px');
     }
     new IntersectionObserver(function (en) { heroVisible = en[0].isIntersecting; update(); }, { threshold: 0.2 }).observe(hero);
     new IntersectionObserver(function (en) { plansVisible = en[0].isIntersecting; update(); }, { threshold: 0.15 }).observe(plans);
+    new IntersectionObserver(function (en) { closingVisible = en[0].isIntersecting; update(); }, { threshold: 0.25 }).observe(document.querySelector('.closing'));
   })();
 
   /* ---------- Header : rétrécit au défilement (desktop) ---------- */

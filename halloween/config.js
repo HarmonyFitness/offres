@@ -34,7 +34,9 @@ window.OFFRE = {
 
   visuels: {
     hero: 'images/hero-halloween.jpg',  // visuel Halloween d'Axelle (1600x900) · vide = fond sombre "Photo à venir"
-    heroAlt: 'Membres Harmony masqués pour Halloween pendant un cours d\'Indoor Cycling'
+    heroAlt: 'Membres Harmony masqués pour Halloween pendant un cours d\'Indoor Cycling',
+    final: 'images/final-halloween.jpg',  // fond du bloc final (1600x900) · vide = dégradé bleu
+    finalAlt: 'Membre Harmony en masque de clown et sweat à capuche, haltère à la main'
   },
 
   liens: {
