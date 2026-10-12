@@ -5,8 +5,9 @@
    à 'blackfriday', mettre à jour les textes, dates, IDs produits et utm_campaign.
 
    Rappels de rédaction (cahier des charges) :
-   vouvoiement · boutons à la 1re personne · prix au format "CHF 888.–"
-   · "club" (jamais "salle") · "Canton de Genève / de Vaud" · pas de tiret cadratin.
+   vouvoiement, boutons à la 1re personne, prix au format "CHF 888.–",
+   "club" (jamais "salle"), "Canton de Genève / de Vaud", pas de tiret cadratin.
+   Pas de « · » dans les textes affichés, pas de flèche dans les boutons.
    Un texte qui contient "[À " est surligné sur la page (contenu en attente).
    ========================================================= */
 window.OFFRE = {
@@ -36,42 +37,29 @@ window.OFFRE = {
     contactEmail:    'info@harmony.ch'
   },
 
-  bandeau: 'Offre diabolique · jusqu\'au 1er novembre seulement',
+  bandeau: 'Offre diabolique : jusqu\'au 1er novembre seulement',
 
+  /* Hero : le choix entre les deux formules est le sujet de la page.
+     Le H1 reprend le titre du brief, sous le choix. */
   hero: {
-    surtitre: 'Abonnement fitness · Offre Halloween',
-    titre: 'Une offre diabolique :',
-    prix: 'CHF 888.–',
-    sousTitre: '12 mois dans 7 clubs, ou 8 mois dans les 10 clubs Harmony des cantons de Genève et de Vaud. Payable en 12x CHF 74.– sans frais. Le seul frisson, c\'est à l\'entraînement.',
-    cta: 'Je choisis ma formule',
-    recapTitre: 'Deux formules, un seul prix'   // encart à droite du hero (desktop)
+    intro: 'Offre Halloween, jusqu\'au 1er novembre',
+    ou: 'ou',
+    titre: 'Une offre diabolique : CHF 888.–',
+    paiement: 'Le même prix pour les deux formules, payable en 12x CHF 74.– ou 6x CHF 148.– sans frais avec HeyLight.'
   },
 
   topbarCta: 'Je choisis ma formule',
 
-  /* Bénéfices concrets, sans répéter le hero (clubs) ni la galerie (cours) */
-  pourquoi: {
-    titre: 'Un abonnement, plusieurs clubs',
-    blocs: [
-      { titre: 'Le club qui vous arrange, chaque jour',
-        texte: 'Près de chez vous le matin, près du bureau à midi : votre abonnement vous suit dans tous les clubs de votre formule.' },
-      { titre: 'Un coach pour bien démarrer',
-        texte: '4 séances de coaching avec Essential, 6 avec Premium, pour fixer vos objectifs et construire votre programme.' },
-      { titre: 'Un prix qui ne fait pas peur',
-        texte: 'Réglez en 12x CHF 74.– ou 6x CHF 148.– sans frais avec HeyLight. Ce qui fait peur, ce sont les courbatures.' }
-    ]
-  },
-
   formulesSection: {
     titre: 'Choisissez votre formule',
-    sousTitre: 'Même prix, à vous de choisir : plus de temps ou plus d\'accès.'
+    sousTitre: 'Tout ce qui est compris, ligne par ligne.'
   },
 
-  reassurance: 'Paiement sécurisé · HeyLight proposé au paiement',   // sous chaque bouton d'achat
+  reassurance: 'Paiement sécurisé, HeyLight proposé au paiement.',   // sous chaque bouton d'achat
   tagDiff: 'Premium',                                               // étiquette des lignes réservées au Premium
 
   /* Clubs · catégorie : 'gym' | 'essential' | 'premium'
-     Essential couvre gym + essential · Premium couvre tout. */
+     Essential couvre gym + essential, Premium couvre tout. */
   clubs: [
     { nom: 'Pâquis',              categorie: 'gym',       canton: 'Genève', lat: 46.2148, lon: 6.1472 },
     { nom: 'Eaux-Vives',          categorie: 'essential', canton: 'Genève', lat: 46.2021, lon: 6.1606 },
@@ -115,7 +103,7 @@ window.OFFRE = {
       badge: '',
       categories: ['gym', 'essential'],
       accroche: 'Toute l\'année pour vous entraîner, près de chez vous.',
-      resume: '12 mois · 7 clubs',
+      choix: { grand: '12 mois', detail: 'dans 7 clubs' },   // hero
       prix: 'CHF 888.–',
       duree: '12 mois',
       sousPrix: 'soit 12x CHF 74.– sans frais avec HeyLight',
@@ -132,7 +120,7 @@ window.OFFRE = {
       badge: 'Accès complet',
       categories: ['gym', 'essential', 'premium'],
       accroche: 'Tous les clubs, les piscines et le linge fourni.',
-      resume: '8 mois · 10 clubs',
+      choix: { grand: '10 clubs', detail: 'pendant 8 mois' },
       prix: 'CHF 888.–',
       duree: '8 mois',
       sousPrix: 'soit 6x CHF 148.– sans frais avec HeyLight',
@@ -144,23 +132,21 @@ window.OFFRE = {
     }
   ],
 
-  /* Galerie · images optimisées dans images/ (reprise de l'offre 333) */
-  galerie: {
-    titre: 'Des clubs conçus pour le corps et l\'esprit',
-    items: [
+  /* Dans les clubs : 3 photos (images optimisées dans images/), puis l'aperçu des cours */
+  dansLesClubs: {
+    titre: 'Dans les clubs',
+    photos: [
       { image: 'images/gallery-fitness.jpg', titre: 'Plateau fitness',
-        texte: 'Cardio, renforcement musculaire et accompagnement par nos coachs',
+        texte: 'Cardio, renforcement musculaire et accompagnement par nos coachs.',
         alt: 'Coach accompagnant un membre sur le plateau fitness Harmony' },
-      { image: 'images/gallery-cours-collectifs.jpg', titre: 'Cours collectifs',
-        texte: '+40 par semaine : renforcement, cardio, danse, yoga, stretching…',
-        alt: 'Cours collectif de danse dans un club Harmony Fitness' },
-      { image: 'images/gallery-aquatiques.jpg', titre: 'Espaces aquatiques', badge: 'Premium uniquement',
-        texte: 'Bassins, cours collectifs aquagym, aquabike…',
+      { image: 'images/gallery-aquatiques.jpg', titre: 'Espaces aquatiques', premium: true,
+        texte: 'Bassins, aquagym et aquabike.',
         alt: 'Coach animant un cours d\'aquagym dans la piscine Harmony' },
       { image: 'images/gallery-wellness.jpg', titre: 'Espaces wellness',
-        texte: 'Sauna et hammam dédiés à la récupération et à la détente',
+        texte: 'Sauna et hammam pour récupérer après l\'effort.',
         alt: 'Espace wellness sauna Harmony Fitness' }
-    ]
+    ],
+    notePremium: 'Avec le 888 Premium uniquement'
   },
 
   /* Cours collectifs · sélection tirée de cours-harmony.xlsx (onglet Cours), classée par objectif principal.
@@ -168,9 +154,8 @@ window.OFFRE = {
      Les Small Group Training sont payants en plus (Extra) : jamais présentés comme inclus.
      Pas de cours Hyrox pour le moment (Les Mills Ceremony Hyrox, Ceremony Hyrox Max retirés). */
   coursSection: {
-    titre: 'Un aperçu de nos cours collectifs',
+    titre: 'Cours collectifs : un aperçu',
     sousTitre: 'Quelques-uns des cours inclus dans votre formule, parmi bien d\'autres. Le planning varie d\'un club à l\'autre.',
-    kicker: 'Extrait du programme',
     plusLabel: 'et d\'autres',                  // dernière étiquette de chaque objectif
     legendePremium: 'Uniquement avec le 888 Premium',
     groupes: [
@@ -190,7 +175,7 @@ window.OFFRE = {
     note: 'Ce n\'est qu\'un aperçu : tous les cours et leurs horaires sont dans le planning de votre club.',
     sgt: {
       titre: 'Small Group Training',
-      badge: 'Extra · non inclus',
+      badge: 'En supplément, non inclus',
       texte: 'En petit groupe avec un coach, sur réservation. Ces séances se paient en plus de votre abonnement.',
       cours: [ 'Cross Training', 'HIIT Boxing', 'TRX Pilates', 'Flow' ]
     }
@@ -203,6 +188,7 @@ window.OFFRE = {
     legendePremium: 'Uniquement avec le 888 Premium, espaces aquatiques inclus'
   },
 
+  faqTitre: 'Questions fréquentes',
   faq: [
     { q: 'Jusqu\'à quand puis-je profiter de l\'offre diabolique ?',
       r: 'Jusqu\'au dimanche 1er novembre 2026 à minuit. Après, elle disparaît comme un fantôme.' },
