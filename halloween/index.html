@@ -705,6 +705,7 @@ h1, h2, h3, h4 {
 .closing { position: relative; padding: 96px 0; overflow: hidden; isolation: isolate; color: #fff; background: var(--closing-bg); }
 .closing::before { content: ''; position: absolute; inset: 0; z-index: -1; background: radial-gradient(45% 60% at 50% 0%, var(--accent-soft) 0%, transparent 70%); }
 .closing-inner { max-width: 760px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.closing-badge { margin-bottom: 22px; }
 .closing h2 { font-size: clamp(32px, 4.4vw, 54px); letter-spacing: -0.03em; color: #fff; margin-bottom: 18px; }
 .closing-lead { font-size: 18.5px; color: rgba(255,255,255,.85); margin: 0 0 30px; }
 .btn-light {
@@ -873,6 +874,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="shell">
       <div class="closing-inner">
         <div class="hide-termine">
+          <span class="season-badge closing-badge" data-t="hero.badgeSaison"></span>
           <h2 data-t="final.titre"></h2>
           <p class="closing-lead only-avant" data-t="final.texteAvantPublic"></p>
           <p class="closing-lead only-public" data-t="final.textePublic"></p>
