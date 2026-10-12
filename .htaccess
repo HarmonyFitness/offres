@@ -6,15 +6,14 @@ RewriteEngine On
 RewriteBase /
 
 # ──────────────────────────────────────────────────────────────
-# Aucune offre spéciale en cours.
-#   /            → sert index.html (page « pas d'offre en cours »)
-#   /222, /333, /444, /888 (offres closes) → /
+# Offre en cours : Offre Halloween 888 → /halloween/ (15 oct. → 1er nov. 2026)
+#   /, /index.html          → /halloween/
+#   /222, /333, /444, /888 (offres closes) → /halloween/
 #
-# Quand la prochaine offre X ouvrira :
-# remplacer la RewriteRule par les 3 rules du pattern précédent :
-#   RewriteRule ^$ /X/ [R=302,L]
-#   RewriteRule ^index\.html?$ /X/ [R=302,L]
-#   RewriteRule ^(anciennes-offres)(/.*)?$ /X/ [R=302,L]
+# Quand l'offre se termine : revenir à la page « pas d'offre en cours »
+# (supprimer les 3 rules ci-dessous et rediriger ^(222|333|444|888|halloween)(/.*)?$ vers /).
 # ──────────────────────────────────────────────────────────────
 
-RewriteRule ^(222|333|444|888)(/.*)?$ / [R=302,L]
+RewriteRule ^$ /halloween/ [R=302,L]
+RewriteRule ^index\.html?$ /halloween/ [R=302,L]
+RewriteRule ^(222|333|444|888)(/.*)?$ /halloween/ [R=302,L]
