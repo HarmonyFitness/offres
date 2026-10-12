@@ -201,15 +201,17 @@ window.OFFRE = {
   faqTitre: 'Questions fréquentes',
   faq: [
     { q: 'Jusqu\'à quand puis-je profiter de l\'offre diabolique ?',
-      r: 'Jusqu\'au dimanche 1er novembre 2026 à minuit. Après, elle disparaît comme un fantôme.' },
+      r: 'Jusqu\'au dimanche 1er novembre 2026 à 23h59. Après, elle disparaît comme un fantôme.' },
     { q: 'Quelle différence entre Essential et Premium ?',
       r: '888 Essential : 12 mois dans 7 clubs. 888 Premium : 8 mois dans les 10 clubs, avec les espaces aquatiques et le linge.' },
+    { q: 'Puis-je prendre le 888 Premium si mon club n\'est pas un club Premium ?',
+      r: 'Oui, bien sûr. Le 888 Premium vous ouvre les 10 clubs Harmony, votre club actuel compris. L\'occasion de découvrir d\'autres clubs, leurs espaces aquatiques et encore plus de cours collectifs.' },
     { q: 'Quand démarre mon abonnement ?',
-      r: '[À CONFIRMER]' },
+      r: 'Quand vous le souhaitez : vous choisissez votre date de début, entre le jour de votre achat et le 30 novembre 2026.' },
     { q: 'Comment fonctionne HeyLight ?',
       r: 'Vous payez en 12x (Essential) ou 6x (Premium) sans frais. La demande se fait au moment du paiement.' },
     { q: 'Je suis déjà membre, je peux en profiter ?',
-      r: '[À CONFIRMER]' }
+      r: 'Oui. Si votre abonnement actuel est sans engagement, c\'est l\'occasion de passer à une formule avec engagement, à prix diabolique. Si vous êtes déjà engagé, le 888 ne met pas fin à votre abonnement en cours. Pour limiter le chevauchement, vous pouvez faire démarrer votre 888 jusqu\'au 30 novembre 2026.' }
   ],
 
   final: {
