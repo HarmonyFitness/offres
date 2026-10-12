@@ -11,6 +11,7 @@ RewriteBase /
 #   /222, /333, /444, /888 (offres closes) → /
 #   /halloween/  → accessible en direct (Offre Halloween 888, lien diffusé
 #                  par les managers), mais pas mise en avant sur /
+#   /halloween-maa/ → accessible en direct (Offre Halloween MAA), même logique
 #
 # Pour en faire l'offre en cours :
 #   RewriteRule ^$ /halloween/ [R=302,L]

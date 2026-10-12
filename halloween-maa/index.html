@@ -1,0 +1,1152 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W9N6SRL');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Offre Halloween MAA : une offre diabolique | Martial Arts Academy</title>
+<meta name="description" content="Offre Halloween MAA : 12 mois dans la discipline de votre choix pour CHF 666.–, ou 8 mois dans toutes les disciplines pour CHF 888.–. Gym-Pâquis inclus. Jusqu'au 1er novembre 2026." />
+<meta property="og:title" content="Offre Halloween MAA : une offre diabolique pour les combattants" />
+<meta property="og:description" content="ONE MAA CHF 666.– pour 12 mois ou FULL MAA CHF 888.– pour 8 mois, Gym-Pâquis inclus. Jusqu'au 1er novembre 2026." />
+<meta property="og:url" content="https://offres.harmony.ch/halloween-maa" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="fr_CH" />
+<!-- og:image : à ajouter avec le visuel d'Axelle (1600x900) -->
+<meta name="robots" content="noindex,nofollow" />
+
+<link rel="icon" type="image/svg+xml" href="images/logo-maa.svg" />
+<link rel="preload" href="fonts/Kobe1.1-Bold.woff" as="font" type="font/woff" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" />
+
+<script src="config.js"></script>
+<script>
+  // Thème + phase posés avant le premier rendu (pas de flash de contenu).
+  // ?now=2026-10-29T10:00:00%2B01:00 permet de prévisualiser une autre date.
+  (function () {
+    var C = window.OFFRE, root = document.documentElement;
+    var ov = new URLSearchParams(location.search).get('now');
+    var now = ov && !isNaN(Date.parse(ov)) ? Date.parse(ov) : Date.now();
+    window.OFFRE_OFFSET = now - Date.now();
+    root.setAttribute('data-theme', C.theme);
+    root.classList.add(now > Date.parse(C.dates.fin) ? 'phase-termine'
+      : now >= Date.parse(C.dates.ouverturePublique) ? 'phase-public' : 'phase-avant');
+  })();
+</script>
+
+<style>
+/* =========================================================
+   Kobe (titres en gras, toujours en capitales) + police système (texte)
+   ========================================================= */
+@font-face {
+  font-family: 'Kobe';
+  src: url('fonts/Kobe1.1-Regular.woff') format('woff');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Kobe';
+  src: url('fonts/Kobe1.1-Bold.woff') format('woff');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+/* =========================================================
+   TOKENS · charte MAA
+   Bleu MAA = structure et achat, accent = saison (bandeau,
+   compte à rebours, pastille) et rien d'autre.
+   ========================================================= */
+:root {
+  --brand:      #002855;
+  --brand-ink:  #001b3d;
+  --brand-deep: #00142b;
+  --brand-300:  #8da3bf;
+  --brand-200:  #c3cfde;
+  --brand-100:  #e1e7ef;
+  --brand-50:   #f1f4f8;
+
+  --cta:        #002855;
+  --cta-hover:  #001b3d;
+
+  --ink:   #000000;
+  --ink-2: #222222;
+  --ink-3: #666666;
+  --ink-4: #8a8a8a;
+  --ink-5: #bdbdbd;
+
+  --line:   #e4e4e4;
+  --canvas: #ffffff;
+  --soft:   #F3F3F3;
+
+  --font-sans:    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Kobe', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --hero-fallback: radial-gradient(120% 90% at 85% 15%, #0a2f5c 0%, #001634 55%, #000a18 100%);
+  --closing-bg: linear-gradient(150deg, #002855 0%, #001d40 55%, #000f22 100%);
+
+  --accent:      #002855;
+  --accent-soft: rgba(0,40,85,.25);
+
+  /* Verre dépoli partagé : header + bouton fixé en bas (mobile) */
+  --glass-bg: linear-gradient(135deg, rgba(255,255,255,.62) 0%, rgba(255,255,255,.38) 100%);
+  --glass-filter: blur(20px) saturate(190%) brightness(1.06);
+  --glass-border: 1px solid rgba(255,255,255,.55);
+  --glass-shadow: inset 0 1px 0 rgba(255,255,255,.85), inset 0 -1px 0 rgba(255,255,255,.18), 0 12px 32px -10px rgba(0,20,43,.32);
+
+  --banner-h: 0px;
+  --sticky-h: 0px;
+}
+:root[data-theme="halloween"] {
+  --accent:      #E8702A;
+  --accent-soft: rgba(232,112,42,.20);
+}
+:root[data-theme="blackfriday"] {
+  --accent:      #D9B44A;
+  --accent-soft: rgba(217,180,74,.18);
+  --hero-fallback: radial-gradient(120% 90% at 85% 15%, #1a2230 0%, #0a0e15 55%, #050608 100%);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(100px + var(--banner-h)); }
+html, body { margin: 0; padding: 0; background: var(--canvas); }
+body {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 1.5;
+  padding-bottom: var(--sticky-h);
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 2px solid var(--cta); outline-offset: 3px; border-radius: 6px; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.04;
+  color: var(--brand);
+  margin: 0;
+  text-transform: uppercase;          /* charte : Kobe toujours en capitales */
+}
+
+.shell { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 900px) { .shell { padding: 0 20px; } }
+
+.todo { background: #fff3a8; color: #6b5200; padding: 0 4px; border-radius: 4px; font-weight: 600; }
+
+/* Visibilité par phase */
+.phase-avant   .only-public,  .phase-termine .only-public,
+.phase-public  .only-avant,   .phase-termine .only-avant,
+.phase-avant   .only-termine, .phase-public  .only-termine,
+.phase-termine .hide-termine { display: none !important; }
+
+.check {
+  flex: 0 0 22px; width: 22px; height: 22px; border-radius: 999px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--brand); color: #fff;
+}
+
+/* =========================================================
+   BANDEAU (à partir de l'ouverture au grand public)
+   ========================================================= */
+.phase-public { --banner-h: 38px; }
+.banner {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+  height: var(--banner-h);
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 16px;
+  background: #000;
+  color: #fff;
+  font-size: 14px; font-weight: 600;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.banner::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 10px var(--accent);
+  margin-right: 10px; flex-shrink: 0;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+@media (max-width: 420px) { .banner { font-size: 13px; } }
+
+/* =========================================================
+   HEADER · pilule en verre
+   ========================================================= */
+.topbar {
+  position: fixed;
+  top: calc(21px + var(--banner-h));
+  left: 50%; transform: translateX(-50%);
+  width: 500px; max-width: calc(100% - 32px);
+  z-index: 50;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-filter);
+  -webkit-backdrop-filter: var(--glass-filter);
+  border: var(--glass-border);
+  border-radius: 999px;
+  box-shadow: var(--glass-shadow);
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+.topbar-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px; gap: 16px;
+  padding: 0 7px 0 10px;
+}
+.phase-termine .topbar-inner { justify-content: center; padding: 0 16px; }
+.topbar-inner > a { flex-shrink: 0; }
+.logo-img { height: 44px; width: auto; display: block; }
+.btn-topbar {
+  padding: 11px 18px; font-size: 14px; font-weight: 600;
+  background: var(--brand-50); color: var(--brand);
+  border: 1px solid var(--brand-100);
+  border-radius: 999px;
+  transition: background .18s, border-color .18s;
+  white-space: nowrap; flex-shrink: 0;
+}
+.btn-topbar:hover { background: var(--brand-100); border-color: var(--brand-200); }
+@media (max-width: 380px) {
+  .logo-img { height: 38px; }
+  .btn-topbar { padding: 9px 12px; font-size: 13px; }
+}
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+.eyebrow {
+  display: inline-flex; align-items: center; flex-wrap: wrap; gap: 8px 12px;
+  font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--brand); font-weight: 700;
+  margin-bottom: 18px;
+}
+@media (max-width: 420px) { .eyebrow { font-size: 11.5px; letter-spacing: .08em; } }
+
+/* Pastille saisonnière « Offre Halloween » */
+.season-badge {
+  display: inline-block; white-space: nowrap;
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 14px; letter-spacing: .06em; text-transform: uppercase;
+  padding: 7px 14px; border-radius: 999px;
+  background: var(--accent); color: #fff;
+}
+:root[data-theme="halloween"] .season-badge {
+  font-family: 'Creepster', var(--font-display); font-weight: 400;
+  font-size: 24px; letter-spacing: .03em; line-height: 1;
+  padding: 7px 16px 5px;
+  color: #1c0d03;
+  transform: rotate(-2.5deg);
+  box-shadow: 0 6px 20px -6px rgba(232,112,42,.7);
+}
+@media (max-width: 420px) { :root[data-theme="halloween"] .season-badge { font-size: 21px; } }
+
+/* =========================================================
+   ARAIGNÉE (thème halloween) · descend du header au chargement
+   ========================================================= */
+.spider {
+  position: absolute; z-index: 40;
+  top: calc(21px + 56px + var(--banner-h) - 6px);
+  left: calc(50% + 170px);
+  width: 56px; margin-left: -28px;
+  pointer-events: none;
+  transform-origin: 50% 0;
+  --drop: 160px;
+}
+.spider-thread {
+  position: absolute; left: 50%; top: 0;
+  width: 1px; height: var(--drop);
+  background: linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.55));
+  transform-origin: 50% 0;
+}
+.spider-body {
+  position: absolute; left: 0; top: 0;
+  width: 56px; height: 56px;
+  transform: translateY(calc(var(--drop) - 10px));
+  pointer-events: auto; cursor: pointer;
+}
+.spider-body svg { display: block; width: 100%; height: 100%; }
+@media (prefers-reduced-motion: no-preference) {
+  .spider { animation: sway 4.5s ease-in-out 2.6s infinite; }
+  .spider-thread { animation: thread-drop 2.4s cubic-bezier(.3,.7,.2,1) .4s both; }
+  .spider-body { animation: body-drop 2.4s cubic-bezier(.3,.7,.2,1) .4s both; }
+  .spider.is-up .spider-thread { animation: thread-up .9s cubic-bezier(.6,0,.8,.4) both; }
+  .spider.is-up .spider-body   { animation: body-up .9s cubic-bezier(.6,0,.8,.4) both; }
+}
+.spider.is-up.no-anim { display: none; }
+@keyframes thread-drop { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes body-drop { from { transform: translateY(-60px); } to { transform: translateY(calc(var(--drop) - 10px)); } }
+@keyframes thread-up { from { transform: scaleY(1); } to { transform: scaleY(0); } }
+@keyframes body-up { from { transform: translateY(calc(var(--drop) - 10px)); } to { transform: translateY(-60px); } }
+@keyframes sway { 0%,100% { transform: rotate(0deg); } 30% { transform: rotate(4deg); } 70% { transform: rotate(-3deg); } }
+@media (max-width: 760px) {
+  .spider { left: 84%; --drop: 34px; width: 38px; margin-left: -19px; }
+  .spider-body { width: 38px; height: 38px; }
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero-wrap {
+  position: relative;
+  padding: 5px;
+  height: 100dvh;
+  min-height: 720px;
+}
+@media (max-width: 768px) {
+  .hero-wrap { height: auto; min-height: 0; }
+}
+.hero {
+  position: relative;
+  height: 100%;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  overflow: hidden; isolation: isolate;
+  color: #fff;
+  border-radius: 15px;
+  background: var(--hero-fallback);
+}
+@media (max-width: 768px) {
+  .hero { min-height: 640px; padding-top: calc(120px + var(--banner-h)); }
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: 50% 30%;
+  z-index: -2;
+}
+@media (min-width: 901px) {
+  .has-hero-img .hero-bg {
+    top: calc(60px + var(--banner-h));
+    background-position: 50% 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 90px);
+            mask-image: linear-gradient(to bottom, transparent 0, #000 90px);
+  }
+}
+.has-hero-img .hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to right, rgba(0,16,36,.9) 0%, rgba(0,16,36,.74) 32%, rgba(0,16,36,.2) 62%, transparent 82%),
+    linear-gradient(to top, rgba(0,16,36,.55) 0%, transparent 50%);
+  z-index: -1;
+}
+@media (max-width: 900px) {
+  .has-hero-img .hero::before {
+    background: linear-gradient(to bottom, rgba(0,16,36,.4) 0%, rgba(0,16,36,.75) 50%, rgba(0,16,36,.94) 100%);
+  }
+}
+@media (max-width: 760px) {
+  .has-hero-img .hero { padding-top: calc(68px + var(--banner-h) + 250px); }
+  .has-hero-img .hero-bg {
+    top: calc(68px + var(--banner-h)); bottom: auto; height: 300px;
+    background-position: 50% 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 36px, #000 62%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0, #000 36px, #000 62%, transparent 100%);
+  }
+  .has-hero-img .hero::before { display: none; }
+}
+/* Fond sombre en attendant le visuel : lueur saisonnière + logo en filigrane */
+.hero::after {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(50% 45% at 82% 22%, var(--accent-soft) 0%, transparent 70%);
+}
+.has-hero-img .hero::after { display: none; }
+.hero-watermark {
+  position: absolute; z-index: -1; pointer-events: none;
+  right: -4%; top: 50%; transform: translateY(-50%);
+  width: min(58vh, 46vw); aspect-ratio: 94 / 91;
+  background: #fff;
+  -webkit-mask: url('images/logo-maa.svg') center / contain no-repeat;
+          mask: url('images/logo-maa.svg') center / contain no-repeat;
+  opacity: .06;
+}
+.has-hero-img .hero-watermark { display: none; }
+@media (max-width: 900px) { .hero-watermark { width: 70vw; right: -18%; top: 34%; } }
+.hero-placeholder {
+  position: absolute; top: calc(96px + var(--banner-h)); right: 28px;
+  font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+  border: 1px dashed rgba(255,255,255,.22); border-radius: 999px;
+  padding: 6px 12px;
+}
+.has-hero-img .hero-placeholder { display: none; }
+@media (max-width: 768px) { .hero-placeholder { top: auto; bottom: 16px; right: 16px; } }
+
+.hero-inner {
+  display: flex; flex-direction: column; align-items: flex-start;
+  padding: 0 72px 84px;
+  max-width: 900px; width: 100%;
+}
+@media (max-width: 900px) { .hero-inner { padding: 0 28px 64px; max-width: 100%; } }
+@media (max-width: 600px) { .hero-inner { padding: 0 20px 56px; } }
+
+.hero .eyebrow { color: rgba(255,255,255,.82); }
+.hero h1 {
+  color: #fff; margin: 0;
+  font-size: clamp(44px, 6.4vw, 96px);
+  line-height: .95; letter-spacing: 0.005em;
+  max-width: 13ch;
+}
+.hero-sub {
+  margin: 24px 0 0;
+  font-size: clamp(17px, 1.25vw, 19px);
+  line-height: 1.55;
+  color: rgba(255,255,255,.86);
+  max-width: 48ch;
+  font-weight: 500;
+}
+.hero-sub strong { color: #fff; font-weight: 700; }
+/* Bouton secondaire du hero : verre sombre (texte blanc), lisible sur la photo */
+.hero-cta {
+  margin-top: 34px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  padding: 17px 30px;
+  background: linear-gradient(135deg, rgba(255,255,255,.22) 0%, rgba(255,255,255,.08) 100%);
+  backdrop-filter: blur(18px) saturate(170%);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+  border: 1px solid rgba(255,255,255,.38);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 12px 32px -10px rgba(0,0,0,.5);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 16.5px; font-weight: 700;
+  transition: transform .18s, background .18s, border-color .18s;
+}
+.hero-cta:hover { background: linear-gradient(135deg, rgba(255,255,255,.32) 0%, rgba(255,255,255,.14) 100%); border-color: rgba(255,255,255,.6); transform: translateY(-1px); }
+@media (max-width: 600px) { .hero-cta { width: 100%; } }
+
+/* Encart récap des formules (desktop) · verre dépoli */
+.hero-recap {
+  position: absolute; right: 56px; bottom: 84px;
+  width: 340px;
+  padding: 20px 20px 12px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.07);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 20px 40px -20px rgba(0,0,0,.5);
+}
+.recap-title {
+  display: block; margin-bottom: 8px;
+  font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700;
+  color: rgba(255,255,255,.6);
+}
+.recap-row {
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 12px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255,255,255,.1);
+  color: #fff;
+}
+.recap-row:first-of-type { border-top: 0; }
+.recap-name { font-family: var(--font-display); font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: .01em; line-height: 1; }
+.recap-price { font-family: var(--font-display); font-size: 22px; font-weight: 700; line-height: 1; text-align: right; }
+.recap-val { grid-column: 1 / -1; font-size: 15px; font-weight: 500; color: rgba(255,255,255,.7); }
+.recap-row:hover .recap-val { color: #fff; }
+@media (max-width: 1100px) { .hero-recap { display: none; } }
+
+/* Compte à rebours */
+.countdown { margin-top: 28px; display: flex; align-items: center; flex-wrap: wrap; gap: 12px 18px; }
+.countdown-label { font-size: 16px; font-weight: 600; color: rgba(255,255,255,.78); display: inline-flex; align-items: center; gap: 8px; }
+.countdown-label::before {
+  content: ''; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 10px var(--accent);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+.countdown-units { display: flex; gap: 8px; }
+.cd-unit {
+  min-width: 70px; padding: 9px 6px 8px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
+  text-align: center;
+}
+.cd-unit b { display: block; font-family: var(--font-display); font-size: 28px; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.cd-unit span { display: block; margin-top: 4px; font-size: 12px; color: rgba(255,255,255,.62); }
+@media (max-width: 420px) {
+  .countdown, .countdown-units { width: 100%; }
+  .cd-unit { min-width: 0; flex: 1; }
+}
+
+/* Offre terminée */
+.ended-box {
+  margin-top: 30px; padding: 18px 22px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
+  max-width: 46ch;
+}
+.ended-box strong { display: block; font-size: 18px; margin-bottom: 4px; }
+.ended-box p { margin: 0; font-size: 17px; color: rgba(255,255,255,.8); }
+.ended-box a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* =========================================================
+   TITRES DE SECTION
+   ========================================================= */
+.section { padding-top: 104px; }
+.section-head { margin-bottom: 40px; max-width: 760px; }
+.section-title { font-size: clamp(34px, 4.2vw, 56px); line-height: 1; }
+.section-sub { margin: 14px 0 0; font-size: 18px; line-height: 1.5; color: var(--ink-3); max-width: 60ch; }
+@media (max-width: 760px) {
+  .section { padding-top: 76px; }
+  .section-head { margin-bottom: 28px; }
+  .section-sub { font-size: 17px; }
+}
+
+/* =========================================================
+   CARTES FORMULES · en-tête bleu des cartes tarifs du site MAA,
+   puces avec check, prix + bouton d'achat en bas de carte (comme Fitness).
+   ========================================================= */
+.plans { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; }
+@media (max-width: 900px) { .plans { grid-template-columns: 1fr; gap: 20px; } }
+
+.plan {
+  background: var(--soft);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.plan.featured {
+  background: #fff;
+  box-shadow: 0 20px 48px -16px rgba(0,40,85,.4);
+  outline: 2px solid var(--brand); outline-offset: -2px;
+}
+.plan-head {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 12px;
+  background: var(--brand); color: #fff;
+  padding: 24px 30px;
+}
+.plan-name { font-size: 40px; line-height: 1; color: #fff; letter-spacing: .02em; white-space: nowrap; }
+.plan-badge {
+  display: inline-block; flex-shrink: 0;
+  font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  padding: 6px 12px; border-radius: 999px;
+  background: #fff; color: var(--brand);
+}
+.plan-body { padding: 10px 30px 30px; display: flex; flex-direction: column; flex: 1; }
+@media (max-width: 600px) { .plan-head { padding: 20px 20px; } .plan-body { padding: 6px 20px 22px; } .plan-name { font-size: 34px; } }
+
+.features-list { list-style: none; padding: 0; margin: 14px 0 28px; }
+.feat {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px 0;
+  font-size: 16.5px; line-height: 1.45; color: var(--ink-2);
+  border-top: 1px solid rgba(0,0,0,.07);
+}
+.feat:first-child { border-top: 0; }
+.feat .check { margin-top: 1px; }
+
+.plan-price-block { margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.1); }
+.plan-price { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.plan-price .amount { font-family: var(--font-display); font-weight: 700; font-size: 64px; line-height: .95; color: var(--brand); white-space: nowrap; }
+@media (max-width: 380px) { .plan-price .amount { font-size: 52px; } }
+.plan-price .per { font-size: 17px; font-weight: 700; color: var(--ink); }
+.price-meta { margin-top: 10px; font-size: 16.5px; color: var(--ink-2); font-weight: 500; }
+
+.plan-cta {
+  margin-top: 22px; width: 100%;
+  padding: 18px 22px; border-radius: 999px;
+  background: var(--cta); color: #fff;
+  font-size: 16.5px; font-weight: 700;
+  display: inline-flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,20,43,.12), 0 10px 22px rgba(0,40,85,.28);
+  transition: background .18s;
+}
+.plan-cta:hover { background: var(--cta-hover); }
+.plan-cta.is-pending { opacity: .55; cursor: not-allowed; }
+.plan-reassure { margin: 10px 0 0; text-align: center; font-size: 14.5px; color: var(--ink-4); }
+.plan-ended {
+  margin-top: 22px; padding: 16px 22px; border-radius: 999px;
+  border: 1px dashed currentColor; opacity: .6;
+  text-align: center; font-size: 15px; font-weight: 600;
+}
+
+/* =========================================================
+   DISCIPLINES
+   ========================================================= */
+.disc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.disc {
+  position: relative;
+  display: flex; flex-direction: column;
+  min-height: 180px;
+  padding: 22px 22px 20px;
+  border-radius: 18px;
+  background: var(--soft);
+  border: 1px solid transparent;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+.disc-num { font-family: var(--font-display); font-size: 15px; color: var(--brand-300); letter-spacing: .04em; }
+.disc h3 { margin-top: 14px; font-size: 30px; line-height: .98; }
+.disc p { margin: 10px 0 0; font-size: 16px; line-height: 1.5; color: var(--ink-3); }
+/* Dernière case : la mention ONE MAA */
+.disc-note {
+  display: flex; flex-direction: column; justify-content: flex-end;
+  min-height: 180px; padding: 22px;
+  border-radius: 18px;
+  background: var(--brand); color: #fff;
+}
+.disc-note p { margin: 0; font-size: 18px; line-height: 1.45; font-weight: 600; }
+.disc-note .plan-badge { align-self: flex-start; }
+@media (max-width: 1000px) { .disc-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) {
+  .disc-grid { grid-template-columns: 1fr; gap: 10px; }
+  .disc, .disc-note { min-height: 0; padding: 18px 18px 16px; }
+  .disc h3 { margin-top: 6px; font-size: 26px; }
+  .disc p { margin: 6px 0 0; }
+}
+
+/* =========================================================
+   GYM-PÂQUIS + INFOS PRATIQUES
+   ========================================================= */
+.gym-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; align-items: stretch; }
+.gym {
+  position: relative; overflow: hidden; isolation: isolate;
+  padding: 44px 44px 40px;
+  border-radius: 24px;
+  background: var(--closing-bg); color: #fff;
+}
+.gym::after {
+  content: ''; position: absolute; z-index: -1; pointer-events: none;
+  right: -60px; bottom: -80px; width: 340px; aspect-ratio: 94 / 91;
+  background: #fff;
+  -webkit-mask: url('images/logo-maa.svg') center / contain no-repeat;
+          mask: url('images/logo-maa.svg') center / contain no-repeat;
+  opacity: .06;
+}
+.gym h2 { color: #fff; font-size: clamp(32px, 3.6vw, 48px); }
+.gym-figure { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; margin-top: 26px; }
+.gym-figure b { font-family: var(--font-display); font-weight: 700; font-size: clamp(72px, 8vw, 112px); line-height: .9; }
+.gym-figure span { font-size: 18px; font-weight: 600; color: rgba(255,255,255,.8); }
+.gym p { margin: 22px 0 0; font-size: 17.5px; line-height: 1.6; color: rgba(255,255,255,.86); max-width: 52ch; }
+.gym-zones { list-style: none; margin: 26px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.gym-zones li { padding: 9px 15px; border-radius: 999px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); font-size: 15px; font-weight: 600; }
+
+.infos { padding: 40px 36px; border-radius: 24px; background: var(--soft); display: flex; flex-direction: column; gap: 26px; }
+.infos h2 { font-size: clamp(28px, 2.6vw, 36px); }
+.info-block h3 { font-family: var(--font-sans); text-transform: none; font-size: 14px; font-weight: 600; letter-spacing: .06em; color: var(--ink-3); margin-bottom: 8px; }
+.info-block p { margin: 0; font-size: 17px; line-height: 1.55; color: var(--ink); }
+.info-block a { color: var(--brand); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.hours { list-style: none; margin: 0; padding: 0; }
+.hours li { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 16.5px; }
+.hours li:last-child { border-bottom: 0; }
+.hours b { font-weight: 600; }
+@media (max-width: 900px) {
+  .gym-layout { grid-template-columns: 1fr; }
+  .gym { padding: 32px 22px 30px; border-radius: 20px; }
+  .infos { padding: 30px 22px; border-radius: 20px; }
+}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+.faq-section { margin-top: 104px; padding: 88px 0; background: var(--soft); }
+.faq-section .section-sub a { color: var(--brand); text-decoration: underline; text-underline-offset: 3px; }
+.faq-list { max-width: 820px; border-top: 1px solid var(--brand-200); }
+.faq-item { border-bottom: 1px solid var(--brand-200); }
+.faq-q {
+  width: 100%; padding: 22px 4px;
+  display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  text-align: left; font-size: 17.5px; font-weight: 600; color: var(--ink);
+  transition: color .18s;
+}
+.faq-q:hover { color: var(--brand); }
+.faq-icon {
+  flex-shrink: 0; width: 28px; height: 28px; border-radius: 999px;
+  background: var(--brand-100); color: var(--brand);
+  display: grid; place-items: center;
+  transition: background .18s, color .18s;
+}
+.faq-icon svg { width: 12px; height: 12px; transition: transform .25s; }
+.faq-item.is-open .faq-icon { background: var(--brand); color: #fff; }
+.faq-item.is-open .faq-icon svg { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .35s; }
+.faq-item.is-open .faq-a { max-height: 420px; }
+.faq-a p { margin: 0; padding: 0 4px 22px; font-size: 17px; color: var(--ink-3); line-height: 1.65; max-width: 64ch; }
+@media (max-width: 760px) { .faq-section { margin-top: 76px; padding: 64px 0; } }
+
+/* =========================================================
+   BLOC FINAL
+   ========================================================= */
+.closing { position: relative; padding: 104px 0; overflow: hidden; isolation: isolate; color: #fff; background: var(--closing-bg); }
+.closing::before { content: ''; position: absolute; inset: 0; z-index: -1; background: radial-gradient(45% 60% at 50% 0%, var(--accent-soft) 0%, transparent 70%); }
+.closing-inner { max-width: 780px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.closing-badge { margin-bottom: 24px; }
+.closing h2 { font-size: clamp(38px, 5.2vw, 68px); color: #fff; margin-bottom: 18px; }
+.closing-lead { font-size: 18.5px; color: rgba(255,255,255,.85); margin: 0 0 30px; }
+.btn-light {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 17px 30px; border-radius: 999px;
+  background: #fff; color: var(--brand);
+  font-size: 16.5px; font-weight: 700;
+  box-shadow: 0 8px 28px rgba(0,0,0,.22);
+  transition: background .18s;
+}
+.btn-light:hover { background: var(--brand-100); }
+.closing .countdown { justify-content: center; }
+.closing .ended-box { margin-top: 0; text-align: center; }
+@media (max-width: 600px) { .closing { padding: 76px 0; } .btn-light { width: 100%; } }
+
+.closing-photo { display: none; }
+.has-final-img .closing-photo {
+  display: block;
+  position: absolute; inset: 0; z-index: -2;
+  background-size: cover; background-position: 50% 30%;
+}
+.has-final-img .closing-photo::after {
+  content: ''; position: absolute; inset: 0;
+  background: var(--closing-bg); opacity: .82;
+}
+
+/* =========================================================
+   PIED DE PAGE
+   ========================================================= */
+.foot { padding: 40px 0 36px; background: #000; color: rgba(255,255,255,.62); font-size: 15px; }
+.foot-inner { display: flex; flex-direction: column; gap: 18px; }
+.foot-mentions { margin: 0; line-height: 1.6; max-width: 80ch; }
+.foot-mentions a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.foot-links { display: flex; flex-wrap: wrap; gap: 8px 22px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.12); }
+.foot-links a { color: rgba(255,255,255,.85); }
+.foot-links a:hover { color: #fff; }
+.foot-links .copy { margin-left: auto; color: rgba(255,255,255,.4); }
+@media (max-width: 600px) { .foot-links .copy { margin-left: 0; width: 100%; } }
+
+/* =========================================================
+   BOUTON FIXÉ EN BAS (mobile)
+   ========================================================= */
+.sticky-cta { display: none; }
+@media (max-width: 900px) {
+  .sticky-cta {
+    display: block;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 55;
+    padding: 10px 16px calc(12px + env(safe-area-inset-bottom));
+    pointer-events: none;
+    transform: translateY(130%);
+    transition: transform .3s cubic-bezier(.16,1,.3,1);
+  }
+  .sticky-cta.is-visible { transform: none; }
+  .sticky-cta a {
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px 22px; border-radius: 999px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-filter);
+    -webkit-backdrop-filter: var(--glass-filter);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    color: var(--brand);
+    font-size: 16px; font-weight: 700;
+    pointer-events: auto;
+  }
+}
+
+/* Curseur fantôme (thème halloween, ordinateur) */
+.ghost-cursor, .ghost-cursor body, .ghost-cursor * { cursor: var(--cursor-ghost); }
+.ghost-cursor a, .ghost-cursor button, .ghost-cursor .spider-body { cursor: var(--cursor-ghost-hover); }
+
+/* Retour tactile au clic */
+.plan-cta:active, .btn-light:active, .hero-cta:active, .recap-row:active, .btn-topbar:active, .sticky-cta a:active { transform: scale(.98); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9N6SRL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!--
+  Structure statique ; tout le contenu est injecté depuis config.js (window.OFFRE).
+  Les éléments [data-t="chemin.cle"] reçoivent le texte correspondant de la config.
+-->
+
+<div class="banner only-public" role="status" data-t="bandeau"></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="#top" aria-label="Martial Arts Academy, retour en haut">
+      <img class="logo-img" src="images/logo-maa.svg" alt="Martial Arts Academy by Harmony" width="45" height="44" />
+    </a>
+    <a class="btn-topbar hide-termine" href="#formules" data-t="topbarCta"></a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero-wrap" id="top">
+<div class="spider" id="spider" hidden>
+  <span class="spider-thread"></span>
+  <span class="spider-body" role="img" aria-label="Araignée d'Halloween" title="Psst… cliquez-moi">
+    <svg viewBox="0 0 40 40" aria-hidden="true">
+      <g fill="none" stroke="#efe9e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 18 L9 12 L4 15"/><path d="M16.5 21 L8 19 L3 23"/><path d="M17 24 L9 26 L5 32"/><path d="M18 26 L13 31 L11 37"/>
+        <path d="M23 18 L31 12 L36 15"/><path d="M23.5 21 L32 19 L37 23"/><path d="M23 24 L31 26 L35 32"/><path d="M22 26 L27 31 L29 37"/>
+      </g>
+      <ellipse cx="20" cy="24" rx="6" ry="7" fill="#efe9e1"/>
+      <circle cx="20" cy="15.5" r="4.2" fill="#efe9e1"/>
+      <circle cx="18.4" cy="15" r="1.1" fill="#E8702A"/><circle cx="21.6" cy="15" r="1.1" fill="#E8702A"/>
+    </svg>
+  </span>
+</div>
+<section class="hero" id="hero">
+  <div class="hero-bg" role="img" aria-label=""></div>
+  <span class="hero-watermark" aria-hidden="true"></span>
+  <span class="hero-placeholder" aria-hidden="true">Visuel à venir</span>
+  <div class="hero-inner">
+    <span class="eyebrow"><span class="season-badge" data-t="hero.badgeSaison"></span><span data-t="hero.surtitre"></span></span>
+    <h1 data-t="hero.titre"></h1>
+    <p class="hero-sub" data-t="hero.sousTitre"></p>
+    <a class="hero-cta hide-termine" href="#formules" data-t="hero.cta"></a>
+    <div class="countdown only-public" data-countdown></div>
+    <div class="ended-box only-termine" data-ended></div>
+  </div>
+  <nav class="hero-recap hide-termine" id="hero-recap" aria-label="Les deux formules"></nav>
+</section>
+</div>
+
+<main>
+  <!-- ============ FORMULES ============ -->
+  <section class="section shell" aria-labelledby="t-formules">
+    <div class="section-head">
+      <h2 class="section-title" id="t-formules" data-t="formulesSection.titre"></h2>
+      <p class="section-sub" data-t="formulesSection.sousTitre"></p>
+    </div>
+    <div class="plans" id="formules"></div>
+  </section>
+
+  <!-- ============ DISCIPLINES ============ -->
+  <section class="section shell" aria-labelledby="t-disciplines">
+    <div class="section-head">
+      <h2 class="section-title" id="t-disciplines" data-t="disciplinesSection.titre"></h2>
+      <p class="section-sub" data-t="disciplinesSection.sousTitre"></p>
+    </div>
+    <div class="disc-grid" id="disciplines"></div>
+  </section>
+
+  <!-- ============ GYM-PÂQUIS + INFOS PRATIQUES ============ -->
+  <section class="section shell">
+    <div class="gym-layout">
+      <div class="gym" id="gym"></div>
+      <aside class="infos" id="infos"></aside>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq-section" aria-labelledby="t-faq">
+    <div class="shell">
+      <div class="section-head">
+        <h2 class="section-title" id="t-faq" data-t="faqTitre"></h2>
+        <p class="section-sub" id="faq-contact"></p>
+      </div>
+      <div class="faq-list" id="faq"></div>
+    </div>
+  </section>
+
+  <!-- ============ BLOC FINAL ============ -->
+  <section class="closing">
+    <div class="closing-photo" id="closing-photo" role="img" aria-label=""></div>
+    <div class="shell">
+      <div class="closing-inner">
+        <div class="hide-termine">
+          <span class="season-badge closing-badge" data-t="hero.badgeSaison"></span>
+          <h2 data-t="final.titre"></h2>
+          <p class="closing-lead only-avant" data-t="final.texteAvantPublic"></p>
+          <p class="closing-lead only-public" data-t="final.textePublic"></p>
+        </div>
+        <a class="btn-light hide-termine" href="#formules" data-t="final.cta"></a>
+        <div class="countdown only-public" data-countdown></div>
+        <div class="ended-box only-termine" data-ended></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="shell foot-inner">
+    <p class="foot-mentions" id="mentions"></p>
+    <nav class="foot-links" id="foot-links" aria-label="Informations légales"></nav>
+  </div>
+</footer>
+
+<div class="sticky-cta hide-termine" id="sticky-cta">
+  <a href="#formules" data-t="topbarCta"></a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var C = window.OFFRE;
+  var OFFSET = window.OFFRE_OFFSET || 0;
+  var root = document.documentElement;
+  var T_PUBLIC = Date.parse(C.dates.ouverturePublique);
+  var T_FIN = Date.parse(C.dates.fin);
+  function now() { return Date.now() + OFFSET; }
+
+  /* ---------- Helpers ---------- */
+  var ICO = {
+    check: '<svg viewBox="0 0 14 14" width="12" height="12" fill="none" aria-hidden="true"><path d="M2.5 7.5 L5.5 10.5 L11.5 3.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    plus:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>'
+  };
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
+  }
+  // Typo française (espaces insécables) + surlignage des contenus en attente
+  function txt(s) {
+    var out = esc(s)
+      .replace(/ ([:;?!»])/g, ' $1')
+      .replace(/CHF /g, 'CHF ')
+      .replace(/(\d+)x /g, '$1x ')
+      .replace(/(\d+) (mois|m²|discipline)/g, '$1 $2')
+      .replace(/Gym-Pâquis/g, 'Gym‑Pâquis');           // trait d'union insécable
+    return out.replace(/\[À [^\]]+\]/g, function (m) { return '<span class="todo">' + m + '</span>'; });
+  }
+  function get(path) { return path.split('.').reduce(function (o, k) { return o == null ? o : o[k]; }, C); }
+  function el(id) { return document.getElementById(id); }
+
+  /* ---------- UTM : transmis aux liens d'achat ---------- */
+  var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  var utm = {};
+  (function () {
+    var p = new URLSearchParams(location.search);
+    UTM_KEYS.forEach(function (k) { var v = p.get(k); if (v) utm[k] = v; });
+    var KEY = 'offre_' + C.slug + '_utm';
+    try {
+      if (Object.keys(utm).length) sessionStorage.setItem(KEY, JSON.stringify(utm));
+      else utm = JSON.parse(sessionStorage.getItem(KEY) || '{}') || {};
+    } catch (e) { /* stockage indisponible : on garde les UTM de l'URL */ }
+  })();
+  function buyUrl(f) {
+    var url = C.checkoutUrl + encodeURIComponent(f.produitId);
+    UTM_KEYS.forEach(function (k) { if (utm[k]) url += '&' + k + '=' + encodeURIComponent(utm[k]); });
+    return url;
+  }
+  function buyCta(f, position) {
+    // Produit WooCommerce pas encore créé : bouton inactif + mention surlignée
+    if (!f.produitId) {
+      return '<a class="plan-cta is-pending hide-termine" href="#formule-' + esc(f.id) + '" aria-disabled="true">' + txt(f.cta) + '</a>' +
+        '<p class="plan-reassure hide-termine">' + txt('[À COMPLÉTER : ID produit WooCommerce]') + '</p>';
+    }
+    return '<a class="plan-cta hide-termine" href="' + esc(buyUrl(f)) + '" target="_blank" rel="noopener"' +
+      ' data-formule="' + esc(f.id) + '" data-position="' + esc(position) + '">' + txt(f.cta) + '</a>' +
+      '<p class="plan-reassure hide-termine">' + txt(C.reassurance) + '</p>';
+  }
+
+  /* ---------- Textes simples ---------- */
+  document.querySelectorAll('[data-t]').forEach(function (n) {
+    var v = get(n.getAttribute('data-t'));
+    if (v != null) n.innerHTML = txt(v);
+  });
+
+  /* ---------- Hero : visuel + encart ---------- */
+  if (C.visuels.hero) {
+    root.classList.add('has-hero-img');
+    var bg = document.querySelector('.hero-bg');
+    bg.style.backgroundImage = 'url("' + C.visuels.hero.replace(/"/g, '%22') + '")';
+    bg.setAttribute('aria-label', C.visuels.heroAlt || C.nom);
+  }
+  // Encart récap (desktop) : mène aux cartes, l'achat se fait après la présentation des formules
+  el('hero-recap').innerHTML = '<span class="recap-title">' + txt(C.hero.recapTitre) + '</span>' +
+    C.formules.map(function (f) {
+      return '<a class="recap-row" href="#formule-' + esc(f.id) + '">' +
+        '<span class="recap-name">' + txt(f.titre) + '</span>' +
+        '<span class="recap-price">' + txt(f.prix) + '</span>' +
+        '<span class="recap-val">' + txt(f.resume) + '</span></a>';
+    }).join('');
+
+  /* ---------- Habillage saisonnier ---------- */
+  var DECO = (C.deco && C.theme === 'halloween') ? C.deco : {};
+  if (DECO.araignee) {
+    (function () {
+      var sp = el('spider'), body = sp.querySelector('.spider-body');
+      sp.hidden = false;
+      var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) sp.classList.add('no-anim');
+      // Un clic la fait remonter, elle redescend un peu plus tard
+      body.addEventListener('click', function () {
+        if (sp.classList.contains('is-up')) return;
+        sp.classList.add('is-up');
+        setTimeout(function () {
+          sp.classList.remove('is-up');
+          sp.querySelectorAll('.spider-thread, .spider-body').forEach(function (n) { n.style.animation = 'none'; void n.offsetWidth; n.style.animation = ''; });
+        }, 7000);
+      });
+    })();
+  }
+  if (DECO.curseurFantome && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    (function () {
+      function ghost(size) {
+        var c = document.createElement('canvas'); c.width = c.height = size + 8;
+        var x = c.getContext('2d');
+        x.font = size + 'px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif';
+        x.textAlign = 'center'; x.textBaseline = 'middle';
+        x.fillText('👻', c.width / 2, c.height / 2 + 1);
+        return 'url(' + c.toDataURL('image/png') + ') ' + Math.round(c.width / 2) + ' ' + Math.round(c.height / 2);
+      }
+      try {
+        root.style.setProperty('--cursor-ghost', ghost(26) + ', auto');
+        root.style.setProperty('--cursor-ghost-hover', ghost(34) + ', pointer');
+        root.classList.add('ghost-cursor');
+      } catch (e) { /* canvas indisponible : curseur normal */ }
+    })();
+  }
+
+  /* ---------- Bloc final : photo ---------- */
+  if (C.visuels.final) {
+    root.classList.add('has-final-img');
+    var fp = el('closing-photo');
+    fp.style.backgroundImage = 'url("' + C.visuels.final.replace(/"/g, '%22') + '")';
+    fp.setAttribute('aria-label', C.visuels.finalAlt || '');
+  }
+
+  /* ---------- Cartes formules ---------- */
+  el('formules').innerHTML = C.formules.map(function (f) {
+    return '<article class="plan' + (f.badge ? ' featured' : '') + '" id="formule-' + esc(f.id) + '">' +
+      '<div class="plan-head"><h3 class="plan-name">' + txt(f.titre) + '</h3>' +
+        (f.badge ? '<span class="plan-badge">' + txt(f.badge) + '</span>' : '') + '</div>' +
+      '<div class="plan-body">' +
+        '<ul class="features-list">' + f.puces.map(function (p) {
+          return '<li class="feat"><span class="check">' + ICO.check + '</span><span>' + txt(p) + '</span></li>';
+        }).join('') + '</ul>' +
+        '<div class="plan-price-block">' +
+        '<div class="plan-price"><span class="amount">' + txt(f.prix) + '</span><span class="per">pour ' + txt(f.duree) + '</span></div>' +
+        '<div class="price-meta">' + txt(f.sousPrix) + '</div>' +
+        buyCta(f, 'carte') +
+        '<div class="plan-ended only-termine">' + txt(C.termine.titre) + '</div>' +
+      '</div></div>' +
+    '</article>';
+  }).join('');
+
+  /* ---------- Disciplines ---------- */
+  el('disciplines').innerHTML = C.disciplines.map(function (d, i) {
+    return '<div class="disc">' +
+      '<span class="disc-num">' + (i < 9 ? '0' : '') + (i + 1) + '</span>' +
+      '<h3>' + txt(d.nom) + '</h3><p>' + txt(d.texte) + '</p></div>';
+  }).join('') +
+    '<div class="disc-note"><span class="plan-badge">' + txt(C.formules[0].titre) + '</span><p>' + txt(C.disciplinesSection.note) + '</p></div>';
+
+  /* ---------- Gym-Pâquis + infos pratiques ---------- */
+  el('gym').innerHTML = '<h2>' + txt(C.gym.titre) + '</h2>' +
+    '<div class="gym-figure"><b>' + txt(C.gym.chiffre) + '</b>' + (C.gym.chiffreLabel ? '<span>' + txt(C.gym.chiffreLabel) + '</span>' : '') + '</div>' +
+    '<p>' + txt(C.gym.texte) + '</p>' +
+    '<ul class="gym-zones">' + C.gym.zones.map(function (z) { return '<li>' + txt(z) + '</li>'; }).join('') + '</ul>';
+  var K = C.contact;
+  el('infos').innerHTML = '<h2>' + txt(C.infosTitre) + '</h2>' +
+    '<div class="info-block"><h3>Adresse</h3><p>' + txt(K.nom) + '<br>' + txt(K.adresse) + '<br>' + txt(K.ville) + '</p>' +
+      '</div>' +
+    '<div class="info-block"><h3>Téléphone</h3><p><a href="tel:' + esc(K.telephoneLien) + '">' + txt(K.telephone) + '</a></p></div>' +
+    '<div class="info-block"><h3>Horaires</h3><ul class="hours">' + K.horaires.map(function (h) {
+      return '<li><b>' + txt(h.jours) + '</b><span>' + txt(h.heures) + '</span></li>';
+    }).join('') + '</ul></div>';
+
+  /* ---------- FAQ ---------- */
+  el('faq-contact').innerHTML = 'Une autre question\u00a0? Appelez la MAA au <a href="tel:' + esc(K.telephoneLien) + '">' +
+    txt(K.telephone) + '</a> ou passez à l’accueil de l’Academy.';
+  el('faq').innerHTML = C.faq.map(function (it, i) {
+    return '<div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-' + i + '">' +
+      '<span>' + txt(it.q) + '</span><span class="faq-icon">' + ICO.plus + '</span></button>' +
+      '<div class="faq-a" id="faq-a-' + i + '"><p>' + txt(it.r) + '</p></div></div>';
+  }).join('');
+
+  /* ---------- Offre terminée ---------- */
+  document.querySelectorAll('[data-ended]').forEach(function (n) {
+    n.innerHTML = '<strong>' + txt(C.termine.titre) + '</strong><p>' +
+      txt(C.termine.texte) + '</p>';
+  });
+
+  /* ---------- Pied de page ---------- */
+  el('mentions').innerHTML = txt(C.mentions) + ' Voir les ' +
+    (C.liens.conditions
+      ? '<a href="' + esc(C.liens.conditions) + '" target="_blank" rel="noopener">conditions de l’offre</a>.'
+      : 'conditions de l’offre <span class="todo">[À FOURNIR : lien conditions de l’offre MAA]</span>.');
+  el('foot-links').innerHTML =
+    '<a href="tel:' + esc(K.telephoneLien) + '">Contact\u00a0: ' + txt(K.telephone) + '</a>' +
+    '<a href="' + esc(C.liens.mentionsLegales) + '" target="_blank" rel="noopener">Mentions légales</a>' +
+    '<a href="' + esc(C.liens.confidentialite) + '" target="_blank" rel="noopener">Politique de confidentialité</a>' +
+    '<span class="copy">© ' + new Date(T_FIN).getFullYear() + ' ' + txt(C.copyright) + '</span>';
+
+  /* ---------- Phase + compte à rebours ---------- */
+  var CD_UNITS = [['j', 'jours'], ['h', 'heures'], ['m', 'min'], ['s', 'sec']];
+  document.querySelectorAll('[data-countdown]').forEach(function (n) {
+    n.innerHTML = '<span class="countdown-label">' + txt(C.compteRebours) + '</span><div class="countdown-units">' +
+      CD_UNITS.map(function (u) { return '<div class="cd-unit"><b data-cd="' + u[0] + '">00</b><span>' + u[1] + '</span></div>'; }).join('') + '</div>';
+  });
+  function phase(t) { return t > T_FIN ? 'termine' : t >= T_PUBLIC ? 'public' : 'avant'; }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  var current = null;
+  function tick() {
+    var t = now(), ph = phase(t);
+    if (ph !== current) {
+      root.classList.remove('phase-avant', 'phase-public', 'phase-termine');
+      root.classList.add('phase-' + ph);
+      current = ph;
+    }
+    if (ph === 'public') {
+      var s = Math.max(0, Math.floor((T_FIN - t) / 1000) + 1);
+      var v = { j: Math.floor(s / 86400), h: Math.floor(s % 86400 / 3600), m: Math.floor(s % 3600 / 60), s: s % 60 };
+      document.querySelectorAll('[data-cd]').forEach(function (b) { b.textContent = pad(v[b.getAttribute('data-cd')]); });
+    }
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  /* ---------- Tracking GTM ---------- */
+  window.dataLayer = window.dataLayer || [];
+  document.addEventListener('click', function (e) {
+    var pending = e.target.closest && e.target.closest('.plan-cta.is-pending');
+    if (pending) { e.preventDefault(); return; }
+    var a = e.target.closest && e.target.closest('a[data-formule]');
+    if (!a) return;
+    window.dataLayer.push({
+      event: C.gtmEvent,
+      offre: C.utmCampaign,
+      formule: a.getAttribute('data-formule'),
+      cta_position: a.getAttribute('data-position')
+    });
+  });
+
+  /* ---------- FAQ accordéon ---------- */
+  document.querySelectorAll('.faq-q').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.faq-item');
+      var open = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item').forEach(function (i) {
+        i.classList.remove('is-open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!open) { item.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+
+  /* ---------- Bouton fixé en bas (mobile) : après le hero, masqué sur les cartes ---------- */
+  (function () {
+    var bar = el('sticky-cta'), hero = el('hero'), plans = el('formules');
+    if (!bar || !('IntersectionObserver' in window)) return;
+    var heroVisible = true, plansVisible = false, closingVisible = false;
+    function update() {
+      var show = !heroVisible && !plansVisible && !closingVisible;   // pas de doublon avec les autres boutons
+      bar.classList.toggle('is-visible', show);
+      root.style.setProperty('--sticky-h', show && innerWidth <= 900 ? bar.offsetHeight + 'px' : '0px');
+    }
+    new IntersectionObserver(function (en) { heroVisible = en[0].isIntersecting; update(); }, { threshold: 0.2 }).observe(hero);
+    new IntersectionObserver(function (en) { plansVisible = en[0].isIntersecting; update(); }, { threshold: 0.15 }).observe(plans);
+    new IntersectionObserver(function (en) { closingVisible = en[0].isIntersecting; update(); }, { threshold: 0.25 }).observe(document.querySelector('.closing'));
+  })();
+
+  /* ---------- Header : rétrécit au défilement (desktop) ---------- */
+  (function () {
+    var topbar = document.querySelector('.topbar'), pending = false;
+    function f() {
+      pending = false;
+      if (innerWidth <= 600) { topbar.style.width = ''; return; }
+      var t = Math.min(scrollY / 180, 1), ease = 1 - Math.pow(1 - t, 2);
+      topbar.style.width = Math.round(500 - 100 * ease) + 'px';
+    }
+    addEventListener('scroll', function () { if (!pending) { pending = true; requestAnimationFrame(f); } }, { passive: true });
+  })();
+})();
+</script>
+</body>
+</html>
