@@ -7,7 +7,7 @@
    Rappels de rédaction (cahier des charges) :
    vouvoiement, boutons à la 1re personne, prix au format "CHF 888.–",
    "club" (jamais "salle"), "Canton de Genève / de Vaud", pas de tiret cadratin.
-   Pas de « · » dans les textes affichés, pas de flèche dans les boutons.
+   Eliptik Harmony toujours en capitales (charte). Pas de flèche dans les boutons.
    Un texte qui contient "[À " est surligné sur la page (contenu en attente).
    ========================================================= */
 window.OFFRE = {
@@ -39,13 +39,13 @@ window.OFFRE = {
 
   bandeau: 'Offre diabolique : jusqu\'au 1er novembre seulement',
 
-  /* Hero : le choix entre les deux formules est le sujet de la page.
-     Le H1 reprend le titre du brief, sous le choix. */
   hero: {
-    intro: 'Offre Halloween, jusqu\'au 1er novembre',
-    ou: 'ou',
-    titre: 'Une offre diabolique : CHF 888.–',
-    paiement: 'Le même prix pour les deux formules, payable en 12x CHF 74.– ou 6x CHF 148.– sans frais avec HeyLight.'
+    surtitre: 'Abonnement fitness · Offre Halloween',
+    titre: 'Une offre diabolique :',
+    prix: 'CHF 888.–',
+    sousTitre: '12 mois dans 7 clubs, ou 8 mois dans les 10 clubs Harmony des cantons de Genève et de Vaud. Payable en 12x CHF 74.– sans frais. Le seul frisson, c\'est à l\'entraînement.',
+    cta: 'Je choisis ma formule',
+    recapTitre: 'Deux formules, un seul prix'   // encart à droite du hero (desktop), mène aux cartes
   },
 
   topbarCta: 'Je choisis ma formule',
@@ -103,7 +103,7 @@ window.OFFRE = {
       badge: '',
       categories: ['gym', 'essential'],
       accroche: 'Toute l\'année pour vous entraîner, près de chez vous.',
-      choix: { grand: '12 mois', detail: 'dans 7 clubs' },   // hero
+      resume: '12 mois, 7 clubs',              // encart du hero
       prix: 'CHF 888.–',
       duree: '12 mois',
       sousPrix: 'soit 12x CHF 74.– sans frais avec HeyLight',
@@ -120,7 +120,7 @@ window.OFFRE = {
       badge: 'Accès complet',
       categories: ['gym', 'essential', 'premium'],
       accroche: 'Tous les clubs, les piscines et le linge fourni.',
-      choix: { grand: '10 clubs', detail: 'pendant 8 mois' },
+      resume: '8 mois, 10 clubs',
       prix: 'CHF 888.–',
       duree: '8 mois',
       sousPrix: 'soit 6x CHF 148.– sans frais avec HeyLight',
