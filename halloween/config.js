@@ -33,7 +33,8 @@ window.OFFRE = {
   checkoutUrl: 'https://souscription.harmony.ch/paiement/?add-to-cart=',
 
   visuels: {
-    hero: ''          // [EN COURS] visuel Halloween d'Axelle · vide = fond sombre "Photo à venir"
+    hero: 'images/hero-halloween.jpg'   // visuel Halloween d'Axelle (1600x900) · vide = fond sombre "Photo à venir",
+    heroAlt: 'Membres Harmony masqués pour Halloween pendant un cours d\'Indoor Cycling'
   },
 
   liens: {

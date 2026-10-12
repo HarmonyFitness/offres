@@ -17,6 +17,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:url" content="https://offres.harmony.ch/halloween" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="fr_CH" />
+<meta property="og:image" content="https://offres.harmony.ch/halloween/images/hero-halloween.jpg" />
+<meta property="og:image:width" content="1600" />
+<meta property="og:image:height" content="900" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="robots" content="noindex,nofollow" />
 
@@ -323,6 +326,15 @@ h1, h2, h3, h4 {
   z-index: -2;
   will-change: transform;
 }
+/* Desktop : la photo démarre sous le header pour ne pas couper les visages, fondu en haut */
+@media (min-width: 901px) {
+  .has-hero-img .hero-bg {
+    top: calc(56px + var(--banner-h));
+    background-position: 50% 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 90px);
+            mask-image: linear-gradient(to bottom, transparent 0, #000 90px);
+  }
+}
 .has-hero-img .hero::before {
   content: '';
   position: absolute; inset: 0;
@@ -335,6 +347,17 @@ h1, h2, h3, h4 {
   .has-hero-img .hero::before {
     background: linear-gradient(to bottom, rgba(8,18,30,.4) 0%, rgba(8,18,30,.75) 50%, rgba(8,18,30,.94) 100%);
   }
+}
+/* Mobile : bande photo entre le header et le texte (les visages restent visibles) */
+@media (max-width: 760px) {
+  .has-hero-img .hero { padding-top: calc(64px + var(--banner-h) + 250px); }
+  .has-hero-img .hero-bg {
+    top: calc(64px + var(--banner-h)); bottom: auto; height: 300px;
+    background-position: 50% 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 36px, #000 62%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0, #000 36px, #000 62%, transparent 100%);
+  }
+  .has-hero-img .hero::before { display: none; }
 }
 /* Fond sombre en attendant le visuel */
 .hero::after {
@@ -975,7 +998,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     root.classList.add('has-hero-img');
     var bg = document.querySelector('.hero-bg');
     bg.style.backgroundImage = 'url("' + C.visuels.hero.replace(/"/g, '%22') + '")';
-    bg.setAttribute('aria-label', C.nom);
+    bg.setAttribute('aria-label', C.visuels.heroAlt || C.nom);
   }
   // Encart récap (desktop) : mène aux cartes, l'achat se fait après la présentation des formules
   el('hero-recap').innerHTML = '<span class="recap-title">' + txt(C.hero.recapTitre) + '</span>' +
