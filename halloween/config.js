@@ -40,7 +40,7 @@ window.OFFRE = {
   },
 
   liens: {
-    conditions:      '',                                          // [À CONFIRMER] CGV promo
+    conditions:      'https://souscription.harmony.ch/termes-et-conditions/',   // CGV (nouvel onglet)
     mentionsLegales: 'https://www.harmony.ch/mentions-legales',
     confidentialite: 'https://www.harmony.ch/politique-de-confidentialite',
     contactEmail:    'info@harmony.ch'
