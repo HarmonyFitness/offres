@@ -193,7 +193,7 @@ window.OFFRE = {
 
   /* Clubs listés à titre d'information (pas de lien : la landing ne mène qu'au checkout) */
   clubsSection: {
-    titre: 'Vos clubs, sans prise de tête',
+    titre: 'Les clubs Harmony',
     legendeEssential: 'Inclus dans les deux formules',
     legendePremium: 'Uniquement avec le 888 Premium, espaces aquatiques inclus'
   },
