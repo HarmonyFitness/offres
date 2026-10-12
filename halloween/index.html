@@ -23,7 +23,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" type="image/png" href="images/favicon-harmony.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Creepster&display=swap" />
 
 <script src="config.js"></script>
 <script>
@@ -224,17 +224,79 @@ h1, h2, h3, h4 {
    EYEBROW
    ========================================================= */
 .eyebrow {
-  display: inline-flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: center; flex-wrap: wrap; gap: 8px 12px;
   font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--brand); font-weight: 700;
   margin-bottom: 16px;
 }
 @media (max-width: 420px) { .eyebrow { font-size: 11.5px; letter-spacing: .08em; } }
 
+/* Pastille saisonnière « Offre Halloween » */
+.season-badge {
+  display: inline-block; white-space: nowrap;
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
+  padding: 7px 14px; border-radius: 999px;
+  background: var(--accent); color: #fff;
+}
+:root[data-theme="halloween"] .season-badge {
+  font-family: 'Creepster', var(--font-display); font-weight: 400;
+  font-size: 24px; letter-spacing: .03em; line-height: 1;
+  padding: 7px 16px 5px;
+  color: #1c0d03;
+  transform: rotate(-2.5deg);
+  box-shadow: 0 6px 20px -6px rgba(232,112,42,.7);
+}
+@media (max-width: 420px) { :root[data-theme="halloween"] .season-badge { font-size: 21px; } }
+
+/* =========================================================
+   ARAIGNÉE (thème halloween) · descend du header au chargement
+   ========================================================= */
+.spider {
+  position: absolute; z-index: 40;
+  top: calc(21px + 52px + var(--banner-h) - 6px);
+  left: calc(50% + 170px);
+  width: 56px; margin-left: -28px;
+  pointer-events: none;
+  transform-origin: 50% 0;
+  --drop: 160px;
+}
+.spider-thread {
+  position: absolute; left: 50%; top: 0;
+  width: 1px; height: var(--drop);
+  background: linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.55));
+  transform-origin: 50% 0;
+}
+.spider-body {
+  position: absolute; left: 0; top: 0;
+  width: 56px; height: 56px;
+  transform: translateY(calc(var(--drop) - 10px));
+  pointer-events: auto; cursor: pointer;
+}
+.spider-body svg { display: block; width: 100%; height: 100%; }
+@media (prefers-reduced-motion: no-preference) {
+  .spider { animation: sway 4.5s ease-in-out 2.6s infinite; }
+  .spider-thread { animation: thread-drop 2.4s cubic-bezier(.3,.7,.2,1) .4s both; }
+  .spider-body { animation: body-drop 2.4s cubic-bezier(.3,.7,.2,1) .4s both; }
+  .spider.is-up .spider-thread { animation: thread-up .9s cubic-bezier(.6,0,.8,.4) both; }
+  .spider.is-up .spider-body   { animation: body-up .9s cubic-bezier(.6,0,.8,.4) both; }
+}
+.spider.is-up.no-anim { display: none; }
+@keyframes thread-drop { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes body-drop { from { transform: translateY(-60px); } to { transform: translateY(calc(var(--drop) - 10px)); } }
+@keyframes thread-up { from { transform: scaleY(1); } to { transform: scaleY(0); } }
+@keyframes body-up { from { transform: translateY(calc(var(--drop) - 10px)); } to { transform: translateY(-60px); } }
+@keyframes sway { 0%,100% { transform: rotate(0deg); } 30% { transform: rotate(4deg); } 70% { transform: rotate(-3deg); } }
+@media (max-width: 760px) {
+  .spider { left: 84%; --drop: 34px; width: 38px; margin-left: -19px; }
+  .spider-body { width: 38px; height: 38px; }
+}
+
 /* =========================================================
    HERO
    ========================================================= */
 .hero-wrap {
+  position: relative;
   padding: 5px;
   height: 100dvh;
   min-height: 720px;
@@ -699,6 +761,10 @@ h1, h2, h3, h4 {
   }
 }
 
+/* Curseur fantôme (thème halloween, ordinateur) */
+.ghost-cursor, .ghost-cursor body, .ghost-cursor * { cursor: var(--cursor-ghost); }
+.ghost-cursor a, .ghost-cursor button, .ghost-cursor .spider-body, .ghost-cursor [data-club] { cursor: var(--cursor-ghost-hover); }
+
 /* Retour tactile au clic */
 .plan-cta:active, .btn-light:active, .hero-cta:active, .recap-row:active, .btn-topbar:active, .sticky-cta a:active { transform: scale(.98); }
 
@@ -732,11 +798,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ============ HERO ============ -->
 <div class="hero-wrap" id="top">
+<div class="spider" id="spider" hidden>
+  <span class="spider-thread"></span>
+  <span class="spider-body" role="img" aria-label="Araignée d'Halloween" title="Psst… cliquez-moi">
+    <svg viewBox="0 0 40 40" aria-hidden="true">
+      <g fill="none" stroke="#efe9e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 18 L9 12 L4 15"/><path d="M16.5 21 L8 19 L3 23"/><path d="M17 24 L9 26 L5 32"/><path d="M18 26 L13 31 L11 37"/>
+        <path d="M23 18 L31 12 L36 15"/><path d="M23.5 21 L32 19 L37 23"/><path d="M23 24 L31 26 L35 32"/><path d="M22 26 L27 31 L29 37"/>
+      </g>
+      <ellipse cx="20" cy="24" rx="6" ry="7" fill="#efe9e1"/>
+      <circle cx="20" cy="15.5" r="4.2" fill="#efe9e1"/>
+      <circle cx="18.4" cy="15" r="1.1" fill="#E8702A"/><circle cx="21.6" cy="15" r="1.1" fill="#E8702A"/>
+    </svg>
+  </span>
+</div>
 <section class="hero" id="hero">
   <div class="hero-bg" role="img" aria-label=""></div>
   <span class="hero-placeholder" aria-hidden="true">Photo à venir</span>
   <div class="hero-inner">
-    <span class="eyebrow" data-t="hero.surtitre"></span>
+    <span class="eyebrow"><span class="season-badge" data-t="hero.badgeSaison"></span><span data-t="hero.surtitre"></span></span>
     <h1><span class="h1-l1" data-t="hero.titre"></span><span class="h1-price" data-t="hero.prix"></span></h1>
     <p class="hero-sub" data-t="hero.sousTitre"></p>
     <a class="hero-cta hide-termine" href="#formules" data-t="hero.cta"></a>
@@ -902,6 +982,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         '<span class="recap-name">' + txt(f.titre) + '</span>' +
         '<span class="recap-val">' + txt(f.resume) + '</span></a>';
     }).join('');
+
+  /* ---------- Habillage saisonnier ---------- */
+  var DECO = (C.deco && C.theme === 'halloween') ? C.deco : {};
+  if (DECO.araignee) {
+    (function () {
+      var sp = el('spider'), body = sp.querySelector('.spider-body');
+      sp.hidden = false;
+      var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) sp.classList.add('no-anim');
+      // Un clic la fait remonter, elle redescend un peu plus tard
+      body.addEventListener('click', function () {
+        if (sp.classList.contains('is-up')) return;
+        sp.classList.add('is-up');
+        setTimeout(function () {
+          sp.classList.remove('is-up');
+          // relance l'animation de descente
+          sp.querySelectorAll('.spider-thread, .spider-body').forEach(function (n) { n.style.animation = 'none'; void n.offsetWidth; n.style.animation = ''; });
+        }, 7000);
+      });
+    })();
+  }
+  if (DECO.curseurFantome && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    (function () {
+      function ghost(size) {
+        var c = document.createElement('canvas'); c.width = c.height = size + 8;
+        var x = c.getContext('2d');
+        x.font = size + 'px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif';
+        x.textAlign = 'center'; x.textBaseline = 'middle';
+        x.fillText('\uD83D\uDC7B', c.width / 2, c.height / 2 + 1);
+        return 'url(' + c.toDataURL('image/png') + ') ' + Math.round(c.width / 2) + ' ' + Math.round(c.height / 2);
+      }
+      try {
+        root.style.setProperty('--cursor-ghost', ghost(26) + ', auto');
+        root.style.setProperty('--cursor-ghost-hover', ghost(34) + ', pointer');
+        root.classList.add('ghost-cursor');
+      } catch (e) { /* canvas indisponible : curseur normal */ }
+    })();
+  }
 
   /* ---------- Cartes formules ---------- */
   function ligneVal(v) {

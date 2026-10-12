@@ -14,6 +14,12 @@ window.OFFRE = {
   slug: 'halloween',                         // = nom du dossier et de l'URL (offres.harmony.ch/halloween)
   nom: 'Offre Halloween 888',
   theme: 'halloween',                       // 'halloween' | 'blackfriday'
+
+  /* Habillage saisonnier (à désactiver pour le Black Friday) */
+  deco: {
+    araignee: true,          // araignée qui descend du header dans le hero
+    curseurFantome: true     // pointeur de souris remplacé par 👻 (ordinateur uniquement)
+  },
   utmCampaign: 'offre_halloween_888',
   gtmEvent: 'offre_cta_click',              // dataLayer · clic sur un bouton d'achat
 
@@ -40,7 +46,8 @@ window.OFFRE = {
   bandeau: 'Offre diabolique : jusqu\'au 1er novembre seulement',
 
   hero: {
-    surtitre: 'Abonnement fitness · Offre Halloween',
+    badgeSaison: 'Offre Halloween',            // pastille orange, police Creepster (thème halloween)
+    surtitre: 'Abonnement fitness',
     titre: 'Une offre diabolique :',
     prix: 'CHF 888.–',
     sousTitre: '12 mois dans 7 clubs, ou 8 mois dans les 10 clubs Harmony des cantons de Genève et de Vaud. Payable en 12x CHF 74.– sans frais. Le seul frisson, c\'est à l\'entraînement.',
