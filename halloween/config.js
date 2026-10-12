@@ -108,7 +108,7 @@ window.OFFRE = {
   formules: [
     {
       id: 'essential',
-      produitId: 'ID_ESSENTIAL',            // [À RENSEIGNER] ID WooCommerce
+      produitId: '59962',                   // OFFRE 888 HALLOWEEN ESSENTIAL (WooCommerce)
       titre: '888 Essential',
       badge: '',
       categories: ['gym', 'essential'],
@@ -125,7 +125,7 @@ window.OFFRE = {
     },
     {
       id: 'premium',
-      produitId: 'ID_PREMIUM',              // [À RENSEIGNER] ID WooCommerce
+      produitId: '59958',                   // OFFRE 888 HALLOWEEN PREMIUM (WooCommerce)
       titre: '888 Premium',
       badge: 'Accès complet',
       categories: ['gym', 'essential', 'premium'],
