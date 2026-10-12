@@ -53,7 +53,7 @@ window.OFFRE = {
     surtitre: 'Abonnement fitness',
     titre: 'Une offre diabolique :',
     prix: 'CHF 888.–',
-    sousTitre: '12 mois dans 7 clubs, ou 8 mois dans les 10 clubs Harmony dans les cantons de Genève et de Vaud. Payable en 12x sans frais, à partir de CHF 74.– par mois. Le seul frisson, c\'est à l\'entraînement.',   // texte validé par Axelle
+    sousTitre: '12 mois dans 7 clubs, ou 8 mois dans les 10 clubs Harmony dans les cantons de Genève et de Vaud. Payable sans frais en plusieurs fois, à partir de CHF 74.– par mois. Le seul frisson, c\'est à l\'entraînement.',   // texte Axelle, paiement reformulé (vaut pour les 2 formules)
     cta: 'Je choisis ma formule',
     recapTitre: 'Deux formules, un seul prix'   // encart à droite du hero (desktop), mène aux cartes
   },
