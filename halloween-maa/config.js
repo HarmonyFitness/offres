@@ -130,14 +130,14 @@ window.OFFRE = {
       'Tous les cours collectifs de la MAA, toutes disciplines.'
     ]
   },
-  disciplines: [
-    { nom: 'MMA', texte: 'Le sport de combat complet : pieds-poings, lutte et sol.' },
-    { nom: '100% Féminin', texte: 'Le MMA entre femmes, pour gagner en force et en confiance.' },
-    { nom: 'Boxe Anglaise', texte: 'Le noble art : poings, déplacements et esquives.' },
-    { nom: 'Boxe Thaï', texte: 'L\'art des huit membres : poings, pieds, genoux et coudes.' },
-    { nom: 'Lutte', texte: 'Contrôle, projections et immobilisations, sans frappe.' },
-    { nom: 'Grappling', texte: 'Le combat au sol, jusqu\'à la soumission.' },
-    { nom: 'Cardio Boxing', texte: 'Les gestes de la boxe pour se dépenser, sans opposition.' }
+  disciplines: [   // descriptions reprises des pages disciplines de maa-academy.ch
+    { nom: 'MMA',            texte: 'Le sport de combat complet : debout, au corps à corps et au sol.' },
+    { nom: '100% Féminin',   texte: 'Les sports de combat entre femmes, tous niveaux, dans un cadre bienveillant.' },
+    { nom: 'Boxe Anglaise',  texte: 'Le combat aux poings : technique, cardio et sens de la mesure.' },
+    { nom: 'Boxe Thaï',      texte: 'L\'art des huit membres : poings, pieds, genoux et coudes, avec saisies et corps à corps.' },
+    { nom: 'Lutte',          texte: 'Contrôle, projections et immobilisations, sans frappe.' },
+    { nom: 'Grappling',      texte: 'La lutte au sol, sans frappe, jusqu\'à la soumission.' },
+    { nom: 'Cardio Boxing',  texte: 'Les techniques de la boxe et le cardio-training, accessibles à tous.' }
   ],
 
   gym: {
