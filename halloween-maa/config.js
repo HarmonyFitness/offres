@@ -122,9 +122,13 @@ window.OFFRE = {
 
   /* Disciplines adultes · menu actuel de maa-academy.ch (sans lien : la landing ne mène qu'au checkout) */
   disciplinesSection: {
-    titre: 'Choisissez votre arme',
+    titre: 'Les disciplines de l\'Academy',
     sousTitre: 'Sept disciplines pour adultes, tous niveaux.',
-    note: 'Avec la ONE MAA, vous choisissez votre discipline au centre.'
+    // Dernière case de la grille : ce que chaque formule donne (même ordre que "formules")
+    notes: [
+      'Une discipline, que vous choisissez au centre.',
+      'Tous les cours collectifs de la MAA, toutes disciplines.'
+    ]
   },
   disciplines: [
     { nom: 'MMA', texte: 'Le sport de combat complet : pieds-poings, lutte et sol.' },

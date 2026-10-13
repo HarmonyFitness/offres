@@ -590,12 +590,14 @@ h1, h2, h3, h4, .recap-name, .recap-price, .cd-unit b, .plan-price .amount, .gym
 .disc p { margin: 10px 0 0; font-size: 16px; line-height: 1.5; color: var(--ink-3); }
 /* Dernière case : la mention ONE MAA */
 .disc-note {
-  display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
+  display: flex; flex-direction: column;
   min-height: 180px; padding: 22px 22px 20px;
   border-radius: 18px;
   background: var(--brand); color: #fff;
 }
-.disc-note p { margin: 0; font-size: 17px; line-height: 1.45; font-weight: 600; }
+.disc-note-item { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.disc-note-item + .disc-note-item { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.18); }
+.disc-note p { margin: 0; font-size: 15.5px; line-height: 1.4; font-weight: 600; }
 @media (max-width: 1000px) { .disc-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) {
   .disc-grid { grid-template-columns: 1fr; gap: 10px; }
@@ -1088,7 +1090,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       '<span class="disc-num">' + (i < 9 ? '0' : '') + (i + 1) + '</span>' +
       '<h3>' + txt(d.nom) + '</h3><p>' + txt(d.texte) + '</p></div>';
   }).join('') +
-    '<div class="disc-note"><span class="plan-badge">' + txt(C.formules[0].titre) + '</span><p>' + txt(C.disciplinesSection.note) + '</p></div>';
+    '<div class="disc-note">' + C.formules.map(function (f, i) {
+      return '<div class="disc-note-item"><span class="plan-badge">' + txt(f.titre) + '</span><p>' + txt(C.disciplinesSection.notes[i]) + '</p></div>';
+    }).join('') + '</div>';
 
   /* ---------- Gym by Harmony + carte + infos pratiques ---------- */
   el('gym').innerHTML = '<span class="gym-eyebrow">' + txt(C.gym.surtitre) + '</span>' +
