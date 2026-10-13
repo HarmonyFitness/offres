@@ -582,13 +582,12 @@ h1, h2, h3, h4 {
 .disc p { margin: 10px 0 0; font-size: 16px; line-height: 1.5; color: var(--ink-3); }
 /* Dernière case : la mention ONE MAA */
 .disc-note {
-  display: flex; flex-direction: column; justify-content: flex-end;
-  min-height: 180px; padding: 22px;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
+  min-height: 180px; padding: 22px 22px 20px;
   border-radius: 18px;
   background: var(--brand); color: #fff;
 }
-.disc-note p { margin: 0; font-size: 18px; line-height: 1.45; font-weight: 600; }
-.disc-note .plan-badge { align-self: flex-start; }
+.disc-note p { margin: 0; font-size: 17px; line-height: 1.45; font-weight: 600; }
 @media (max-width: 1000px) { .disc-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) {
   .disc-grid { grid-template-columns: 1fr; gap: 10px; }
