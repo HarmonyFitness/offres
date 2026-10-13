@@ -536,6 +536,7 @@ h1, h2, h3, h4, .recap-name, .recap-price, .cd-unit b, .plan-price .amount, .gym
 .plan-body { padding: 10px 30px 30px; display: flex; flex-direction: column; flex: 1; }
 @media (max-width: 600px) { .plan-head { padding: 20px 20px; } .plan-body { padding: 6px 20px 22px; } .plan-name { font-size: 27px; } }
 
+.plan-tagline { margin: 18px 0 0; padding-bottom: 14px; border-bottom: 1px solid rgba(0,0,0,.1); font-size: 17px; line-height: 1.45; font-weight: 600; color: var(--ink); }
 .features-list { list-style: none; padding: 0; margin: 14px 0 28px; }
 .feat {
   display: flex; align-items: flex-start; gap: 12px;
@@ -1072,6 +1073,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       '<div class="plan-head"><h3 class="plan-name">' + txt(f.titre) + '</h3>' +
         (f.badge ? '<span class="plan-badge">' + txt(f.badge) + '</span>' : '') + '</div>' +
       '<div class="plan-body">' +
+        (f.accroche ? '<p class="plan-tagline">' + txt(f.accroche) + '</p>' : '') +
         '<ul class="features-list">' + f.puces.map(function (p) {
           return '<li class="feat"><span class="check">' + ICO.check + '</span><span>' + txt(p) + '</span></li>';
         }).join('') + '</ul>' +

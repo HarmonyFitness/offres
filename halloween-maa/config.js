@@ -89,6 +89,7 @@ window.OFFRE = {
       produitId: '',                        // [À CRÉER] Offre Halloween ONE MAA (WooCommerce, produit caché)
       titre: 'ONE MAA',
       badge: '',
+      accroche: 'Toute l\'année pour progresser dans votre discipline.',   // phrase avant les puces
       resume: '12 mois, 1 discipline',      // encart du hero
       prix: 'CHF 666.–',
       duree: '12 mois',
@@ -106,6 +107,7 @@ window.OFFRE = {
       produitId: '',                        // [À CRÉER] Offre Halloween FULL MAA (WooCommerce, produit caché)
       titre: 'FULL MAA',
       badge: 'Toutes les disciplines',      // carte mise en avant (contour bleu + étiquette)
+      accroche: 'Toutes les disciplines de l\'Academy, pour varier vos entraînements.',
       resume: '8 mois, toutes disciplines',
       prix: 'CHF 888.–',
       duree: '8 mois',
