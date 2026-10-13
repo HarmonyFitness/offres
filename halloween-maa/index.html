@@ -604,7 +604,7 @@ h1, h2, h3, h4, .recap-name, .recap-price, .cd-unit b, .plan-price .amount, .gym
 /* =========================================================
    GYM-PÂQUIS + INFOS PRATIQUES
    ========================================================= */
-.gym-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; align-items: stretch; }
+.gym-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
 .gym {
   position: relative; overflow: hidden; isolation: isolate;
   padding: 44px 44px 40px;
@@ -619,6 +619,7 @@ h1, h2, h3, h4, .recap-name, .recap-price, .cd-unit b, .plan-price .amount, .gym
           mask: url('images/logo-maa.svg') center / contain no-repeat;
   opacity: .06;
 }
+.gym-eyebrow { display: block; margin-bottom: 12px; font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: rgba(255,255,255,.7); }
 .gym h2 { color: #fff; font-size: clamp(26px, 2.6vw, 34px); }
 .gym-figure { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; margin-top: 26px; }
 .gym-figure b { font-family: var(--font-display); font-weight: 700; font-size: clamp(52px, 5.6vw, 76px); line-height: .9; }
@@ -627,19 +628,66 @@ h1, h2, h3, h4, .recap-name, .recap-price, .cd-unit b, .plan-price .amount, .gym
 .gym-zones { list-style: none; margin: 26px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .gym-zones li { padding: 9px 15px; border-radius: 999px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); font-size: 15px; font-weight: 600; }
 
-.infos { padding: 40px 36px; border-radius: 24px; background: var(--soft); display: flex; flex-direction: column; gap: 26px; }
+/* Carte du quartier : fond OSM + repères et étiquettes en HTML (taille de texte fixe) */
+.street-map {
+  margin: 0; display: flex; flex-direction: column;
+  border-radius: 24px; overflow: hidden;
+  background: var(--brand-50); border: 1px solid var(--brand-100);
+}
+.map-canvas { position: relative; margin: auto 0; }      /* proportions du fond : les repères en % restent alignés */
+.map-canvas svg { display: block; width: 100%; height: auto; }
+.map-pin {
+  position: absolute; z-index: 2;
+  width: 46px; height: 46px; margin: -23px 0 0 -23px;
+  border-radius: 50%; background: #fff;
+  box-shadow: 0 0 0 2.5px var(--brand), 0 8px 18px -4px rgba(0,20,43,.45);
+  display: grid; place-items: center;
+}
+.map-pin img { width: 32px; height: 32px; object-fit: contain; }
+.map-tag {
+  position: absolute; z-index: 3;
+  padding: 8px 12px; border-radius: 12px;
+  background: #fff; box-shadow: 0 6px 18px -6px rgba(0,20,43,.35);
+  font-size: 13px; line-height: 1.3; color: var(--ink-3); white-space: nowrap;
+}
+.map-tag b { display: block; font-size: 14.5px; color: var(--brand); }
+.map-tag.haut   { transform: translate(-50%, calc(-100% - 32px)); text-align: center; }
+.map-tag.bas    { transform: translate(-50%, 32px); text-align: center; }
+.map-tag.gauche { transform: translate(calc(-100% - 34px), -50%); }
+.map-tag.droite { transform: translate(34px, -50%); }
+.map-street {
+  position: absolute; z-index: 1;
+  font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--brand); white-space: nowrap; pointer-events: none;
+}
+.street-map figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; padding: 14px 18px; border-top: 1px solid var(--brand-100); font-size: 15px; font-weight: 600; color: var(--ink); background: #fff; }
+.street-map figcaption small { font-size: 13px; font-weight: 400; color: var(--ink-4); }
+@media (max-width: 600px) {
+  .map-pin { width: 38px; height: 38px; margin: -19px 0 0 -19px; }
+  .map-pin img { width: 26px; height: 26px; }
+  .map-tag { padding: 6px 9px; font-size: 12px; }
+  .map-tag b { font-size: 13px; }
+  .map-tag.haut, .map-tag.gauche { transform: translate(-50%, calc(-100% - 26px)); text-align: center; }
+  .map-tag.bas, .map-tag.droite { transform: translate(-50%, 26px); text-align: center; }
+  .map-street { display: none; }
+}
+
+.infos {
+  margin-top: 20px; padding: 32px 36px; border-radius: 24px; background: var(--soft);
+  display: grid; grid-template-columns: auto 1fr auto auto; gap: 24px 48px; align-items: start;
+}
 .infos h2 { font-size: clamp(24px, 2.2vw, 30px); }
-.info-block h3 { font-family: var(--font-sans); text-transform: none; font-size: 14px; font-weight: 600; letter-spacing: .06em; color: var(--ink-3); margin-bottom: 8px; }
+.info-block h3 { font-family: var(--font-sans); text-transform: none; font-size: 14px; font-weight: 600; letter-spacing: .06em; color: var(--ink-3); margin-bottom: 8px; -webkit-text-stroke: 0; }
 .info-block p { margin: 0; font-size: 17px; line-height: 1.55; color: var(--ink); }
 .info-block a { color: var(--brand); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .hours { list-style: none; margin: 0; padding: 0; }
-.hours li { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 16.5px; }
-.hours li:last-child { border-bottom: 0; }
+.hours li { display: flex; justify-content: space-between; gap: 20px; padding: 4px 0; font-size: 16.5px; white-space: nowrap; }
 .hours b { font-weight: 600; }
 @media (max-width: 900px) {
   .gym-layout { grid-template-columns: 1fr; }
   .gym { padding: 32px 22px 30px; border-radius: 20px; }
-  .infos { padding: 30px 22px; border-radius: 20px; }
+  .street-map { border-radius: 20px; }
+  .infos { grid-template-columns: 1fr; gap: 20px; padding: 28px 22px; border-radius: 20px; }
 }
 
 /* =========================================================
@@ -830,12 +878,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="disc-grid" id="disciplines"></div>
   </section>
 
-  <!-- ============ GYM-PÂQUIS + INFOS PRATIQUES ============ -->
+  <!-- ============ GYM-PÂQUIS + CARTE + INFOS PRATIQUES ============ -->
   <section class="section shell">
     <div class="gym-layout">
       <div class="gym" id="gym"></div>
-      <aside class="infos" id="infos"></aside>
+      <figure class="street-map" id="carte"></figure>
     </div>
+    <aside class="infos" id="infos"></aside>
   </section>
 
   <!-- ============ FAQ ============ -->
@@ -1033,14 +1082,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     '<div class="disc-note"><span class="plan-badge">' + txt(C.formules[0].titre) + '</span><p>' + txt(C.disciplinesSection.note) + '</p></div>';
 
   /* ---------- Gym-Pâquis + infos pratiques ---------- */
-  el('gym').innerHTML = '<h2>' + txt(C.gym.titre) + '</h2>' +
+  el('gym').innerHTML = '<span class="gym-eyebrow">' + txt(C.gym.surtitre) + '</span>' +
+    '<h2>' + txt(C.gym.titre) + '</h2>' +
     '<div class="gym-figure"><b>' + txt(C.gym.chiffre) + '</b>' + (C.gym.chiffreLabel ? '<span>' + txt(C.gym.chiffreLabel) + '</span>' : '') + '</div>' +
     '<p>' + txt(C.gym.texte) + '</p>' +
     '<ul class="gym-zones">' + C.gym.zones.map(function (z) { return '<li>' + txt(z) + '</li>'; }).join('') + '</ul>';
+
+  // Carte : même projection que le script qui a généré le fond (images/carte-paquis.svg)
+  (function () {
+    var M = C.carte, K = M.echelle, COS = Math.cos((M.lat0 + M.lat1) / 2 * Math.PI / 180);
+    var W = (M.lon1 - M.lon0) * COS * K, H = (M.lat1 - M.lat0) * K;
+    function xy(lat, lon) { return [(lon - M.lon0) * COS * K, (M.lat1 - lat) * K]; }
+    function pct(p) { return 'left:' + (p[0] / W * 100).toFixed(2) + '%;top:' + (p[1] / H * 100).toFixed(2) + '%'; }
+    var pts = M.lieux.map(function (l) { return xy(l.lat, l.lon); });
+    // Rue : nom posé le long du tronçon, décalé sous la ligne qui relie les deux adresses
+    var a = pts[0], b = pts[1], mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2;
+    var len = Math.hypot(b[0] - a[0], b[1] - a[1]), nx = -(b[1] - a[1]) / len, ny = (b[0] - a[0]) / len;
+    if (ny < 0) { nx = -nx; ny = -ny; }                       // toujours du côté bas de la ligne
+    var street = [mx + nx * 40, my + ny * 40];
+    el('carte').innerHTML =
+      '<div class="map-canvas">' +
+        '<svg viewBox="0 0 ' + W.toFixed(1) + ' ' + H.toFixed(1) + '" role="img" aria-label="' + esc(M.legende) + '">' +
+          '<image href="' + esc(M.image) + '" x="0" y="0" width="' + W.toFixed(1) + '" height="' + H.toFixed(1) + '"/>' +
+          '<line x1="' + a[0].toFixed(1) + '" y1="' + a[1].toFixed(1) + '" x2="' + b[0].toFixed(1) + '" y2="' + b[1].toFixed(1) + '"' +
+            ' stroke="#002855" stroke-width="3" stroke-dasharray="1 6" stroke-linecap="round"/>' +
+        '</svg>' +
+        '<span class="map-street" style="' + pct(street) + ';transform:translate(-50%,-50%) rotate(' + M.rue.angle + 'deg)">' + txt(M.rue.texte) + '</span>' +
+        M.lieux.map(function (l, i) {
+          return '<span class="map-pin" style="' + pct(pts[i]) + '"><img src="' + esc(l.logo) + '" alt=""></span>' +
+            '<span class="map-tag ' + esc(l.cote) + '" style="' + pct(pts[i]) + '"><b>' + txt(l.nom) + '</b>' + txt(l.detail) + '</span>';
+        }).join('') +
+      '</div>' +
+      '<figcaption><span>' + txt(M.legende) + '</span><small>' + txt(M.credit) + '</small></figcaption>';
+  })();
+
   var K = C.contact;
   el('infos').innerHTML = '<h2>' + txt(C.infosTitre) + '</h2>' +
-    '<div class="info-block"><h3>Adresse</h3><p>' + txt(K.nom) + '<br>' + txt(K.adresse) + '<br>' + txt(K.ville) + '</p>' +
-      '</div>' +
+    '<div class="info-block"><h3>Adresse</h3><p>' + txt(K.nom) + '<br>' + txt(K.adresse) + '<br>' + txt(K.ville) + '</p></div>' +
     '<div class="info-block"><h3>Téléphone</h3><p><a href="tel:' + esc(K.telephoneLien) + '">' + txt(K.telephone) + '</a></p></div>' +
     '<div class="info-block"><h3>Horaires</h3><ul class="hours">' + K.horaires.map(function (h) {
       return '<li><b>' + txt(h.jours) + '</b><span>' + txt(h.heures) + '</span></li>';

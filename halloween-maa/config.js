@@ -54,7 +54,7 @@ window.OFFRE = {
 
   contact: {
     nom: 'Martial Arts Academy Geneva',
-    adresse: 'Rue Jean-Charles Amat 12a',
+    adresse: 'Rue Jean-Charles-Amat 12a',
     ville: '1202 Genève',
     telephone: '022 735 12 12',
     telephoneLien: '+41227351212',
@@ -71,7 +71,7 @@ window.OFFRE = {
     surtitre: 'Martial Arts Academy',
     titre: 'Une offre diabolique pour les combattants',
     // Variantes du brief : 'Frappez fort avant le 1er novembre' · 'L\'offre qui fait peur à vos adversaires'
-    sousTitre: '12 mois dans la discipline de votre choix pour CHF 666.–, ou 8 mois dans toutes les disciplines pour CHF 888.–. Le Gym-Pâquis est inclus dans les deux formules.',
+    sousTitre: '12 mois dans la discipline de votre choix pour CHF 666.–, ou 8 mois dans toutes les disciplines pour CHF 888.–. L\'accès au Gym-Pâquis, club de fitness Harmony dans la même rue, est inclus dans les deux formules.',
     cta: 'Je choisis ma formule',
     recapTitre: 'Deux formules'                // encart à droite du hero (desktop), mène aux cartes
   },
@@ -80,7 +80,7 @@ window.OFFRE = {
 
   formulesSection: {
     titre: 'Choisissez votre formule',
-    sousTitre: 'Deux formules, le Gym-Pâquis inclus dans les deux.'
+    sousTitre: 'Deux formules, avec l\'accès au club de fitness Gym-Pâquis dans les deux.'
   },
 
   reassurance: 'Paiement sécurisé, HeyLight proposé au paiement.',   // sous chaque bouton d'achat
@@ -98,7 +98,7 @@ window.OFFRE = {
       puces: [
         'Abonnement 12 mois',
         'Accès à tous les cours collectifs de la MAA dans une discipline de votre choix',
-        'Accès au Gym-Pâquis avec 650 m² dédiés à la musculation, zone cardio, zone poids libres et street workout',
+        'Accès au club de fitness Gym-Pâquis : 650 m² dédiés à la musculation, zone cardio, zone poids libres et street workout',
         'Payable en 12x sans frais avec HeyLight'
       ],
       cta: 'Je choisis cette formule'
@@ -115,7 +115,7 @@ window.OFFRE = {
       puces: [
         'Abonnement 8 mois',
         'Accès à tous les cours collectifs de la MAA, toutes disciplines',
-        'Accès au Gym-Pâquis avec 650 m² dédiés à la musculation, zone cardio, zone poids libres et street workout',
+        'Accès au club de fitness Gym-Pâquis : 650 m² dédiés à la musculation, zone cardio, zone poids libres et street workout',
         'Payable en 6x sans frais avec HeyLight'
       ],
       cta: 'Je choisis cette formule'
@@ -139,11 +139,29 @@ window.OFFRE = {
   ],
 
   gym: {
+    surtitre: 'Club de fitness Harmony',
     titre: 'Le Gym-Pâquis inclus',
     chiffre: '650 m²',
     chiffreLabel: '',                       // petit texte à côté du chiffre (facultatif)
-    texte: '650 m² dédiés à la musculation, avec zone cardio, zone poids libres et street workout. À deux pas de l\'Academy, pour travailler votre condition physique entre deux entraînements.',
+    texte: 'Le Gym-Pâquis est un club de fitness Harmony de 650 m² dédiés à la musculation, avec zone cardio, zone poids libres et street workout. Il se trouve dans la même rue que l\'Academy, pour travailler votre condition physique entre deux entraînements.',
     zones: ['Zone cardio', 'Zone poids libres', 'Street workout']
+  },
+
+  /* Carte du quartier · fond SVG généré depuis OpenStreetMap (rues, bâtiments, rue Jean-Charles-Amat en évidence).
+     L'emprise et l'échelle doivent rester celles utilisées pour générer images/carte-paquis.svg. */
+  carte: {
+    image: 'images/carte-paquis.svg',
+    lon0: 6.1444, lon1: 6.1512, lat0: 46.2128, lat1: 46.2164, echelle: 100000,
+    rue: { texte: 'Rue Jean-Charles-Amat', angle: 32 },   // nom de la rue, posé le long de la rue (ordinateur)
+    // cote : position de l'étiquette ('haut' | 'bas' | 'gauche' | 'droite'), sur mobile toujours au-dessus ou en dessous
+    lieux: [
+      { nom: 'Gym-Pâquis', detail: 'Club de fitness Harmony, n° 17', logo: 'images/logo-harmony.png',
+        lat: 46.2148056, lon: 6.1471820, cote: 'haut' },
+      { nom: 'Martial Arts Academy', detail: 'N° 12a', logo: 'images/logo-maa.svg',
+        lat: 46.2144176, lon: 6.1484321, cote: 'droite' }
+    ],
+    legende: 'Rue Jean-Charles-Amat : environ 100 m à pied.',
+    credit: 'Fond de carte © OpenStreetMap.'
   },
 
   infosTitre: 'Infos pratiques',
@@ -153,7 +171,7 @@ window.OFFRE = {
     { q: 'Jusqu\'à quand puis-je profiter de l\'offre diabolique ?',
       r: 'Jusqu\'au dimanche 1er novembre 2026 à 23h59.' },
     { q: 'Quelle différence entre ONE MAA et FULL MAA ?',
-      r: 'ONE MAA : 12 mois dans la discipline de votre choix. FULL MAA : 8 mois dans toutes les disciplines. Le Gym-Pâquis est inclus dans les deux.' },
+      r: 'ONE MAA : 12 mois dans la discipline de votre choix. FULL MAA : 8 mois dans toutes les disciplines. Le club de fitness Gym-Pâquis est inclus dans les deux.' },
     { q: 'Quand choisir ma discipline avec la ONE MAA ?',
       r: 'Au centre, lors de votre première venue.' },
     { q: 'Quand démarre mon abonnement ?',
