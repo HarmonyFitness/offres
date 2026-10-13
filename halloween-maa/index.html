@@ -11,13 +11,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Offre Halloween MAA : une offre diabolique | Martial Arts Academy</title>
-<meta name="description" content="Offre Halloween MAA : 12 mois dans la discipline de votre choix pour CHF 666.–, ou 8 mois dans toutes les disciplines pour CHF 888.–. Gym-Pâquis inclus. Jusqu'au 1er novembre 2026." />
+<meta name="description" content="Offre Halloween MAA : 12 mois dans la discipline de votre choix pour CHF 666.–, ou 8 mois dans toutes les disciplines pour CHF 888.–. Gym by Harmony inclus. Jusqu'au 1er novembre 2026." />
 <meta property="og:title" content="Offre Halloween MAA : une offre diabolique pour les combattants" />
-<meta property="og:description" content="ONE MAA CHF 666.– pour 12 mois ou FULL MAA CHF 888.– pour 8 mois, Gym-Pâquis inclus. Jusqu'au 1er novembre 2026." />
+<meta property="og:description" content="ONE MAA CHF 666.– pour 12 mois ou FULL MAA CHF 888.– pour 8 mois, Gym by Harmony inclus. Jusqu'au 1er novembre 2026." />
 <meta property="og:url" content="https://offres.harmony.ch/halloween-maa" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="fr_CH" />
-<!-- og:image : à ajouter avec le visuel d'Axelle (1600x900) -->
+<meta property="og:image" content="https://offres.harmony.ch/halloween-maa/images/hero-halloween-maa.jpg" />
+<meta property="og:image:width" content="1536" />
+<meta property="og:image:height" content="1024" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="robots" content="noindex,nofollow" />
 
 <link rel="icon" type="image/svg+xml" href="images/logo-maa.svg" />
@@ -602,7 +605,7 @@ h1, h2, h3, h4, .recap-name, .recap-price, .cd-unit b, .plan-price .amount, .gym
 }
 
 /* =========================================================
-   GYM-PÂQUIS + INFOS PRATIQUES
+   GYM BY HARMONY + CARTE + INFOS PRATIQUES
    ========================================================= */
 .gym-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
 .gym {
@@ -674,9 +677,14 @@ h1, h2, h3, h4, .recap-name, .recap-price, .cd-unit b, .plan-price .amount, .gym
 
 .infos {
   margin-top: 20px; padding: 32px 36px; border-radius: 24px; background: var(--soft);
-  display: grid; grid-template-columns: auto 1fr auto auto; gap: 24px 48px; align-items: start;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px 48px; align-items: start;
 }
-.infos h2 { font-size: clamp(24px, 2.2vw, 30px); }
+.infos h2 { grid-column: 1 / -1; font-size: clamp(24px, 2.2vw, 30px); }
+.info-place { display: grid; grid-template-columns: 1fr auto; gap: 18px 32px; align-content: start; }
+.info-place-head { grid-column: 1 / -1; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.info-place-head b { display: block; font-size: 19px; font-weight: 700; color: var(--brand); }
+.info-place-head span { font-size: 15px; color: var(--ink-3); }
+.info-place .info-block.hours-block { grid-column: 1 / -1; }
 .info-block h3 { font-family: var(--font-sans); text-transform: none; font-size: 14px; font-weight: 600; letter-spacing: .06em; color: var(--ink-3); margin-bottom: 8px; -webkit-text-stroke: 0; }
 .info-block p { margin: 0; font-size: 17px; line-height: 1.55; color: var(--ink); }
 .info-block a { color: var(--brand); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
@@ -687,7 +695,8 @@ h1, h2, h3, h4, .recap-name, .recap-price, .cd-unit b, .plan-price .amount, .gym
   .gym-layout { grid-template-columns: 1fr; }
   .gym { padding: 32px 22px 30px; border-radius: 20px; }
   .street-map { border-radius: 20px; }
-  .infos { grid-template-columns: 1fr; gap: 20px; padding: 28px 22px; border-radius: 20px; }
+  .infos { grid-template-columns: 1fr; gap: 28px; padding: 28px 22px; border-radius: 20px; }
+  .info-place { grid-template-columns: 1fr; gap: 16px; }
 }
 
 /* =========================================================
@@ -878,7 +887,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="disc-grid" id="disciplines"></div>
   </section>
 
-  <!-- ============ GYM-PÂQUIS + CARTE + INFOS PRATIQUES ============ -->
+  <!-- ============ GYM BY HARMONY + CARTE + INFOS PRATIQUES ============ -->
   <section class="section shell">
     <div class="gym-layout">
       <div class="gym" id="gym"></div>
@@ -953,7 +962,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       .replace(/CHF /g, 'CHF ')
       .replace(/(\d+)x /g, '$1x ')
       .replace(/(\d+) (mois|m²|discipline)/g, '$1 $2')
-      .replace(/Gym-Pâquis/g, 'Gym‑Pâquis');           // trait d'union insécable
+      .replace(/Gym by Harmony/g, 'Gym\u00a0by\u00a0Harmony');   // nom du club jamais coupé
     return out.replace(/\[À [^\]]+\]/g, function (m) { return '<span class="todo">' + m + '</span>'; });
   }
   function get(path) { return path.split('.').reduce(function (o, k) { return o == null ? o : o[k]; }, C); }
@@ -1081,7 +1090,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }).join('') +
     '<div class="disc-note"><span class="plan-badge">' + txt(C.formules[0].titre) + '</span><p>' + txt(C.disciplinesSection.note) + '</p></div>';
 
-  /* ---------- Gym-Pâquis + infos pratiques ---------- */
+  /* ---------- Gym by Harmony + carte + infos pratiques ---------- */
   el('gym').innerHTML = '<span class="gym-eyebrow">' + txt(C.gym.surtitre) + '</span>' +
     '<h2>' + txt(C.gym.titre) + '</h2>' +
     '<div class="gym-figure"><b>' + txt(C.gym.chiffre) + '</b>' + (C.gym.chiffreLabel ? '<span>' + txt(C.gym.chiffreLabel) + '</span>' : '') + '</div>' +
@@ -1117,16 +1126,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   })();
 
   var K = C.contact;
-  el('infos').innerHTML = '<h2>' + txt(C.infosTitre) + '</h2>' +
-    '<div class="info-block"><h3>Adresse</h3><p>' + txt(K.nom) + '<br>' + txt(K.adresse) + '<br>' + txt(K.ville) + '</p></div>' +
-    '<div class="info-block"><h3>Téléphone</h3><p><a href="tel:' + esc(K.telephoneLien) + '">' + txt(K.telephone) + '</a></p></div>' +
-    '<div class="info-block"><h3>Horaires</h3><ul class="hours">' + K.horaires.map(function (h) {
-      return '<li><b>' + txt(h.jours) + '</b><span>' + txt(h.heures) + '</span></li>';
-    }).join('') + '</ul></div>';
+  function infoPlace(P) {
+    return '<div class="info-place">' +
+      '<div class="info-place-head"><b>' + txt(P.nom) + '</b><span>' + txt(P.sousTitre) + '</span></div>' +
+      '<div class="info-block"><h3>Adresse</h3><p>' + txt(P.adresse) + '<br>' + txt(P.ville) + '</p></div>' +
+      '<div class="info-block hours-block"><h3>Horaires</h3><ul class="hours">' + P.horaires.map(function (h) {
+        return '<li><b>' + txt(h.jours) + '</b><span>' + txt(h.heures) + '</span></li>';
+      }).join('') + '</ul></div>' +
+    '</div>';
+  }
+  el('infos').innerHTML = '<h2>' + txt(C.infosTitre) + '</h2>' + infoPlace(K) + infoPlace(C.gymInfos);
 
   /* ---------- FAQ ---------- */
-  el('faq-contact').innerHTML = 'Une autre question\u00a0? Appelez la MAA au <a href="tel:' + esc(K.telephoneLien) + '">' +
-    txt(K.telephone) + '</a> ou passez à l’accueil de l’Academy.';
+  el('faq-contact').innerHTML = 'Une autre question\u00a0? Passez à l’accueil de l’Academy.';
   el('faq').innerHTML = C.faq.map(function (it, i) {
     return '<div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-' + i + '">' +
       '<span>' + txt(it.q) + '</span><span class="faq-icon">' + ICO.plus + '</span></button>' +
@@ -1145,7 +1157,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       ? '<a href="' + esc(C.liens.conditions) + '" target="_blank" rel="noopener">conditions de l’offre</a>.'
       : 'conditions de l’offre <span class="todo">[À FOURNIR : lien conditions de l’offre MAA]</span>.');
   el('foot-links').innerHTML =
-    '<a href="tel:' + esc(K.telephoneLien) + '">Contact\u00a0: ' + txt(K.telephone) + '</a>' +
     '<a href="' + esc(C.liens.mentionsLegales) + '" target="_blank" rel="noopener">Mentions légales</a>' +
     '<a href="' + esc(C.liens.confidentialite) + '" target="_blank" rel="noopener">Politique de confidentialité</a>' +
     '<span class="copy">© ' + new Date(T_FIN).getFullYear() + ' ' + txt(C.copyright) + '</span>';
