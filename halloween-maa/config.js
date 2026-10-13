@@ -38,10 +38,12 @@ window.OFFRE = {
   checkoutUrl: 'https://souscription.harmony.ch/paiement/?add-to-cart=',
 
   visuels: {
-    hero: '',        // visuel Halloween MAA d'Axelle (1600x900) · vide = fond sombre "Visuel à venir"
-    heroAlt: '',
-    final: '',       // fond du bloc final (1600x900) · vide = dégradé bleu
-    finalAlt: ''
+    // Photo provisoire (entraînement aux pattes d'ours) en attendant les visuels Halloween d'Axelle
+    hero: 'images/hero-maa.jpg',   // visuel du hero · vide = fond sombre "Visuel à venir"
+    heroPosition: '100% 0',        // cadrage du visuel sur ordinateur (défaut '50% 0')
+    heroAlt: 'Combattant de la MAA à capuche frappant dans les pattes d\'ours tenues par son coach',
+    final: 'images/hero-maa.jpg',  // fond du bloc final · vide = dégradé bleu
+    finalAlt: 'Entraînement aux pattes d\'ours à la Martial Arts Academy'
   },
 
   liens: {

@@ -136,6 +136,11 @@ h1, h2, h3, h4 {
   margin: 0;
   text-transform: uppercase;          /* charte : Kobe toujours en capitales */
 }
+/* Kobe Bold à peine plus gras : fin contour de la couleur du texte (pas de graisse entre Bold et Black) */
+h1, h2, h3, h4, .recap-name, .recap-price, .cd-unit b, .plan-price .amount, .gym-figure b {
+  -webkit-text-stroke: 0.022em currentColor;
+  paint-order: stroke fill;
+}
 
 .shell { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 @media (max-width: 900px) { .shell { padding: 0 20px; } }
@@ -322,7 +327,7 @@ h1, h2, h3, h4 {
 @media (min-width: 901px) {
   .has-hero-img .hero-bg {
     top: calc(60px + var(--banner-h));
-    background-position: 50% 0;
+    background-position: var(--hero-pos, 50% 0);
     -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 90px);
             mask-image: linear-gradient(to bottom, transparent 0, #000 90px);
   }
@@ -945,6 +950,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var bg = document.querySelector('.hero-bg');
     bg.style.backgroundImage = 'url("' + C.visuels.hero.replace(/"/g, '%22') + '")';
     bg.setAttribute('aria-label', C.visuels.heroAlt || C.nom);
+    if (C.visuels.heroPosition) root.style.setProperty('--hero-pos', C.visuels.heroPosition);
   }
   // Encart récap (desktop) : mène aux cartes, l'achat se fait après la présentation des formules
   el('hero-recap').innerHTML = '<span class="recap-title">' + txt(C.hero.recapTitre) + '</span>' +
