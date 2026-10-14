@@ -1,0 +1,10 @@
+# ──────────────────────────────────────────────────────────────
+# Offre Halloween MAA — accès protégé par mot de passe (pré-lancement)
+# Mêmes identifiants que /halloween/ (fichier .htpasswd-halloween à la racine).
+# Pour rendre la page publique : supprimer ce fichier (ou le vider).
+# ──────────────────────────────────────────────────────────────
+
+AuthType Basic
+AuthName "Offre Halloween MAA : accès réservé"
+AuthUserFile /home/clients/de689a3b51d476d9dabc281e543b9349/sites/offres.harmony.ch/.htpasswd-halloween
+Require valid-user
