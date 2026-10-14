@@ -536,7 +536,21 @@ h1, h2, h3, h4, .recap-name, .recap-price, .cd-unit b, .plan-price .amount, .gym
 .plan-body { padding: 10px 30px 30px; display: flex; flex-direction: column; flex: 1; }
 @media (max-width: 600px) { .plan-head { padding: 20px 20px; } .plan-body { padding: 6px 20px 22px; } .plan-name { font-size: 27px; } }
 
-.plan-tagline { margin: 18px 0 0; padding-bottom: 14px; border-bottom: 1px solid rgba(0,0,0,.1); font-size: 17px; line-height: 1.45; font-weight: 600; color: var(--ink); }
+.plan-tagline { margin: 18px 0 0; font-size: 17px; line-height: 1.45; font-weight: 600; color: var(--ink); }
+@media (min-width: 901px) { .plan-tagline { min-height: 2.9em; } }   /* 2 lignes réservées : encadrés alignés d'une carte à l'autre */
+
+/* Durée + disciplines : ce qui distingue les deux formules, en un coup d'œil */
+.plan-facts { display: grid; grid-template-columns: 1fr 1.25fr; gap: 10px; margin-top: 18px; }
+.fact { padding: 14px 16px 16px; border-radius: 14px; background: #fff; border: 1px solid rgba(0,20,43,.08); }
+.plan.featured .fact { background: var(--brand-50); border-color: var(--brand-100); }
+.fact-label { display: block; font-size: 14.5px; font-weight: 500; color: var(--ink-3); }
+.fact-val { display: block; margin-top: 4px; font-family: var(--font-display); font-weight: 700; font-size: 38px; line-height: 1; color: var(--brand); white-space: nowrap; -webkit-text-stroke: 0.022em currentColor; paint-order: stroke fill; }
+.fact-val small { font-size: 17px; margin-left: 6px; -webkit-text-stroke: 0; }
+.fact-dots { display: flex; gap: 5px; margin-top: 10px; }
+.fact-dots i { width: 13px; height: 13px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--brand-200); }
+.fact-dots i.on { background: var(--brand); box-shadow: none; }
+@media (max-width: 380px) { .fact { padding: 12px 12px 14px; } .fact-val { font-size: 32px; } .fact-dots i { width: 11px; height: 11px; } }
+.feat.diff { font-weight: 700; color: var(--ink); }
 .features-list { list-style: none; padding: 0; margin: 14px 0 28px; }
 .feat {
   display: flex; align-items: flex-start; gap: 12px;
@@ -1075,8 +1089,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         (f.badge ? '<span class="plan-badge">' + txt(f.badge) + '</span>' : '') + '</div>' +
       '<div class="plan-body">' +
         (f.accroche ? '<p class="plan-tagline">' + txt(f.accroche) + '</p>' : '') +
+        (f.faits ? '<div class="plan-facts">' + f.faits.map(function (x) {
+          var dots = x.pastilles ? '<span class="fact-dots" aria-hidden="true">' + C.disciplines.map(function (d, i) {
+            return '<i' + (i < x.pastilles ? ' class="on"' : '') + '></i>';
+          }).join('') + '</span>' : '';
+          return '<div class="fact"><span class="fact-label">' + txt(x.label) + '</span>' +
+            '<span class="fact-val">' + esc(x.valeur) + '<small>' + txt(x.unite) + '</small></span>' + dots + '</div>';
+        }).join('') + '</div>' : '') +
         '<ul class="features-list">' + f.puces.map(function (p) {
-          return '<li class="feat"><span class="check">' + ICO.check + '</span><span>' + txt(p) + '</span></li>';
+          var t = typeof p === 'string' ? p : p.texte, diff = typeof p === 'object' && p.diff;
+          return '<li class="feat' + (diff ? ' diff' : '') + '"><span class="check">' + ICO.check + '</span><span>' + txt(t) + '</span></li>';
         }).join('') + '</ul>' +
         '<div class="plan-price-block">' +
         '<div class="plan-price"><span class="amount">' + txt(f.prix) + '</span><span class="per">pour ' + txt(f.duree) + '</span></div>' +

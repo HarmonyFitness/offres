@@ -93,10 +93,15 @@ window.OFFRE = {
       resume: '12 mois, 1 discipline',      // encart du hero
       prix: 'CHF 666.–',
       duree: '12 mois',
+      // Encadrés en haut de carte : ce qui distingue les formules (pastilles = disciplines incluses sur les 7)
+      faits: [
+        { label: 'Durée', valeur: '12', unite: 'mois' },
+        { label: 'Disciplines', valeur: '1', unite: 'au choix', pastilles: 1 }
+      ],
       sousPrix: 'soit 12x CHF 55.50 sans frais avec HeyLight',
-      puces: [
+      puces: [   // { texte, diff: true } = ligne mise en gras (ce qui change d'une formule à l'autre)
         'Abonnement 12 mois',
-        'Accès à tous les cours collectifs de la MAA dans une discipline de votre choix',
+        { texte: 'Accès à tous les cours collectifs de la MAA dans une discipline de votre choix', diff: true },
         'Accès au club de fitness Gym by Harmony aux Pâquis : musculation, zone cardio, zone poids libres et street workout',
         'Payable en 12x sans frais avec HeyLight'
       ],
@@ -111,10 +116,14 @@ window.OFFRE = {
       resume: '8 mois, toutes disciplines',
       prix: 'CHF 888.–',
       duree: '8 mois',
+      faits: [
+        { label: 'Durée', valeur: '8', unite: 'mois' },
+        { label: 'Disciplines', valeur: '7', unite: 'sur 7', pastilles: 7 }
+      ],
       sousPrix: 'soit 6x CHF 148.– sans frais avec HeyLight',
       puces: [
         'Abonnement 8 mois',
-        'Accès à tous les cours collectifs de la MAA, toutes disciplines',
+        { texte: 'Accès à tous les cours collectifs de la MAA, toutes disciplines', diff: true },
         'Accès au club de fitness Gym by Harmony aux Pâquis : musculation, zone cardio, zone poids libres et street workout',
         'Payable en 6x sans frais avec HeyLight'
       ],
