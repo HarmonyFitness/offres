@@ -540,16 +540,16 @@ h1, h2, h3, h4, .recap-name, .recap-price, .cd-unit b, .plan-price .amount, .gym
 @media (min-width: 901px) { .plan-tagline { min-height: 2.9em; } }   /* 2 lignes réservées : encadrés alignés d'une carte à l'autre */
 
 /* Durée + disciplines : ce qui distingue les deux formules, en un coup d'œil */
-.plan-facts { display: grid; grid-template-columns: 1fr 1.25fr; gap: 10px; margin-top: 18px; }
+.plan-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 18px; }
 .fact { padding: 14px 16px 16px; border-radius: 14px; background: #fff; border: 1px solid rgba(0,20,43,.08); }
 .plan.featured .fact { background: var(--brand-50); border-color: var(--brand-100); }
 .fact-label { display: block; font-size: 14.5px; font-weight: 500; color: var(--ink-3); }
 .fact-val { display: block; margin-top: 4px; font-family: var(--font-display); font-weight: 700; font-size: 38px; line-height: 1; color: var(--brand); white-space: nowrap; -webkit-text-stroke: 0.022em currentColor; paint-order: stroke fill; }
 .fact-val small { font-size: 17px; margin-left: 6px; -webkit-text-stroke: 0; }
 .fact-dots { display: flex; gap: 5px; margin-top: 10px; }
-.fact-dots i { width: 13px; height: 13px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--brand-200); }
+.fact-dots i { flex: 0 1 13px; min-width: 0; aspect-ratio: 1; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--brand-200); }
 .fact-dots i.on { background: var(--brand); box-shadow: none; }
-@media (max-width: 380px) { .fact { padding: 12px 12px 14px; } .fact-val { font-size: 32px; } .fact-dots i { width: 11px; height: 11px; } }
+@media (max-width: 380px) { .fact { padding: 12px 12px 14px; } .fact-val { font-size: 32px; } .fact-dots { gap: 4px; } }
 .feat.diff { font-weight: 700; color: var(--ink); }
 .features-list { list-style: none; padding: 0; margin: 14px 0 28px; }
 .feat {
