@@ -121,7 +121,7 @@ window.OFFRE = {
         fitness: true, wellness: true, cours: true, aqua: false, linge: false,
         coaching: '4 séances (valeur CHF 400.–)'
       },
-      cta: 'Je profite du 888 Essential'
+      cta: 'Je m\'abonne au 888 Essential'
     },
     {
       id: 'premium',
@@ -138,7 +138,7 @@ window.OFFRE = {
         fitness: true, wellness: true, cours: true, aqua: true, linge: true,
         coaching: '6 séances (valeur CHF 600.–)'
       },
-      cta: 'Je profite du 888 Premium'
+      cta: 'Je m\'abonne au 888 Premium'
     }
   ],
 
