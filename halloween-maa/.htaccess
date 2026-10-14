@@ -8,3 +8,10 @@ AuthType Basic
 AuthName "Offre Halloween MAA : accès réservé"
 AuthUserFile /home/clients/de689a3b51d476d9dabc281e543b9349/sites/offres.harmony.ch/.htpasswd-halloween
 Require valid-user
+
+# Page et config toujours revérifiées : une mise à jour de config.js (ID, textes) est vue tout de suite
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|js)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
