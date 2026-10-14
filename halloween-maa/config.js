@@ -97,7 +97,7 @@ window.OFFRE = {
       puces: [
         'Abonnement 12 mois',
         'Accès à tous les cours collectifs de la MAA dans une discipline de votre choix',
-        'Accès au club de fitness Gym by Harmony aux Pâquis : 650 m² dédiés à la musculation, zone cardio, zone poids libres et street workout',
+        'Accès au club de fitness Gym by Harmony aux Pâquis : musculation, zone cardio, zone poids libres et street workout',
         'Payable en 12x sans frais avec HeyLight'
       ],
       cta: 'Je choisis cette formule'
@@ -115,7 +115,7 @@ window.OFFRE = {
       puces: [
         'Abonnement 8 mois',
         'Accès à tous les cours collectifs de la MAA, toutes disciplines',
-        'Accès au club de fitness Gym by Harmony aux Pâquis : 650 m² dédiés à la musculation, zone cardio, zone poids libres et street workout',
+        'Accès au club de fitness Gym by Harmony aux Pâquis : musculation, zone cardio, zone poids libres et street workout',
         'Payable en 6x sans frais avec HeyLight'
       ],
       cta: 'Je choisis cette formule'
@@ -145,9 +145,9 @@ window.OFFRE = {
   gym: {
     surtitre: 'Club de fitness aux Pâquis',
     titre: 'Le Gym by Harmony inclus',
-    chiffre: '650 m²',
+    chiffre: '',                            // grand chiffre facultatif (vide = non affiché ; 650 m² retiré, plus à jour)
     chiffreLabel: '',                       // petit texte à côté du chiffre (facultatif)
-    texte: 'Le Gym by Harmony est un club de fitness de 650 m² aux Pâquis, dédié à la musculation, avec zone cardio, zone poids libres et street workout. Il se trouve dans la même rue que l\'Academy, pour travailler votre condition physique entre deux entraînements.',
+    texte: 'Le Gym by Harmony est un club de fitness aux Pâquis, dédié à la musculation, avec zone cardio, zone poids libres et street workout. Il se trouve dans la même rue que l\'Academy, pour travailler votre condition physique entre deux entraînements.',
     zones: ['Zone cardio', 'Zone poids libres', 'Street workout']
   },
 

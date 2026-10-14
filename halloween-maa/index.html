@@ -1099,7 +1099,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   /* ---------- Gym by Harmony + carte + infos pratiques ---------- */
   el('gym').innerHTML = '<span class="gym-eyebrow">' + txt(C.gym.surtitre) + '</span>' +
     '<h2>' + txt(C.gym.titre) + '</h2>' +
-    '<div class="gym-figure"><b>' + txt(C.gym.chiffre) + '</b>' + (C.gym.chiffreLabel ? '<span>' + txt(C.gym.chiffreLabel) + '</span>' : '') + '</div>' +
+    (C.gym.chiffre ? '<div class="gym-figure"><b>' + txt(C.gym.chiffre) + '</b>' + (C.gym.chiffreLabel ? '<span>' + txt(C.gym.chiffreLabel) + '</span>' : '') + '</div>' : '') +
     '<p>' + txt(C.gym.texte) + '</p>' +
     '<ul class="gym-zones">' + C.gym.zones.map(function (z) { return '<li>' + txt(z) + '</li>'; }).join('') + '</ul>';
 
