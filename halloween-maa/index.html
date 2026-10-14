@@ -579,6 +579,8 @@ h1, h2, h3, h4, .recap-name, .recap-price, .cd-unit b, .plan-price .amount, .gym
 }
 .plan-cta:hover { background: var(--cta-hover); }
 .plan-cta.is-pending { opacity: .55; cursor: not-allowed; }
+.plan-cta { text-align: center; }
+@media (max-width: 600px) { .plan-cta { padding: 18px 14px; } }
 .plan-reassure { margin: 10px 0 0; text-align: center; font-size: 14.5px; color: var(--ink-4); }
 .plan-ended {
   margin-top: 22px; padding: 16px 22px; border-radius: 999px;
@@ -979,7 +981,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       .replace(/CHF /g, 'CHF ')
       .replace(/(\d+)x /g, '$1x ')
       .replace(/(\d+) (mois|m²|discipline)/g, '$1 $2')
-      .replace(/Gym by Harmony/g, 'Gym\u00a0by\u00a0Harmony');   // nom du club jamais coupé
+      .replace(/Gym by Harmony/g, 'Gym\u00a0by\u00a0Harmony')    // nom du club jamais coupé
+      .replace(/(ONE|FULL) MAA/g, '$1\u00a0MAA');                  // nom des formules jamais coupé
     return out.replace(/\[À [^\]]+\]/g, function (m) { return '<span class="todo">' + m + '</span>'; });
   }
   function get(path) { return path.split('.').reduce(function (o, k) { return o == null ? o : o[k]; }, C); }

@@ -105,7 +105,7 @@ window.OFFRE = {
         'Accès au club de fitness Gym by Harmony aux Pâquis : musculation, zone cardio, zone poids libres et street workout',
         'Payable en 12x sans frais avec HeyLight'
       ],
-      cta: 'Je choisis cette formule'
+      cta: 'Je m\'abonne à l\'offre ONE MAA'
     },
     {
       id: 'full_maa',
@@ -127,7 +127,7 @@ window.OFFRE = {
         'Accès au club de fitness Gym by Harmony aux Pâquis : musculation, zone cardio, zone poids libres et street workout',
         'Payable en 6x sans frais avec HeyLight'
       ],
-      cta: 'Je choisis cette formule'
+      cta: 'Je m\'abonne à l\'offre FULL MAA'
     }
   ],
 
