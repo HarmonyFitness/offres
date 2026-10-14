@@ -991,7 +991,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return url;
   }
   function buyCta(f, position) {
-    return '<a class="plan-cta hide-termine" href="' + esc(buyUrl(f)) + '" target="_blank" rel="noopener"' +
+    // Même onglet : le parcours reste dans un seul onglet (navigateurs intégrés Instagram / Facebook, bouton retour)
+    return '<a class="plan-cta hide-termine" href="' + esc(buyUrl(f)) + '"' +
       ' data-formule="' + esc(f.id) + '" data-position="' + esc(position) + '">' + txt(f.cta) + '</a>';
   }
 

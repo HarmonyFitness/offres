@@ -994,7 +994,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       return '<a class="plan-cta is-pending hide-termine" href="#formule-' + esc(f.id) + '" aria-disabled="true">' + txt(f.cta) + '</a>' +
         '<p class="plan-reassure hide-termine">' + txt('[À COMPLÉTER : ID produit WooCommerce]') + '</p>';
     }
-    return '<a class="plan-cta hide-termine" href="' + esc(buyUrl(f)) + '" target="_blank" rel="noopener"' +
+    // Même onglet : le parcours reste dans un seul onglet (navigateurs intégrés Instagram / Facebook, bouton retour)
+    return '<a class="plan-cta hide-termine" href="' + esc(buyUrl(f)) + '"' +
       ' data-formule="' + esc(f.id) + '" data-position="' + esc(position) + '">' + txt(f.cta) + '</a>' +
       '<p class="plan-reassure hide-termine">' + txt(C.reassurance) + '</p>';
   }
