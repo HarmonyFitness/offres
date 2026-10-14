@@ -1,0 +1,10 @@
+# ──────────────────────────────────────────────────────────────
+# Offre Halloween 888 — accès protégé par mot de passe (pré-lancement)
+# Identifiants : utilisateur « harmony », mot de passe communiqué à part.
+# Pour rendre la page publique : supprimer ce fichier (ou le vider).
+# ──────────────────────────────────────────────────────────────
+
+AuthType Basic
+AuthName "Offre Halloween 888 : accès réservé"
+AuthUserFile /home/clients/de689a3b51d476d9dabc281e543b9349/sites/offres.harmony.ch/.htpasswd-halloween
+Require valid-user
