@@ -46,7 +46,7 @@ window.OFFRE = {
   },
 
   liens: {
-    conditions:      '',   // [À FOURNIR] lien vers les conditions de l'offre MAA · vide = mention surlignée
+    conditions:      'https://souscription.harmony.ch/maa-termes-et-conditions/',   // CGV MAA (nouvel onglet)
     mentionsLegales: 'https://www.maa-academy.ch/mention-legal',
     confidentialite: 'https://www.harmony.ch/politique-de-confidentialite'
   },
