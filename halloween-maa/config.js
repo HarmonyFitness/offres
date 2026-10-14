@@ -145,7 +145,7 @@ window.OFFRE = {
   gym: {
     surtitre: 'Club de fitness aux Pâquis',
     titre: 'Le Gym by Harmony inclus',
-    chiffre: '',                            // grand chiffre facultatif (vide = non affiché ; 650 m² retiré, plus à jour)
+    chiffre: '',                            // grand chiffre facultatif (vide = non affiché)
     chiffreLabel: '',                       // petit texte à côté du chiffre (facultatif)
     texte: 'Le Gym by Harmony est un club de fitness aux Pâquis, dédié à la musculation, avec zone cardio, zone poids libres et street workout. Il se trouve dans la même rue que l\'Academy, pour travailler votre condition physique entre deux entraînements.',
     zones: ['Zone cardio', 'Zone poids libres', 'Street workout']
