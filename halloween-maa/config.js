@@ -86,7 +86,7 @@ window.OFFRE = {
   formules: [
     {
       id: 'one_maa',
-      produitId: '',                        // [À CRÉER] Offre Halloween ONE MAA (WooCommerce, produit caché)
+      produitId: '60026',                   // OFFRE HALLOWEEN ONE MAA (WooCommerce)
       titre: 'ONE MAA',
       badge: '',
       accroche: 'Toute l\'année pour progresser dans votre discipline.',   // phrase avant les puces
@@ -104,7 +104,7 @@ window.OFFRE = {
     },
     {
       id: 'full_maa',
-      produitId: '',                        // [À CRÉER] Offre Halloween FULL MAA (WooCommerce, produit caché)
+      produitId: '60037',                   // OFFRE HALLOWEEN FULL MAA (WooCommerce)
       titre: 'FULL MAA',
       badge: 'Toutes les disciplines',      // carte mise en avant (contour bleu + étiquette)
       accroche: 'Toutes les disciplines de l\'Academy, pour varier vos entraînements.',
