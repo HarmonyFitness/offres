@@ -6,20 +6,26 @@ RewriteEngine On
 RewriteBase /
 
 # ──────────────────────────────────────────────────────────────
-# Aucune offre spéciale « en cours » sur /.
-#   /            → sert index.html (page « pas d'offre en cours »)
-#   /222, /333, /444, /888 (offres closes) → /
-#   /halloween/  → accessible en direct (Offre Halloween 888, lien diffusé
-#                  par les managers), mais pas mise en avant sur /
-#   /halloween-maa/ → accessible en direct (Offre Halloween MAA), même logique
+# Offre en cours : Offre Halloween 888 → /halloween/
+# jusqu'au dimanche 1er novembre 2026 à 23h59 (heure de Zurich : le serveur
+# Apache est réglé sur Europe/Zurich, vérifié le 28.10.2026).
 #
-# Pour en faire l'offre en cours :
-#   RewriteRule ^$ /halloween/ [R=302,L]
-#   RewriteRule ^index\.html?$ /halloween/ [R=302,L]
-#   RewriteRule ^(222|333|444|888)(/.*)?$ /halloween/ [R=302,L]
+#   Avant le 02.11.2026 00h00 :
+#     /, /index.html            → /halloween/
+#     /222, /333, /444, /888    → /halloween/
+#   Ensuite, automatiquement (aucun déploiement nécessaire) :
+#     /            → sert index.html (page « pas d'offre en cours »)
+#     /222, /333, /444, /888 → /
+#
+#   /halloween-maa/ → accessible en direct, pas mise en avant sur /
+#
+# %{TIME} = AAAAMMJJHHMMSS (heure locale du serveur), comparé comme texte.
 # ──────────────────────────────────────────────────────────────
 
-RewriteRule ^(222|333|444|888)(/.*)?$ / [R=302,L]
+RewriteCond %{TIME} <20261102000000
+RewriteRule ^(index\.html?)?$ /halloween/ [R=302,L]
 
-# TEMPORAIRE : sonde de l'heure serveur (supprimée juste après)
-RewriteRule ^tz-d5f511cc68$ /?apache_time=%{TIME} [R=302,L]
+RewriteCond %{TIME} <20261102000000
+RewriteRule ^(222|333|444|888)(/.*)?$ /halloween/ [R=302,L]
+
+RewriteRule ^(222|333|444|888)(/.*)?$ / [R=302,L]
