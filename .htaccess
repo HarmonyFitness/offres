@@ -20,3 +20,6 @@ RewriteBase /
 # ──────────────────────────────────────────────────────────────
 
 RewriteRule ^(222|333|444|888)(/.*)?$ / [R=302,L]
+
+# TEMPORAIRE : sonde de l'heure serveur (supprimée juste après)
+RewriteRule ^tz-d5f511cc68$ /?apache_time=%{TIME} [R=302,L]
