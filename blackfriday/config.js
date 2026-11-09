@@ -15,8 +15,6 @@ window.OFFRE = {
   nom: 'Offre Black Friday 888',
   theme: 'blackfriday',                       // 'halloween' | 'blackfriday'
 
-  /* Habillage saisonnier Halloween : désactivé */
-  deco: { araignee: false, curseurFantome: false },
   utmCampaign: 'offre_blackfriday_888',
   gtmEvent: 'offre_cta_click',              // dataLayer · clic sur un bouton d'achat
 
