@@ -114,6 +114,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   --accent-soft: rgba(255,213,0,.16);
   --hero-fallback: radial-gradient(120% 90% at 85% 15%, #1d1d1d 0%, #0b0b0b 55%, #000 100%);
   --closing-bg: linear-gradient(160deg, #161616 0%, #0b0b0b 55%, #000 100%);
+  /* Header et bouton fixé (mobile) : verre plus blanc, moins transparent */
+  --glass-bg: linear-gradient(135deg, rgba(255,255,255,.9) 0%, rgba(255,255,255,.8) 100%);
 }
 /* Bandeau et pied : noir pur, comme l'annonce */
 :root[data-theme="blackfriday"] .banner { background: #000; color: #fff; }
@@ -143,10 +145,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   :root[data-theme="blackfriday"].has-hero-img .hero::before {
     background:
-      linear-gradient(to right, rgba(0,0,0,.75) 0%, rgba(0,0,0,.55) 40%, transparent 62%),
-      linear-gradient(to top, rgba(0,0,0,.55) 0%, transparent 45%);
+      linear-gradient(to right, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 40%, transparent 62%),
+      linear-gradient(to top, rgba(0,0,0,.45) 0%, transparent 45%);
+  }
+  /* À gauche de la photo : la même photo, floutée, au lieu d'un aplat noir */
+  :root[data-theme="blackfriday"].has-hero-img .hero-bg-blur {
+    display: block;
+    position: absolute; inset: 0; z-index: -3;
+    background: url('images/hero-blackfriday.jpg') 0 30% / cover no-repeat;
+    filter: blur(40px) brightness(.8) saturate(1.1);
+    transform: scale(1.15);
   }
 }
+.hero-bg-blur { display: none; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: calc(100px + var(--banner-h)); }
@@ -884,6 +895,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============ HERO ============ -->
 <div class="hero-wrap" id="top">
 <section class="hero" id="hero">
+  <div class="hero-bg-blur" aria-hidden="true"></div>
   <div class="hero-bg" role="img" aria-label=""></div>
   <span class="hero-placeholder" aria-hidden="true">Photo à venir</span>
   <div class="hero-inner">
