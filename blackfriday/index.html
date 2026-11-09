@@ -162,6 +162,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .hero-bg-blur { display: none; }
 /* Sélection de texte et focus clavier aux couleurs de l'offre (noir + jaune) */
 :root[data-theme="blackfriday"] ::selection { background: var(--accent); color: #000; }
+/* Mobile et tablette : header collé sous le bandeau, puis masqué une fois le hero passé
+   (le bouton fixé en bas prend le relais : un seul appel à l'action à l'écran) */
+@media (max-width: 900px) {
+  :root[data-theme="blackfriday"] .topbar {
+    top: calc(8px + var(--banner-h));
+    transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform .35s cubic-bezier(0.16, 1, 0.3, 1), opacity .25s;
+  }
+  :root[data-theme="blackfriday"].hors-hero .topbar {
+    transform: translate(-50%, calc(-100% - 8px - var(--banner-h)));
+    opacity: 0; pointer-events: none;
+  }
+}
 :root[data-theme="blackfriday"] .hero :focus-visible,
 :root[data-theme="blackfriday"] .closing :focus-visible { outline-color: var(--accent); }
 /* Header : plus large en haut de page (720 px), puis se resserre en pilule pendant le défilement du hero (script plus bas) */
@@ -1267,7 +1279,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       bar.classList.toggle('is-visible', show);
       root.style.setProperty('--sticky-h', show && innerWidth <= 900 ? bar.offsetHeight + 'px' : '0px');
     }
-    new IntersectionObserver(function (en) { heroVisible = en[0].isIntersecting; update(); }, { threshold: 0.2 }).observe(hero);
+    new IntersectionObserver(function (en) {
+      heroVisible = en[0].isIntersecting;
+      root.classList.toggle('hors-hero', !heroVisible);   // mobile : masque le header après le hero
+      update();
+    }, { threshold: 0.2 }).observe(hero);
     new IntersectionObserver(function (en) { plansVisible = en[0].isIntersecting; update(); }, { threshold: 0.15 }).observe(plans);
     new IntersectionObserver(function (en) { closingVisible = en[0].isIntersecting; update(); }, { threshold: 0.25 }).observe(document.querySelector('.closing'));
   })();
