@@ -28,7 +28,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preload" href="fonts/Kobe1.1-Bold.woff" as="font" type="font/woff" crossorigin />
 <link rel="preload" as="image" href="images/hero-blackfriday-maa.jpg" fetchpriority="high" />
 
-<script src="config.js?v=1"></script>
+<script src="config.js?v=2"></script>
 <script>
   // Thème + phase posés avant le premier rendu (pas de flash de contenu).
   // ?now=2026-11-25T10:00:00%2B01:00 permet de prévisualiser une autre date.
@@ -134,37 +134,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 }
 :root[data-theme="blackfriday"].has-final-img .closing-photo::after { opacity: .86; }
-/* Desktop : photo calée à droite (moitié droite : le second combattant, à gauche du cliché, reste hors cadre),
-   fondu à gauche et en haut */
+/* Ordinateur : la photo en pleine largeur, assombrie à gauche sous le texte (sans flou : rendu naturel) */
 @media (min-width: 901px) {
-  :root[data-theme="blackfriday"].has-hero-img .hero-bg {
-    left: 50%;
-    background-position: var(--hero-pos, 50% 0);
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 28%), linear-gradient(to bottom, transparent 0, #000 90px);
-    -webkit-mask-composite: source-in;
-            mask-image: linear-gradient(to right, transparent 0, #000 28%), linear-gradient(to bottom, transparent 0, #000 90px);
-            mask-composite: intersect;
-  }
   :root[data-theme="blackfriday"].has-hero-img .hero::before {
     background:
-      linear-gradient(to right, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 40%, transparent 62%),
-      linear-gradient(to top, rgba(0,0,0,.45) 0%, transparent 45%);
-  }
-  /* À gauche de la photo : la même photo, floutée, au lieu d'un aplat noir.
-     Zone neutre du cliché (plafond) agrandie : fond uni, sans tache de couleur des combattants */
-  :root[data-theme="blackfriday"].has-hero-img .hero-bg-blur {
-    display: block;
-    position: absolute; inset: 0; z-index: -3;
-    background: url('images/hero-blackfriday-maa.jpg') 62% 4% / 400% auto no-repeat;
-    filter: blur(40px) brightness(.8) saturate(1.1);
-    transform: scale(1.15);
+      linear-gradient(to right, rgba(0,0,0,.88) 0%, rgba(0,0,0,.72) 34%, rgba(0,0,0,.2) 62%, transparent 80%),
+      linear-gradient(to top, rgba(0,0,0,.55) 0%, transparent 50%);
   }
 }
-/* Petits ordinateurs (1024 px) : texte resserré, le combattant ne passe pas sous le texte */
-@media (min-width: 901px) and (max-width: 1200px) {
-  :root[data-theme="blackfriday"] .hero-sub { max-width: 38ch; }
-}
-.hero-bg-blur { display: none; }
 /* Sélection de texte et focus clavier aux couleurs de l'offre (noir + jaune) */
 :root[data-theme="blackfriday"] ::selection { background: var(--accent); color: #000; }
 /* Mobile et tablette : header collé sous le bandeau, puis masqué une fois le hero passé
@@ -874,7 +851,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============ HERO ============ -->
 <div class="hero-wrap" id="top">
 <section class="hero" id="hero">
-  <div class="hero-bg-blur" aria-hidden="true"></div>
   <div class="hero-bg" role="img" aria-label=""></div>
   <span class="hero-watermark" aria-hidden="true"></span>
   <div class="hero-inner">

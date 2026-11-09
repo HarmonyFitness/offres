@@ -35,7 +35,7 @@ window.OFFRE = {
 
   visuels: {
     hero: 'images/hero-blackfriday-maa.jpg',  // même photo que l'offre Halloween MAA · vide = fond noir + logo en filigrane
-    heroPosition: '100% 0',                   // ordinateur : photo calée à droite, cadrée sur le combattant qui frappe (à droite du cliché)
+    heroPosition: '50% 0',                    // cadrage du visuel sur ordinateur (photo en pleine largeur)
     heroAlt: 'Deux combattants de la Martial Arts Academy à l\'entraînement, l\'un armant un coup de pied',
     final: 'images/final-blackfriday-maa.jpg', // fond du bloc final, sous un voile noir · vide = dégradé noir
     finalAlt: 'Entraînement de sports de combat sur les tapis de la Martial Arts Academy'
