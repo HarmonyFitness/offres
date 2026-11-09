@@ -6,27 +6,16 @@ RewriteEngine On
 RewriteBase /
 
 # ──────────────────────────────────────────────────────────────
-# Offre en cours : Offre Black Friday 888 → /blackfriday/
-# prévente dès le 09.11.2026, Black Friday du mercredi 25 au dimanche
-# 29 novembre 2026 à 23h59 (heure de Zurich : le serveur Apache est réglé
-# sur Europe/Zurich, vérifié le 28.10.2026).
+# Aucune offre en cours mise en avant sur /.
+#   /            → sert index.html (page « pas d'offre en cours »)
+#   Offres closes → /
+#     /222, /333, /444, /888
+#     /halloween, /halloween-maa (Offres Halloween 888, terminées le 01.11.2026)
 #
-#   Jusqu'au 29.11.2026 23h59 :
-#     /, /index.html                        → /blackfriday/
-#     /222, /333, /444, /888, /halloween    → /blackfriday/
-#   Ensuite, automatiquement (aucun déploiement nécessaire) :
-#     /            → sert index.html (page « pas d'offre en cours »)
-#     Offres closes → /
-#   La page /blackfriday/ masque elle-même ses boutons d'achat après la fin.
-#   /halloween-maa → / (offre close)
-#
-# %{TIME} = AAAAMMJJHHMMSS (heure locale du serveur), comparé comme texte.
+#   /blackfriday/ → accessible en direct uniquement (Offre Black Friday 888,
+#                   prévente puis Black Friday du 25 au 29.11.2026), pas de
+#                   redirection depuis /. La page masque elle-même ses boutons
+#                   d'achat après la fin de l'offre.
 # ──────────────────────────────────────────────────────────────
-
-RewriteCond %{TIME} <20261130000000
-RewriteRule ^(index\.html?)?$ /blackfriday/ [R=302,L]
-
-RewriteCond %{TIME} <20261130000000
-RewriteRule ^(222|333|444|888|halloween)(/.*)?$ /blackfriday/ [R=302,L]
 
 RewriteRule ^(222|333|444|888|halloween|halloween-maa)(/.*)?$ / [R=302,L]
