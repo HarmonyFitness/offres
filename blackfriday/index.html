@@ -135,8 +135,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 }
 :root[data-theme="blackfriday"].has-final-img .closing-photo::after { opacity: .86; }
-/* Desktop : photo en pleine largeur, dégradé sombre sous le texte (à gauche et en bas) */
+/* Desktop : photo en pleine largeur, inversée en miroir (le coach passe à droite, loin du texte),
+   dégradé sombre sous le texte (à gauche et en bas) */
 @media (min-width: 901px) {
+  :root[data-theme="blackfriday"].has-hero-img .hero-bg { transform: scaleX(-1); }
   :root[data-theme="blackfriday"].has-hero-img .hero::before {
     background:
       linear-gradient(to right, rgba(0,0,0,.82) 0%, rgba(0,0,0,.66) 30%, rgba(0,0,0,.3) 50%, transparent 66%),
