@@ -28,7 +28,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" />
 
-<script src="config.js"></script>
+<script src="config.js?v=2"></script>
 <script>
   // Thème + phase posés avant le premier rendu (pas de flash de contenu).
   // ?now=2026-11-25T10:00:00%2B01:00 permet de prévisualiser une autre date.
@@ -119,6 +119,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 /* Bandeau et pied : noir pur, comme l'annonce */
 :root[data-theme="blackfriday"] .banner { background: #000; color: #fff; }
+/* Bandeau avec décompte : visible dès la prévente */
+:root[data-theme="blackfriday"].phase-avant { --banner-h: 38px; }
+.banner-sep { margin: 0 8px; color: rgba(255,255,255,.4); }
+.banner-cd { margin-left: 6px; color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+@media (max-width: 420px) { .banner-titre, .banner-sep { display: none; } }
 /* Prix du hero en jaune, comme le « 888.– » de l'annonce */
 :root[data-theme="blackfriday"] .hero h1 .h1-price { color: var(--accent); }
 /* Voile du hero : noir (au lieu du bleu nuit) */
@@ -885,7 +890,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   Les éléments [data-t="chemin.cle"] reçoivent le texte correspondant de la config.
 -->
 
-<div class="banner only-public" role="status" data-t="bandeau"></div>
+<div class="banner hide-termine" id="banner"></div>
 
 <header class="topbar">
   <div class="topbar-inner">
@@ -1278,6 +1283,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     '<a href="' + esc(C.liens.confidentialite) + '" target="_blank" rel="noopener">Politique de confidentialité</a>' +
     '<span class="copy">© ' + new Date(T_FIN).getFullYear() + ' Harmony Fitness</span>';
 
+  /* ---------- Bandeau : titre + décompte compact ---------- */
+  el('banner').innerHTML = '<span class="banner-titre">' + txt(C.bandeau.titre) + '</span><span class="banner-sep" aria-hidden="true">·</span>' +
+    '<span>' + txt(C.bandeau.texte) + '</span><b class="banner-cd" data-cd-banner></b>';
+  var bannerCd = document.querySelector('[data-cd-banner]');
+
   /* ---------- Phase + compte à rebours ---------- */
   var CD_UNITS = [['j', 'jours'], ['h', 'heures'], ['m', 'min'], ['s', 'sec']];
   document.querySelectorAll('[data-countdown]').forEach(function (n) {
@@ -1298,6 +1308,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var s = Math.max(0, Math.floor((T_FIN - t) / 1000) + 1);
       var v = { j: Math.floor(s / 86400), h: Math.floor(s % 86400 / 3600), m: Math.floor(s % 3600 / 60), s: s % 60 };
       document.querySelectorAll('[data-cd]').forEach(function (b) { b.textContent = pad(v[b.getAttribute('data-cd')]); });
+      bannerCd.textContent = v.j + '\u00a0j ' + pad(v.h) + '\u00a0h ' + pad(v.m) + '\u00a0min ' + pad(v.s) + '\u00a0s';
     }
   }
   tick();

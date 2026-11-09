@@ -21,7 +21,7 @@ window.OFFRE = {
   gtmEvent: 'offre_cta_click',              // dataLayer · clic sur un bouton d'achat
 
   /* Dates · heure de Zurich (+01:00). Prévente ouverte dès le 09.11.2026 (phase « avant » : achat possible,
-     sans bandeau ni compte à rebours), Black Friday du mercredi 25 au dimanche 29 novembre 2026. */
+     bandeau et compte à rebours dès maintenant), Black Friday du mercredi 25 au dimanche 29 novembre 2026. */
   dates: {
     ouverturePublique: '2026-11-25T00:00:00+01:00', // bandeau + compte à rebours
     fin:               '2026-11-29T23:59:59+01:00'  // après : CTA masqués
@@ -44,7 +44,8 @@ window.OFFRE = {
     contactEmail:    'info@harmony.ch'
   },
 
-  bandeau: 'Black Friday : jusqu\'au 29 novembre seulement',
+  /* Bandeau noir fixé en haut, avec le décompte jusqu'à la fin de l'offre (affiché dès la prévente) */
+  bandeau: { titre: 'Black Friday', texte: 'Fin de l\'offre dans' },
 
   hero: {
     badgeSaison: 'Black Friday',               // bandeau noir et jaune, comme sur l'annonce
