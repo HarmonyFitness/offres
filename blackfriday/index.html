@@ -158,9 +158,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 }
 .hero-bg-blur { display: none; }
-/* Header : pleine largeur en haut de page, puis se resserre en pilule pendant le défilement du hero (script plus bas) */
+/* Header : plus large en haut de page (720 px), puis se resserre en pilule pendant le défilement du hero (script plus bas) */
 @media (min-width: 601px) {
-  :root[data-theme="blackfriday"] .topbar { width: calc(100% - 48px); max-width: none; }
+  :root[data-theme="blackfriday"] .topbar { width: 720px; }
 }
 
 * { box-sizing: border-box; }
@@ -1365,14 +1365,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     new IntersectionObserver(function (en) { closingVisible = en[0].isIntersecting; update(); }, { threshold: 0.25 }).observe(document.querySelector('.closing'));
   })();
 
-  /* ---------- Header : pleine largeur en haut de page, se resserre au défilement du hero (≥ 601 px) ---------- */
+  /* ---------- Header : 720 px en haut de page, se resserre au défilement du hero (≥ 601 px) ---------- */
   (function () {
     var topbar = document.querySelector('.topbar'), pending = false;
-    var FIN = 400, COURSE = 360;   // largeur finale (px) · défilement nécessaire pour l'atteindre (px)
+    var DEBUT = 720, FIN = 400, COURSE = 240;   // largeurs de départ et finale (px) · défilement nécessaire (px)
     function f() {
       pending = false;
       if (innerWidth <= 600) { topbar.style.width = ''; return; }
-      var plein = innerWidth - 48;
+      var plein = Math.min(DEBUT, innerWidth - 32);
       var t = Math.min(scrollY / COURSE, 1), ease = 1 - Math.pow(1 - t, 2);
       topbar.style.width = Math.round(plein - (plein - FIN) * ease) + 'px';
     }
