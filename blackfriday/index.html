@@ -115,7 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   --hero-fallback: radial-gradient(120% 90% at 85% 15%, #1d1d1d 0%, #0b0b0b 55%, #000 100%);
   --closing-bg: linear-gradient(160deg, #161616 0%, #0b0b0b 55%, #000 100%);
   /* Header et bouton fixé (mobile) : verre plus blanc, moins transparent */
-  --glass-bg: linear-gradient(135deg, rgba(255,255,255,.9) 0%, rgba(255,255,255,.8) 100%);
+  --glass-bg: linear-gradient(135deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.87) 100%);
 }
 /* Bandeau et pied : noir pur, comme l'annonce */
 :root[data-theme="blackfriday"] .banner { background: #000; color: #fff; }
@@ -158,6 +158,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 }
 .hero-bg-blur { display: none; }
+/* Header : pleine largeur en haut de page, puis se resserre en pilule pendant le défilement du hero (script plus bas) */
+@media (min-width: 601px) {
+  :root[data-theme="blackfriday"] .topbar { width: calc(100% - 48px); max-width: none; }
+}
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: calc(100px + var(--banner-h)); }
@@ -1361,16 +1365,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     new IntersectionObserver(function (en) { closingVisible = en[0].isIntersecting; update(); }, { threshold: 0.25 }).observe(document.querySelector('.closing'));
   })();
 
-  /* ---------- Header : rétrécit au défilement (desktop) ---------- */
+  /* ---------- Header : pleine largeur en haut de page, se resserre au défilement du hero (≥ 601 px) ---------- */
   (function () {
     var topbar = document.querySelector('.topbar'), pending = false;
+    var FIN = 400, COURSE = 360;   // largeur finale (px) · défilement nécessaire pour l'atteindre (px)
     function f() {
       pending = false;
       if (innerWidth <= 600) { topbar.style.width = ''; return; }
-      var t = Math.min(scrollY / 180, 1), ease = 1 - Math.pow(1 - t, 2);
-      topbar.style.width = Math.round(500 - 100 * ease) + 'px';
+      var plein = innerWidth - 48;
+      var t = Math.min(scrollY / COURSE, 1), ease = 1 - Math.pow(1 - t, 2);
+      topbar.style.width = Math.round(plein - (plein - FIN) * ease) + 'px';
     }
-    addEventListener('scroll', function () { if (!pending) { pending = true; requestAnimationFrame(f); } }, { passive: true });
+    function req() { if (!pending) { pending = true; requestAnimationFrame(f); } }
+    addEventListener('scroll', req, { passive: true });
+    addEventListener('resize', req);
+    f();
   })();
 })();
 </script>
