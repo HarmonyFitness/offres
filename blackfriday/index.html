@@ -25,7 +25,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="theme-color" content="#000000" />
 
 <link rel="icon" type="image/png" href="images/favicon-harmony.png" />
-<link rel="preload" as="image" href="images/hero-blackfriday.jpg" fetchpriority="high" />
+<link rel="preload" as="image" href="images/hero-blackfriday-large.jpg" media="(min-width: 901px)" fetchpriority="high" />
+<link rel="preload" as="image" href="images/hero-blackfriday.jpg" media="(max-width: 900px)" fetchpriority="high" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" />
@@ -135,31 +136,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 }
 :root[data-theme="blackfriday"].has-final-img .closing-photo::after { opacity: .86; }
-/* Desktop : photo calée à droite (le coach est à gauche du cliché), fondu dans le noir à gauche et en haut */
+/* Desktop : cadrage paysage dédié (coach à droite, disque flou du premier plan à gauche, sous le texte) */
 @media (min-width: 901px) {
   :root[data-theme="blackfriday"].has-hero-img .hero-bg {
-    left: 40%;
-    background-position: 0 0;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 28%), linear-gradient(to bottom, transparent 0, #000 90px);
-    -webkit-mask-composite: source-in;
-            mask-image: linear-gradient(to right, transparent 0, #000 28%), linear-gradient(to bottom, transparent 0, #000 90px);
-            mask-composite: intersect;
+    background-image: url('images/hero-blackfriday-large.jpg') !important;
+    background-position: 72% 30%;
   }
   :root[data-theme="blackfriday"].has-hero-img .hero::before {
     background:
-      linear-gradient(to right, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 40%, transparent 62%),
-      linear-gradient(to top, rgba(0,0,0,.45) 0%, transparent 45%);
-  }
-  /* À gauche de la photo : la même photo, floutée, au lieu d'un aplat noir */
-  :root[data-theme="blackfriday"].has-hero-img .hero-bg-blur {
-    display: block;
-    position: absolute; inset: 0; z-index: -3;
-    background: url('images/hero-blackfriday.jpg') 0 30% / cover no-repeat;
-    filter: blur(40px) brightness(.8) saturate(1.1);
-    transform: scale(1.15);
+      linear-gradient(to right, rgba(0,0,0,.6) 0%, rgba(0,0,0,.35) 38%, transparent 60%),
+      linear-gradient(to top, rgba(0,0,0,.5) 0%, transparent 45%);
   }
 }
-.hero-bg-blur { display: none; }
 /* Sélection de texte et focus clavier aux couleurs de l'offre (noir + jaune) */
 :root[data-theme="blackfriday"] ::selection { background: var(--accent); color: #000; }
 /* Mobile et tablette : header collé sous le bandeau, puis masqué une fois le hero passé
@@ -852,7 +840,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============ HERO ============ -->
 <div class="hero-wrap" id="top">
 <section class="hero" id="hero">
-  <div class="hero-bg-blur" aria-hidden="true"></div>
   <div class="hero-bg" role="img" aria-label=""></div>
   <div class="hero-inner">
     <span class="eyebrow"><span class="season-badge" data-t="hero.badgeSaison"></span><span data-t="hero.surtitre"></span></span>
