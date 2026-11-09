@@ -907,7 +907,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1><span class="h1-l1" data-t="hero.titre"></span><span class="h1-price" data-t="hero.prix"></span></h1>
     <p class="hero-sub" data-t="hero.sousTitre"></p>
     <a class="hero-cta hide-termine" href="#formules" data-t="hero.cta"></a>
-    <div class="countdown only-public" data-countdown></div>
+    <div class="countdown hide-termine" data-countdown></div>
     <div class="ended-box only-termine" data-ended></div>
   </div>
   <nav class="hero-recap hide-termine" id="hero-recap" aria-label="Les deux formules"></nav>
@@ -967,7 +967,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="closing-lead only-public" data-t="final.textePublic"></p>
         </div>
         <a class="btn-light hide-termine" href="#formules" data-t="final.cta"></a>
-        <div class="countdown only-public" data-countdown></div>
+        <div class="countdown hide-termine" data-countdown></div>
         <div class="ended-box only-termine" data-ended></div>
       </div>
     </div>
@@ -1294,7 +1294,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       root.classList.add('phase-' + ph);
       current = ph;
     }
-    if (ph === 'public') {
+    if (ph !== 'termine') {   // compte à rebours affiché dès la prévente (phase « avant »)
       var s = Math.max(0, Math.floor((T_FIN - t) / 1000) + 1);
       var v = { j: Math.floor(s / 86400), h: Math.floor(s % 86400 / 3600), m: Math.floor(s % 3600 / 60), s: s % 60 };
       document.querySelectorAll('[data-cd]').forEach(function (b) { b.textContent = pad(v[b.getAttribute('data-cd')]); });
