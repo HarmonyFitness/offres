@@ -25,8 +25,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="theme-color" content="#000000" />
 
 <link rel="icon" type="image/png" href="images/favicon-harmony.png" />
-<link rel="preload" as="image" href="images/hero-blackfriday-large.jpg" media="(min-width: 901px)" fetchpriority="high" />
-<link rel="preload" as="image" href="images/hero-blackfriday.jpg" media="(max-width: 900px)" fetchpriority="high" />
+<link rel="preload" as="image" href="images/hero-blackfriday.jpg" fetchpriority="high" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" />
@@ -136,18 +135,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 }
 :root[data-theme="blackfriday"].has-final-img .closing-photo::after { opacity: .86; }
-/* Desktop : cadrage paysage dédié (coach à droite, disque flou du premier plan à gauche, sous le texte) */
+/* Desktop : photo calée à droite (le coach est à gauche du cliché), long fondu vers la gauche
+   dans un fond gris-bleu sombre pris dans les tons de la photo (ni aplat noir, ni flou) */
 @media (min-width: 901px) {
+  :root[data-theme="blackfriday"].has-hero-img .hero {
+    background: linear-gradient(100deg, #0d1115 0%, #1a232b 45%, #26313a 100%);
+  }
   :root[data-theme="blackfriday"].has-hero-img .hero-bg {
-    background-image: url('images/hero-blackfriday-large.jpg') !important;
-    background-position: 72% 30%;
+    left: 40%;
+    background-position: 0 0;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, rgba(0,0,0,.6) 18%, #000 40%), linear-gradient(to bottom, transparent 0, #000 90px);
+    -webkit-mask-composite: source-in;
+            mask-image: linear-gradient(to right, transparent 0, rgba(0,0,0,.6) 18%, #000 40%), linear-gradient(to bottom, transparent 0, #000 90px);
+            mask-composite: intersect;
   }
   :root[data-theme="blackfriday"].has-hero-img .hero::before {
     background:
-      linear-gradient(to right, rgba(0,0,0,.6) 0%, rgba(0,0,0,.35) 38%, transparent 60%),
-      linear-gradient(to top, rgba(0,0,0,.5) 0%, transparent 45%);
+      linear-gradient(to right, rgba(0,0,0,.5) 0%, rgba(0,0,0,.3) 40%, transparent 62%),
+      linear-gradient(to top, rgba(0,0,0,.45) 0%, transparent 45%);
   }
 }
+
 /* Sélection de texte et focus clavier aux couleurs de l'offre (noir + jaune) */
 :root[data-theme="blackfriday"] ::selection { background: var(--accent); color: #000; }
 /* Mobile et tablette : header collé sous le bandeau, puis masqué une fois le hero passé
