@@ -1,3 +1,14 @@
+# ──────────────────────────────────────────────────────────────
+# Offre Black Friday 888 — accès protégé par identifiant (lien à ne pas faire circuler)
+# Utilisateur « fitness » (fichier .htpasswd-blackfriday à la racine).
+# Pour rendre la page publique : supprimer ce bloc.
+# ──────────────────────────────────────────────────────────────
+
+AuthType Basic
+AuthName "Offre Black Friday 888 : accès réservé"
+AuthUserFile /home/clients/de689a3b51d476d9dabc281e543b9349/sites/offres.harmony.ch/.htpasswd-blackfriday
+Require user fitness
+
 # Page et config toujours revérifiées : une mise à jour de config.js (ID, textes) est vue tout de suite
 <IfModule mod_headers.c>
   <FilesMatch "\.(html|js)$">
