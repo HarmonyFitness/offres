@@ -19,10 +19,10 @@ window.OFFRE = {
   gtmEvent: 'offre_cta_click',              // dataLayer · clic sur un bouton d'achat
 
   /* Dates · heure de Zurich (+01:00). Prévente ouverte dès le 09.11.2026 (phase « avant » : achat possible,
-     bandeau et compte à rebours dès maintenant), Black Friday du mercredi 25 au dimanche 29 novembre 2026. */
+     bandeau et compte à rebours dès maintenant), Black Friday du mercredi 25 au lundi 30 novembre 2026. */
   dates: {
     ouverturePublique: '2026-11-25T00:00:00+01:00', // bandeau + compte à rebours
-    fin:               '2026-11-29T23:59:59+01:00'  // après : CTA masqués
+    fin:               '2026-11-30T23:59:59+01:00'  // après : CTA masqués
   },
 
   /* Lien d'achat : /paiement/ (checkout direct, cf. offres 222 et 888 précédentes) */
@@ -198,7 +198,7 @@ window.OFFRE = {
   faqTitre: 'Questions fréquentes',
   faq: [
     { q: 'Jusqu\'à quand puis-je profiter de l\'offre Black Friday ?',
-      r: 'Jusqu\'au dimanche 29 novembre 2026 à 23h59.' },
+      r: 'Jusqu\'au lundi 30 novembre 2026 à 23h59.' },
     { q: 'Quelle différence entre Essential et Premium ?',
       r: '888 Essential : 12 mois dans 7 clubs. 888 Premium : 8 mois dans les 10 clubs, avec les espaces aquatiques et le linge.' },
     { q: 'Puis-je prendre le 888 Premium si mon club n\'est pas un club Premium ?',
@@ -213,7 +213,7 @@ window.OFFRE = {
 
   final: {
     titre: 'L\'offre Black Friday se termine bientôt',
-    texteAvantPublic: 'Vous avez jusqu\'au 29 novembre pour choisir votre 888.',
+    texteAvantPublic: 'Vous avez jusqu\'au 30 novembre pour choisir votre 888.',
     textePublic: 'Plus que quelques jours pour choisir votre 888.',
     cta: 'Je choisis ma formule'
   },
@@ -226,5 +226,5 @@ window.OFFRE = {
 
   compteRebours: 'Fin de l\'offre dans',
 
-  mentions: 'Offre Black Friday valable jusqu\'au 29 novembre 2026 sur offres.harmony.ch et dans les clubs Harmony. Offre sous conditions, non cumulable.'
+  mentions: 'Offre Black Friday valable jusqu\'au 30 novembre 2026 sur offres.harmony.ch et dans les clubs Harmony. Offre sous conditions, non cumulable.'
 };
