@@ -24,10 +24,10 @@ window.OFFRE = {
   gtmEvent: 'offre_cta_click',               // dataLayer · clic sur un bouton d'achat (formule : one_maa / full_maa)
 
   /* Dates · heure de Zurich (+01:00). Prévente ouverte dès maintenant (phase « avant » : achat possible,
-     bandeau et compte à rebours), Black Friday du mercredi 25 au dimanche 29 novembre 2026. */
+     bandeau et compte à rebours), Black Friday du mercredi 25 au lundi 30 novembre 2026. */
   dates: {
     ouverturePublique: '2026-11-25T00:00:00+01:00', // début du Black Friday (textes « public »)
-    fin:               '2026-11-29T23:59:59+01:00'  // après : CTA masqués
+    fin:               '2026-11-30T23:59:59+01:00'  // après : CTA masqués
   },
 
   /* Lien d'achat : /paiement/ (checkout direct, comme la landing Fitness) */
@@ -189,7 +189,7 @@ window.OFFRE = {
   faqTitre: 'Questions fréquentes',          // à valider avec Axelle
   faq: [
     { q: 'Jusqu\'à quand puis-je profiter de l\'offre Black Friday ?',
-      r: 'Jusqu\'au dimanche 29 novembre 2026 à 23h59.' },
+      r: 'Jusqu\'au lundi 30 novembre 2026 à 23h59.' },
     { q: 'Quelle différence entre ONE MAA et FULL MAA ?',
       r: 'ONE MAA : 12 mois dans la discipline de votre choix. FULL MAA : 8 mois dans toutes les disciplines. Le club de fitness Gym by Harmony est inclus dans les deux.' },
     { q: 'Quand choisir ma discipline avec la ONE MAA ?',
@@ -204,7 +204,7 @@ window.OFFRE = {
 
   final: {
     titre: 'L\'offre Black Friday se termine bientôt',
-    texteAvantPublic: 'Vous avez jusqu\'au 29 novembre pour monter sur le tatami.',
+    texteAvantPublic: 'Vous avez jusqu\'au 30 novembre pour monter sur le tatami.',
     textePublic: 'Plus que quelques jours pour monter sur le tatami.',
     cta: 'Je choisis ma formule'
   },
@@ -216,6 +216,6 @@ window.OFFRE = {
 
   compteRebours: 'Fin de l\'offre dans',
 
-  mentions: 'Offre Black Friday valable jusqu\'au 29 novembre 2026 sur offres.harmony.ch et à la Martial Arts Academy.',
+  mentions: 'Offre Black Friday valable jusqu\'au 30 novembre 2026 sur offres.harmony.ch et à la Martial Arts Academy.',
   copyright: 'Martial Arts Academy by Harmony'
 };
