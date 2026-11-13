@@ -34,9 +34,9 @@ window.OFFRE = {
   checkoutUrl: 'https://souscription.harmony.ch/paiement/?add-to-cart=',
 
   visuels: {
-    hero: 'images/hero-blackfriday-maa.jpg',  // même photo que l'offre Halloween MAA · vide = fond noir + logo en filigrane
+    hero: 'images/hero-blackfriday-maa-2.jpg',  // deux combattants en garde devant la cage (fresque Andy Hug) · vide = fond noir + logo en filigrane
     heroPosition: '50% 0',                    // cadrage du visuel sur ordinateur (photo en pleine largeur)
-    heroAlt: 'Deux combattants de la Martial Arts Academy à l\'entraînement, l\'un armant un coup de pied',
+    heroAlt: 'Deux combattants de la Martial Arts Academy à l\'entraînement devant la cage, l\'un en garde haute, l\'autre lançant un direct',
     final: 'images/final-blackfriday-maa.jpg', // fond du bloc final, sous un voile noir · vide = dégradé noir
     finalAlt: 'Entraînement de sports de combat sur les tapis de la Martial Arts Academy'
   },
