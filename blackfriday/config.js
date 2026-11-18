@@ -204,11 +204,11 @@ window.OFFRE = {
     { q: 'Puis-je prendre le 888 Premium si mon club n\'est pas un club Premium ?',
       r: 'Oui, bien sûr. Le 888 Premium vous ouvre les 10 clubs Harmony, votre club actuel compris. L\'occasion de découvrir d\'autres clubs, leurs espaces aquatiques et encore plus de cours collectifs.' },
     { q: 'Quand démarre mon abonnement ?',
-      r: 'Quand vous le souhaitez : vous choisissez votre date de début, entre le jour de votre achat et le 30 novembre 2026.' },
+      r: 'Quand vous le souhaitez : vous choisissez votre date de début, entre le jour de votre achat et le 31 décembre 2026.' },
     { q: 'Comment fonctionne HeyLight ?',
       r: 'Vous payez en 12x (Essential) ou 6x (Premium) sans frais. La demande se fait au moment du paiement.' },
     { q: 'Je suis déjà membre, je peux en profiter ?',
-      r: 'Oui. Si votre abonnement actuel est sans engagement, c\'est l\'occasion de passer à une formule avec engagement, au prix Black Friday. Si vous êtes déjà engagé, le 888 ne met pas fin à votre abonnement en cours. Pour limiter le chevauchement, vous pouvez faire démarrer votre 888 plus tard, jusqu\'au 30 novembre 2026.' }
+      r: 'Oui. Si votre abonnement actuel est sans engagement, c\'est l\'occasion de passer à une formule avec engagement, au prix Black Friday. Si vous êtes déjà engagé, le 888 ne met pas fin à votre abonnement en cours. Pour limiter le chevauchement, vous pouvez faire démarrer votre 888 plus tard, jusqu\'au 31 décembre 2026.' }
   ],
 
   final: {

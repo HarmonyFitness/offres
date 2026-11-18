@@ -195,11 +195,11 @@ window.OFFRE = {
     { q: 'Quand choisir ma discipline avec la ONE MAA ?',
       r: 'Au centre, lors de votre première venue.' },
     { q: 'Quand démarre mon abonnement ?',
-      r: 'Quand vous le souhaitez : vous choisissez votre date de début, entre le jour de votre achat et le 30 novembre 2026.' },
+      r: 'Quand vous le souhaitez : vous choisissez votre date de début, entre le jour de votre achat et le 31 décembre 2026.' },
     { q: 'Comment fonctionne HeyLight ?',
       r: 'Vous payez en 12x (ONE MAA) ou 6x (FULL MAA) sans frais. La demande se fait au moment du paiement.' },
     { q: 'Je suis déjà membre, je peux en profiter ?',
-      r: 'Oui. Si votre abonnement actuel est sans engagement, c\'est l\'occasion de passer à une formule avec engagement, au prix Black Friday. Si vous êtes déjà engagé, l\'offre ne met pas fin à votre abonnement en cours. Pour limiter le chevauchement, vous pouvez faire démarrer votre nouvel abonnement jusqu\'au 30 novembre 2026.' }
+      r: 'Oui. Si votre abonnement actuel est sans engagement, c\'est l\'occasion de passer à une formule avec engagement, au prix Black Friday. Si vous êtes déjà engagé, l\'offre ne met pas fin à votre abonnement en cours. Pour limiter le chevauchement, vous pouvez faire démarrer votre nouvel abonnement jusqu\'au 31 décembre 2026.' }
   ],
 
   final: {
