@@ -1,0 +1,69 @@
+name: Bascule Black Friday sur la page d'accueil /
+
+# Ouverture : / redirige vers /blackfriday/ le mercredi 25.11.2026 à 8h00 (Paris).
+#   cron 07:00 UTC le 25.11 = 08:00 CET. Latence GitHub Actions : 5 à 15 min.
+# Fermeture : / revient à la page « aucune offre en cours » après la fin de l'offre
+#   (mardi 01.12.2026 23h59). cron 23:00 UTC le 01.12 = 00:00 CET le 02.12.
+# Lancement manuel possible (workflow_dispatch) avec le choix ouverture / fermeture.
+
+on:
+  schedule:
+    - cron: '0 7 25 11 *'
+    - cron: '0 23 1 12 *'
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "ouverture ou fermeture"
+        required: true
+        default: ouverture
+        type: choice
+        options: [ouverture, fermeture]
+
+jobs:
+  bascule:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Choix de l'action
+        id: act
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then A="${{ inputs.action }}";
+          elif [ "${{ github.event.schedule }}" = "0 7 25 11 *" ]; then A=ouverture;
+          else A=fermeture; fi
+          echo "action=$A" >> "$GITHUB_OUTPUT"; echo "Action : $A"
+
+      - name: Modifier .htaccess
+        run: |
+          LINE='RewriteRule ^$ /blackfriday/ [R=302,L]'
+          if [ "${{ steps.act.outputs.action }}" = "ouverture" ]; then
+            grep -qxF "$LINE" .htaccess || printf '\n# Black Friday 888 : / redirige vers /blackfriday/ (bascule auto)\n%s\n' "$LINE" >> .htaccess
+          else
+            grep -vxF "$LINE" .htaccess | grep -vxF '# Black Friday 888 : / redirige vers /blackfriday/ (bascule auto)' > .htaccess.tmp && mv .htaccess.tmp .htaccess
+          fi
+          tail -5 .htaccess
+
+      - name: Commit et push
+        run: |
+          git config user.name "harmony-scheduler[bot]"
+          git config user.email "harmony-scheduler@users.noreply.github.com"
+          git add .htaccess
+          git diff --cached --quiet && echo "Rien à changer" || { git commit -m "Black Friday : bascule / (${{ steps.act.outputs.action }})"; git push origin main; }
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: ${{ secrets.FTP_PATH }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
