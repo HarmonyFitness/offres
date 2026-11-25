@@ -19,3 +19,6 @@ RewriteBase /
 # ──────────────────────────────────────────────────────────────
 
 RewriteRule ^(222|333|444|888|halloween|halloween-maa)(/.*)?$ / [R=302,L]
+
+# Black Friday 888 : / redirige vers /blackfriday/ (bascule auto)
+RewriteRule ^$ /blackfriday/ [R=302,L]
