@@ -66,7 +66,7 @@ window.OFFRE = {
     surtitre: 'Martial Arts Academy',
     titre: 'L\'offre de l\'année :',
     prix: 'dès CHF 666.–',                     // en jaune sous le titre
-    sousTitre: '12 mois dans la discipline de votre choix pour CHF 666.–, ou 8 mois dans toutes les disciplines pour CHF 888.–. L\'accès au Gym by Harmony, le club de fitness situé dans la même rue aux Pâquis, est inclus dans les deux formules.',
+    sousTitre: '12 mois dans la discipline de votre choix pour CHF 666.–, ou 8 mois dans toutes les disciplines et tous les clubs Harmony Fitness pour CHF 888.–. L\'accès au Gym by Harmony, le club de fitness situé dans la même rue aux Pâquis, est inclus dans les deux formules.',
     cta: 'Je choisis ma formule',
     recapTitre: 'Deux formules'                 // encart à droite du hero (desktop), mène aux cartes
   },
@@ -107,10 +107,10 @@ window.OFFRE = {
     {
       id: 'full_maa',
       produitId: '62271',                   // OFFRE BLACK FRIDAY FULL MAA (WooCommerce · 888, 8 mois)
-      titre: 'FULL MAA',
-      badge: 'Toutes les disciplines',      // carte mise en avant (contour + étiquette)
-      accroche: 'Toutes les disciplines de l\'Academy, pour varier vos entraînements.',
-      resume: '8 mois, toutes disciplines',
+      titre: 'FULL HARMONY MAA',
+      badge: 'MAA + Harmony Fitness',      // carte mise en avant (contour + étiquette)
+      accroche: 'Toute la MAA, et tous les clubs Harmony Fitness en plus.',
+      resume: '8 mois, toute la MAA + clubs Fitness',
       prix: 'CHF 888.–',
       duree: '8 mois',
       faits: [
@@ -121,10 +121,11 @@ window.OFFRE = {
       puces: [
         'Abonnement 8 mois',
         { texte: 'Accès à tous les cours collectifs de la MAA, toutes disciplines', diff: true },
+        { texte: 'Accès à tous les clubs Harmony Fitness, cours collectifs inclus', diff: true },
         'Accès au club de fitness Gym by Harmony aux Pâquis : musculation, zone cardio, zone poids libres et street workout',
         'Payable en 6x sans frais avec HeyLight'
       ],
-      cta: 'Je m\'abonne à l\'offre FULL MAA'
+      cta: 'Je m\'abonne à l\'offre FULL HARMONY MAA'
     }
   ],
 
@@ -135,7 +136,7 @@ window.OFFRE = {
     // Dernière case de la grille : ce que chaque formule donne (même ordre que "formules")
     notes: [
       'Une discipline, que vous choisissez au centre.',
-      'Tous les cours collectifs de la MAA, toutes disciplines.'
+      'Tous les cours collectifs de la MAA, toutes disciplines, et tous les clubs Harmony Fitness.'
     ]
   },
   disciplines: [   // descriptions reprises des pages disciplines de maa-academy.ch
@@ -190,14 +191,14 @@ window.OFFRE = {
   faq: [
     { q: 'Jusqu\'à quand puis-je profiter de l\'offre Black Friday ?',
       r: 'Jusqu\'au mardi 1er décembre 2026 à 23h59.' },
-    { q: 'Quelle différence entre ONE MAA et FULL MAA ?',
-      r: 'ONE MAA : 12 mois dans la discipline de votre choix. FULL MAA : 8 mois dans toutes les disciplines. Le club de fitness Gym by Harmony est inclus dans les deux.' },
+    { q: 'Quelle différence entre ONE MAA et FULL HARMONY MAA ?',
+      r: 'ONE MAA : 12 mois dans la discipline de votre choix. FULL HARMONY MAA : 8 mois dans toutes les disciplines, avec en plus l\'accès à tous les clubs Harmony Fitness. Le club de fitness Gym by Harmony est inclus dans les deux.' },
     { q: 'Quand choisir ma discipline avec la ONE MAA ?',
       r: 'Au centre, lors de votre première venue.' },
     { q: 'Quand démarre mon abonnement ?',
       r: 'Quand vous le souhaitez : vous choisissez votre date de début, entre le jour de votre achat et le 31 décembre 2026.' },
     { q: 'Comment fonctionne HeyLight ?',
-      r: 'Vous payez en 12x (ONE MAA) ou 6x (FULL MAA) sans frais. La demande se fait au moment du paiement.' },
+      r: 'Vous payez en 12x (ONE MAA) ou 6x (FULL HARMONY MAA) sans frais. La demande se fait au moment du paiement.' },
     { q: 'Je suis déjà membre, je peux en profiter ?',
       r: 'Oui. Si votre abonnement actuel est sans engagement, c\'est l\'occasion de passer à une formule avec engagement, au prix Black Friday. Si vous êtes déjà engagé, l\'offre ne met pas fin à votre abonnement en cours. Pour limiter le chevauchement, vous pouvez faire démarrer votre nouvel abonnement jusqu\'au 31 décembre 2026.' }
   ],
